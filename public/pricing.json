@@ -1,0 +1,43 @@
+{
+  "currency": "USD",
+  "lastUpdated": "2025-02-20",
+  "packages": [
+    {
+      "name": "Startup Sprint",
+      "pricePerMonth": 3500,
+      "description": "Dedicated full-stack developer + UI/UX support for MVPs and app modernization projects.",
+      "includes": [
+        "Dedicated developers for hire (1 full-stack engineer)",
+        "Weekly product strategy sync",
+        "Microservices-ready architecture guidance",
+        "Book free IT consultation and get sprint roadmap"
+      ],
+      "idealFor": ["Startups", "SMEs in Vadodara", "Agencies needing overflow capacity"]
+    },
+    {
+      "name": "Remote Pod",
+      "pricePerMonth": 6200,
+      "description": "Cross-functional remote staffing pod with 3 engineers, QA, and delivery manager in India.",
+      "includes": [
+        "Remote staffing services and HR outsourcing",
+        "Scrum master + QA automation",
+        "Tech team scaling for startups",
+        "Hire remote team today with 2-week onboarding"
+      ],
+      "idealFor": ["Scaling SaaS", "Fintech", "Enterprise innovation labs"]
+    },
+    {
+      "name": "Staffing+ Recruit",
+      "pricePerHire": 1800,
+      "description": "Talent acquisition support and recruitment and staffing solutions for IT + non-IT roles.",
+      "includes": [
+        "Technical recruitment pipeline",
+        "HR outsourcing & HR solutions",
+        "Remote staffing vs in-house hiring advisory",
+        "Schedule recruitment call to kick off"
+      ],
+      "idealFor": ["IT services company in Gujarat", "IT staffing services for SMEs", "Global clients hiring in India"]
+    }
+  ]
+}
+

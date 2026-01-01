@@ -1,0 +1,109 @@
+{
+  "updated": "2025-02-20",
+  "currency": "INR",
+  "services": [
+    {
+      "name": "IT Solutions and Consulting",
+      "slug": "it-services",
+      "description": "Digital transformation services, IT support and maintenance, and microservices architecture for SMEs and enterprises.",
+      "features": [
+        "IT infrastructure and support services",
+        "Digital business solutions for SMEs in Vadodara",
+        "Cloud-based IT solutions and app modernization",
+        "Enterprise-grade applications and integration"
+      ],
+      "industries": ["SaaS", "Manufacturing", "Healthcare", "Education"],
+      "keywords": [
+        "IT services company in Vadodara",
+        "IT solutions and consulting",
+        "business process outsourcing"
+      ]
+    },
+    {
+      "name": "IT Staffing Services",
+      "slug": "staffing",
+      "description": "Dedicated developers for hire, remote staffing services, and HR outsourcing & HR solutions for scaling teams.",
+      "features": [
+        "Technical recruitment pipeline and talent acquisition support",
+        "Remote staffing vs in-house hiring advisory",
+        "IT staffing services for SMEs in Vadodara",
+        "Compliance-ready HR outsourcing"
+      ],
+      "industries": ["Startups", "Fintech", "E-commerce", "Agencies"],
+      "keywords": [
+        "IT staffing services",
+        "recruitment and staffing solutions",
+        "remote staffing services"
+      ]
+    },
+    {
+      "name": "Recruitment & Non-IT Staffing",
+      "slug": "recruitment",
+      "description": "Non-IT staffing services, HR and workforce outsourcing, and business process outsourcing across Gujarat and India.",
+      "features": [
+        "Recruitment and staffing solutions for support teams",
+        "HR outsourcing for IT companies",
+        "Talent acquisition support for back office roles",
+        "Staffing agency for tech startups"
+      ],
+      "industries": ["BPO", "Retail", "Logistics", "Professional Services"],
+      "keywords": [
+        "non-IT staffing services",
+        "HR outsourcing & HR solutions",
+        "business process outsourcing"
+      ]
+    },
+    {
+      "name": "Web Development",
+      "slug": "web-development",
+      "description": "Website and app development with frontend development, backend development, and UI/UX design services.",
+      "features": [
+        "Full-stack development services",
+        "Headless CMS and microservices architecture",
+        "SEO-ready web experiences for Gujarat businesses",
+        "IT support and maintenance retainers"
+      ],
+      "industries": ["Hospitality", "Real Estate", "Professional Services"],
+      "keywords": [
+        "website and app development",
+        "web development in Vadodara",
+        "digital transformation services"
+      ]
+    },
+    {
+      "name": "App Development",
+      "slug": "app-development",
+      "description": "Cross-platform mobile apps, app modernization, and enterprise-grade applications for SMEs in Vadodara.",
+      "features": [
+        "Native and hybrid app development",
+        "Cloud-native backend and microservices",
+        "Product roadmapping for startups",
+        "Ongoing IT support and maintenance"
+      ],
+      "industries": ["Healthcare", "Travel", "Fintech"],
+      "keywords": [
+        "app development for SMEs in Vadodara",
+        "remote developer hiring",
+        "dedicated developers for hire"
+      ]
+    },
+    {
+      "name": "Remote Staffing Pods",
+      "slug": "remote-staffing",
+      "description": "Remote developers for hire in India with managed pods, Scrum masters, and delivery governance.",
+      "features": [
+        "Remote staffing vs in-house hiring comparison",
+        "Tech team scaling for startups",
+        "Advantages of remote IT teams",
+        "Cost-effective IT outsourcing in India"
+      ],
+      "industries": ["Startups", "Agencies", "Product Companies"],
+      "keywords": [
+        "remote staffing services",
+        "remote developers for hire in India",
+        "how to hire remote IT talent"
+      ]
+    }
+  ]
+}
+
