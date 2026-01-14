@@ -59,7 +59,7 @@ const Elearning = () => {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground mb-4">
-                Learn at your own pace with our comprehensive video tutorials and hands-on projects.
+                Learn at your own pace with our comprehensive live projects and hands-on training.
               </p>
               <Button variant="outline" className="w-full" asChild>
                 <Link to="/hr-certification">

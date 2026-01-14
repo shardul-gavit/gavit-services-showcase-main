@@ -61,7 +61,7 @@ export const validateName = (name: string): { valid: boolean; sanitized: string 
   }
   
   const sanitized = sanitizeInput(name);
-  const valid = sanitized.length >= 2 && sanitized.length <= 100 && /^[a-zA-Z\s.'-]+$/.test(sanitized);
+  const valid = sanitized.length >= 2 && sanitized.length <= 200 && /^[a-zA-Z\s.'-]+$/.test(sanitized);
   
   return { valid, sanitized };
 };

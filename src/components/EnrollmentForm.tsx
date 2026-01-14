@@ -25,8 +25,9 @@ interface EnrollmentFormProps {
   onOpenChange: (open: boolean) => void;
 }
 
-// Google Apps Script Web App URL - Replace with your actual Web App URL
-const GOOGLE_SCRIPT_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+// API endpoint for enrollment form submission
+// This uses a Vercel serverless function as a proxy to handle CORS
+const API_ENDPOINT = "/api/enrollment";
 
 interface FormData {
   name: string;
@@ -81,9 +82,15 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
   const rateLimiter = useState(() => new RateLimiter('enrollment_form', 3, 60000))[0];
 
   const handleChange = (field: keyof FormData, value: string | boolean) => {
-    // Sanitize string inputs
+    // For string inputs, only sanitize dangerous characters but preserve spaces
     if (typeof value === 'string') {
-      value = sanitizeInput(value);
+      // Remove HTML tags and dangerous script patterns, but allow spaces
+      let sanitized = value.replace(/<[^>]*>/g, ''); // Remove HTML tags
+      sanitized = sanitized.replace(/javascript:/gi, ''); // Remove javascript: protocol
+      sanitized = sanitized.replace(/on\w+\s*=/gi, ''); // Remove event handlers
+      sanitized = sanitized.replace(/[<>'"&]/g, ''); // Remove dangerous characters but keep spaces
+      value = sanitized;
+      // Don't trim here - allow spaces during typing, trim only on submit
     }
     setFormData((prev) => ({ ...prev, [field]: value }));
     setError("");
@@ -111,7 +118,7 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
     // Enhanced name validation
     const nameValidation = validateName(formData.name);
     if (!nameValidation.valid) {
-      setError("Please enter a valid name (2-100 characters, letters and spaces only)");
+      setError("Please enter a valid name (2-200 characters, letters and spaces only)");
       return;
     }
 
@@ -160,22 +167,20 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
         timestamp: new Date().toISOString(),
       };
 
-      // Check if Google Script URL is configured
-      if (GOOGLE_SCRIPT_URL === "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") {
-        setError("Google Apps Script URL not configured. Please contact the administrator.");
-        setIsSubmitting(false);
-        return;
-      }
-
-      // Send to Google Apps Script Web App
-      await fetch(GOOGLE_SCRIPT_URL, {
+      // Send to Vercel API route (which proxies to Google Apps Script)
+      const response = await fetch(API_ENDPOINT, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(submissionData),
       });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to submit enrollment");
+      }
 
       setIsSuccess(true);
       
@@ -245,6 +250,7 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
                   value={formData.name}
                   onChange={(e) => handleChange("name", e.target.value)}
                   className="bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-800 focus:border-blue-500 focus:ring-blue-500"
+                  maxLength={200}
                   required
                 />
               </div>
@@ -258,12 +264,10 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
                   id="profession"
                   type="text"
                   placeholder="Enter your profession"
-                value={formData.profession}
-                onChange={(e) => {
-                  const sanitized = sanitizeInput(e.target.value);
-                  handleChange("profession", sanitized);
-                }}
+                  value={formData.profession}
+                  onChange={(e) => handleChange("profession", e.target.value)}
                   className="bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-800 focus:border-blue-500 focus:ring-blue-500"
+                  maxLength={200}
                   required
                 />
               </div>
@@ -299,6 +303,7 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
                   value={formData.emailId}
                   onChange={(e) => handleChange("emailId", e.target.value)}
                   className="bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-800 focus:border-blue-500 focus:ring-blue-500"
+                  maxLength={254}
                   required
                 />
               </div>
@@ -360,6 +365,7 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
                   value={formData.city}
                   onChange={(e) => handleChange("city", e.target.value)}
                   className="bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-800 focus:border-blue-500 focus:ring-blue-500"
+                  maxLength={200}
                   required
                 />
               </div>
@@ -396,12 +402,10 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
                   id="collegeUniversity"
                   type="text"
                   placeholder="Enter college/university name"
-                value={formData.collegeUniversity}
-                onChange={(e) => {
-                  const sanitized = sanitizeInput(e.target.value);
-                  handleChange("collegeUniversity", sanitized);
-                }}
+                  value={formData.collegeUniversity}
+                  onChange={(e) => handleChange("collegeUniversity", e.target.value)}
                   className="bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-800 focus:border-blue-500 focus:ring-blue-500"
+                  maxLength={300}
                   required
                 />
               </div>
@@ -415,12 +419,12 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
                   id="courseStream"
                   type="text"
                   placeholder="Enter your course/stream"
-                value={formData.courseStream}
-                onChange={(e) => {
-                  const sanitized = sanitizeInput(e.target.value);
-                  handleChange("courseStream", sanitized);
-                }}
+                  value={formData.courseStream}
+                  onChange={(e) => handleChange("courseStream", e.target.value)}
                   className="bg-white dark:bg-slate-900 border-blue-200 dark:border-blue-800 focus:border-blue-500 focus:ring-blue-500"
+                  maxLength={200}
+                  autoComplete="off"
+                  spellCheck={false}
                   required
                 />
               </div>

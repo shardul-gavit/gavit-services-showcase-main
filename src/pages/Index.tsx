@@ -393,7 +393,7 @@ const Index = () => {
                   </div>
                   <div className="flex items-center gap-2 text-white/90">
                     <Video className="w-5 h-5" />
-                    <span className="text-sm">Video Tutorials</span>
+                    <span className="text-sm">Live Projects</span>
                   </div>
                 </div>
                 <Button 

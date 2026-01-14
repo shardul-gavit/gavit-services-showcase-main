@@ -173,7 +173,7 @@ const ServicesHub = () => {
       <Seo
         title="Our Services | IT Solutions, Staffing & Digital Services | Gavit E-Services"
         description="Explore Gavit E-Services' comprehensive offerings: IT services and consulting, staffing and recruitment, remote staffing, web development, app development, digital marketing, branding, and business consulting in Vadodara, Gujarat, India."
-        keywords="IT services, staffing solutions, remote staffing, web development, app development, digital marketing, branding, business consulting, Vadodara, Gujarat, India"
+        keywords={["IT services", "staffing solutions", "remote staffing", "web development", "app development", "digital marketing", "branding", "business consulting", "Vadodara", "Gujarat", "India"]}
         canonical="https://www.gaviteservice.com/services"
       />
 

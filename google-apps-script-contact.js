@@ -1,5 +1,5 @@
 /**
- * Google Apps Script Web App for Student Enrollment Form
+ * Google Apps Script Web App for Contact/Enquiry Form
  * 
  * INSTRUCTIONS TO DEPLOY:
  * 1. Go to https://script.google.com/
@@ -12,35 +12,31 @@
  * 8. Who has access: "Anyone" (or "Anyone with Google account" if you want to restrict)
  * 9. Click "Deploy"
  * 10. Copy the Web App URL and add it as an environment variable in Vercel:
- *     GOOGLE_SCRIPT_ENROLLMENT_URL = "YOUR_WEB_APP_URL"
+ *     GOOGLE_SCRIPT_CONTACT_URL = "YOUR_WEB_APP_URL"
  * 
  * GOOGLE SHEET SETUP:
  * - Create a Google Sheet with the following columns in row 1:
  *   A: Timestamp
- *   B: Name
- *   C: Profession
- *   D: Contact Number
- *   E: Email ID
- *   F: Gender
- *   G: State
- *   H: City
- *   I: Qualification
- *   J: College/University Name
- *   K: Course/Stream
- *   L: Select Course
- *   M: How did you hear about us?
- *   N: Declaration
+ *   B: First Name
+ *   C: Last Name
+ *   D: Email
+ *   E: Phone
+ *   F: Service Interest
+ *   G: Message
  * - Copy the Sheet ID from the URL (between /d/ and /edit)
  * - Update SPREADSHEET_ID below
  */
 
 // Replace with your Google Sheet ID
 // Get it from the URL: https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
-const SPREADSHEET_ID = '1C-sKPSFg_HA1rLI-ELYM4gu9i8TRrBxdkyM-uaquEt4';
-const SHEET_NAME = 'Student_Enrollments';
+const SPREADSHEET_ID = '1jSdMTR0zBnEHHRccryZc15CmL55F5r7b5J1P2cr7Ggg';
+const SHEET_NAME = 'Contact_Enquiries';
+
+// Email configuration - Change this to your email address
+const RECIPIENT_EMAIL = 'gaviteservice26@gmail.com';
 
 /**
- * Handle POST request from enrollment form
+ * Handle POST request from contact form
  * This is called by the Vercel serverless function proxy
  */
 function doPost(e) {
@@ -67,54 +63,75 @@ function doPost(e) {
       sheet = spreadsheet.insertSheet(SHEET_NAME);
       sheet.appendRow([
         'Timestamp',
-        'Name',
-        'Profession',
-        'Contact Number',
-        'Email ID',
-        'Gender',
-        'State',
-        'City',
-        'Qualification',
-        'College/University Name',
-        'Course/Stream',
-        'Select Course',
-        'How did you hear about us?',
-        'Declaration'
+        'First Name',
+        'Last Name',
+        'Email',
+        'Phone',
+        'Service Interest',
+        'Message'
       ]);
       // Format header row
-      const headerRange = sheet.getRange(1, 1, 1, 14);
+      const headerRange = sheet.getRange(1, 1, 1, 7);
       headerRange.setFontWeight('bold');
       headerRange.setBackground('#4285f4');
       headerRange.setFontColor('#ffffff');
     }
     
-    // Prepare row data - ensure all fields are properly extracted
+    // Prepare row data
     const timestamp = new Date();
     const rowData = [
       timestamp,
-      (data.name || '').toString().trim(),
-      (data.profession || '').toString().trim(),
-      (data.contactNumber || '').toString().trim(),
-      (data.emailId || '').toString().trim(),
-      (data.gender || '').toString().trim(),
-      (data.state || '').toString().trim(),
-      (data.city || '').toString().trim(),
-      (data.qualification || '').toString().trim(),
-      (data.collegeUniversity || '').toString().trim(),
-      (data.courseStream || '').toString().trim(),
-      (data.selectCourse || '').toString().trim(),
-      (data.hearAboutUs || '').toString().trim(),
-      data.declaration ? 'Yes' : 'No'
+      data.firstName || '',
+      data.lastName || '',
+      data.email || '',
+      data.phone || '',
+      data.service || '',
+      data.message || ''
     ];
     
     // Append the data to the sheet
     sheet.appendRow(rowData);
     
+    // Send email notification
+    try {
+      const fullName = (data.firstName || '') + ' ' + (data.lastName || '');
+      const subject = `New Contact Form Submission - ${data.service || 'General Inquiry'}`;
+      
+      const emailBody = `
+New contact form submission received:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Name: ${fullName.trim()}
+Email: ${data.email || 'Not provided'}
+Phone: ${data.phone || 'Not provided'}
+Service Interest: ${data.service || 'Not specified'}
+
+Message:
+${data.message || 'No message provided'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Submitted on: ${timestamp.toLocaleString()}
+
+This is an automated notification from your website contact form.
+      `.trim();
+      
+      MailApp.sendEmail({
+        to: RECIPIENT_EMAIL,
+        subject: subject,
+        body: emailBody
+      });
+    } catch (emailError) {
+      // Log email error but don't fail the submission
+      console.error('Email sending failed:', emailError);
+    }
+    
     // Return success response
     return ContentService
       .createTextOutput(JSON.stringify({
         success: true,
-        message: 'Enrollment submitted successfully'
+        message: 'Contact form submitted successfully'
       }))
       .setMimeType(ContentService.MimeType.JSON);
       
@@ -136,7 +153,7 @@ function doGet(e) {
   return ContentService
     .createTextOutput(JSON.stringify({
       status: 'OK',
-      message: 'Enrollment form endpoint is active'
+      message: 'Contact form endpoint is active'
     }))
     .setMimeType(ContentService.MimeType.JSON);
 }

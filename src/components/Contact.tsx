@@ -4,17 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Instagram, Linkedin, Globe, CheckCircle, Loader2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
-// EmailJS Configuration
-// You'll need to set up EmailJS account and get these values:
-// 1. Go to https://www.emailjs.com/ and create account
-// 2. Create an email service (Gmail, Outlook, etc.)
-// 3. Create an email template with variables: {{from_name}}, {{from_email}}, {{phone}}, {{service}}, {{message}}
-// 4. Replace these values with your actual EmailJS credentials
-const EMAILJS_SERVICE_ID = 'service_gavit'; // Replace with your service ID
-const EMAILJS_TEMPLATE_ID = 'template_contact'; // Replace with your template ID
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your public key
+// API endpoint for contact form submission
+// This uses a Vercel serverless function as a proxy to handle CORS
+const API_ENDPOINT = "/api/contact";
 
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
@@ -38,35 +31,31 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const templateParams = {
-      from_name: `${formData.firstName} ${formData.lastName}`,
-      from_email: formData.email,
-      phone: formData.phone,
-      service: formData.service,
-      message: formData.message,
-      to_email: 'gaviteservice26@gmail.com',
+    const submissionData = {
+      firstName: formData.firstName.trim(),
+      lastName: formData.lastName.trim(),
+      email: formData.email.toLowerCase().trim(),
+      phone: formData.phone.replace(/\D/g, ''), // Only digits
+      service: formData.service.trim(),
+      message: formData.message.trim(),
+      timestamp: new Date().toISOString(),
     };
 
     try {
-      // Send email to Gavit E-Services
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
-      );
-
-      // Send confirmation email to visitor
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        'template_confirmation', // Create this template for auto-reply
-        {
-          to_name: formData.firstName,
-          to_email: formData.email,
-          message: `Thank you for reaching out to Gavit E-Services! We have received your inquiry regarding "${formData.service}". Our team will review your message and get back to you within 24-48 hours. We appreciate your interest in our services!`
+      // Send to Vercel API route (which proxies to Google Apps Script)
+      const response = await fetch(API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        EMAILJS_PUBLIC_KEY
-      );
+        body: JSON.stringify(submissionData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.error || "Failed to submit contact form");
+      }
 
       setIsSubmitted(true);
       setFormData({
@@ -78,7 +67,7 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Email send failed:', error);
+      console.error('Form submission failed:', error);
       // Fallback: Open mailto link
       const subject = encodeURIComponent(`New Inquiry from ${formData.firstName} ${formData.lastName} - ${formData.service}`);
       const body = encodeURIComponent(

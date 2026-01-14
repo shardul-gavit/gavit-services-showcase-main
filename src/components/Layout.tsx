@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   ArrowUpRight,
-  Globe,
   Instagram,
   Linkedin,
   Mail,
@@ -17,6 +15,7 @@ import {
   Twitter,
   Youtube,
   Clock,
+  MessageCircle,
 } from "lucide-react";
 import gavitLogo from "@/assets/gavit-logo.png";
 
@@ -84,15 +83,6 @@ export const Layout = ({ children }: LayoutProps) => {
                 </Link>
               ))}
             </div>
-            <div className="hidden xl:flex items-center gap-3 text-xs text-muted-foreground">
-              <div className="flex items-center gap-2 border px-3 py-1 rounded-full">
-                <Globe className="w-4 h-4 text-blue-500" />
-                5 Countries
-              </div>
-              <div className="flex items-center gap-2 border px-3 py-1 rounded-full">
-                <Badge variant="secondary">80+ Projects</Badge>
-              </div>
-            </div>
             <div className="flex items-center gap-3">
               <a
                 href="https://www.linkedin.com/company/gavit-e-services/"
@@ -102,6 +92,15 @@ export const Layout = ({ children }: LayoutProps) => {
                 aria-label="Gavit E-Services on LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="https://wa.me/918141381255"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden md:inline-flex w-10 h-10 items-center justify-center rounded-full border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+                aria-label="Contact us on WhatsApp"
+              >
+                <MessageCircle className="w-4 h-4" />
               </a>
               <Button onClick={handleContactNav} className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600">
                 Get Started
