@@ -205,7 +205,19 @@ const EnrollmentForm = ({ open, onOpenChange }: EnrollmentFormProps) => {
         onOpenChange(false);
       }, 3000);
     } catch (err) {
-      setError("Failed to submit enrollment. Please try again or contact us directly.");
+      let errorMessage = "Failed to submit enrollment. Please try again or contact us directly.";
+      
+      if (err instanceof Error) {
+        if (err.message.includes("Network") || err.message.includes("fetch")) {
+          errorMessage = "Network error. Please check your internet connection and try again.";
+        } else if (err.message.includes("timeout")) {
+          errorMessage = "Request timed out. Please try again.";
+        } else {
+          errorMessage = err.message || errorMessage;
+        }
+      }
+      
+      setError(errorMessage);
       console.error("Enrollment error:", err);
       setIsSubmitting(false);
     }

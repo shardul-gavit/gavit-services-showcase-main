@@ -87,9 +87,24 @@ export default async function handler(
     }
   } catch (error) {
     console.error('Error forwarding request to Google Apps Script:', error);
-    return response.status(500).json({ 
+    
+    // Determine error type and provide appropriate response
+    let errorMessage = 'Failed to submit contact form. Please try again later.';
+    let statusCode = 500;
+    
+    if (error instanceof TypeError && error.message.includes('fetch')) {
+      errorMessage = 'Network error. Please check your internet connection and try again.';
+      statusCode = 503; // Service Unavailable
+    } else if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    
+    return response.status(statusCode).json({ 
       success: false, 
-      error: 'Failed to submit contact form. Please try again later.' 
+      error: errorMessage,
+      details: process.env.NODE_ENV === 'development' 
+        ? (error instanceof Error ? error.message : String(error))
+        : undefined
     });
   }
 }

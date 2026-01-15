@@ -21,39 +21,51 @@ import ComingSoon from "./pages/ComingSoon";
 import WhyJoinUs from "./pages/WhyJoinUs";
 import CareerGrowth from "./pages/CareerGrowth";
 import NotFound from "./pages/NotFound";
+import ErrorBoundary from "./components/ErrorBoundary";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<ServicesHub />} />
-          <Route path="/it-services" element={<ItServices />} />
-          <Route path="/staffing" element={<Staffing />} />
-          <Route path="/remote-staffing" element={<RemoteStaffing />} />
-          <Route path="/web-development" element={<WebDevelopment />} />
-          <Route path="/app-development" element={<AppDevelopment />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/coming-soon" element={<ComingSoon />} />
-          <Route path="/why-join-us" element={<WhyJoinUs />} />
-          <Route path="/career-growth" element={<CareerGrowth />} />
-          <Route path="/elearning" element={<Elearning />} />
-          <Route path="/technical-certification" element={<TechnicalCertification />} />
-          <Route path="/hr-certification" element={<HrCertification />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/blogs" element={<Blogs />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ErrorBoundary>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <ErrorBoundary>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/services" element={<ServicesHub />} />
+              <Route path="/it-services" element={<ItServices />} />
+              <Route path="/staffing" element={<Staffing />} />
+              <Route path="/remote-staffing" element={<RemoteStaffing />} />
+              <Route path="/web-development" element={<WebDevelopment />} />
+              <Route path="/app-development" element={<AppDevelopment />} />
+              <Route path="/career" element={<Career />} />
+              <Route path="/coming-soon" element={<ComingSoon />} />
+              <Route path="/why-join-us" element={<WhyJoinUs />} />
+              <Route path="/career-growth" element={<CareerGrowth />} />
+              <Route path="/elearning" element={<Elearning />} />
+              <Route path="/technical-certification" element={<TechnicalCertification />} />
+              <Route path="/hr-certification" element={<HrCertification />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="/blogs" element={<Blogs />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </ErrorBoundary>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ErrorBoundary>
 );
 
 export default App;

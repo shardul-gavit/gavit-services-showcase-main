@@ -41,18 +41,6 @@ export default async function handler(
     });
   }
 
-  // Log the URL being used to verify it's correct
-  console.log('Enrollment API - Using Google Script URL:', googleScriptUrl);
-  
-  // Verify it's not the contact form URL
-  if (googleScriptUrl.includes('AKfycbzf8TITzhANIMrh-3BiBAaYJpA8B47VrXcxm5qDFzYr1iyJagWcX9Rfi4EJW_zEkfohOQ')) {
-    console.error('ERROR: Enrollment form is using CONTACT form URL! This is wrong!');
-    return response.status(500).json({ 
-      success: false, 
-      error: 'Configuration error: Enrollment form is pointing to contact form URL. Please check environment variables.' 
-    });
-  }
-
   // Validate request body
   if (!request.body) {
     return response.status(400).json({ 
@@ -114,10 +102,24 @@ export default async function handler(
     }
   } catch (error) {
     console.error('Error forwarding request to Google Apps Script:', error);
-    return response.status(500).json({ 
+    
+    // Determine error type and provide appropriate response
+    let errorMessage = 'Failed to submit enrollment. Please try again later.';
+    let statusCode = 500;
+    
+    if (error instanceof TypeError && error.message.includes('fetch')) {
+      errorMessage = 'Network error. Please check your internet connection and try again.';
+      statusCode = 503; // Service Unavailable
+    } else if (error instanceof Error) {
+      errorMessage = error.message;
+    }
+    
+    return response.status(statusCode).json({ 
       success: false, 
-      error: 'Failed to submit enrollment. Please try again later.',
-      details: error instanceof Error ? error.message : String(error)
+      error: errorMessage,
+      details: process.env.NODE_ENV === 'development' 
+        ? (error instanceof Error ? error.message : String(error))
+        : undefined
     });
   }
 }

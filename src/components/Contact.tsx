@@ -68,18 +68,38 @@ const Contact = () => {
       });
     } catch (error) {
       console.error('Form submission failed:', error);
+      
+      let errorMessage = "Failed to submit contact form. ";
+      if (error instanceof Error) {
+        if (error.message.includes("Network") || error.message.includes("fetch")) {
+          errorMessage += "Network error. Please check your internet connection.";
+        } else if (error.message.includes("timeout")) {
+          errorMessage += "Request timed out. Please try again.";
+        } else {
+          errorMessage += error.message;
+        }
+      } else {
+        errorMessage += "Please try again or contact us directly.";
+      }
+      
+      // Show error alert
+      alert(errorMessage);
+      
       // Fallback: Open mailto link
-      const subject = encodeURIComponent(`New Inquiry from ${formData.firstName} ${formData.lastName} - ${formData.service}`);
-      const body = encodeURIComponent(
-        `Name: ${formData.firstName} ${formData.lastName}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone}\n` +
-        `Service Interest: ${formData.service}\n\n` +
-        `Message:\n${formData.message}`
-      );
-      window.location.href = `mailto:gaviteservice26@gmail.com?subject=${subject}&body=${body}`;
-      setIsSubmitted(true);
-    } finally {
+      try {
+        const subject = encodeURIComponent(`New Inquiry from ${formData.firstName} ${formData.lastName} - ${formData.service}`);
+        const body = encodeURIComponent(
+          `Name: ${formData.firstName} ${formData.lastName}\n` +
+          `Email: ${formData.email}\n` +
+          `Phone: ${formData.phone}\n` +
+          `Service Interest: ${formData.service}\n\n` +
+          `Message:\n${formData.message}`
+        );
+        window.location.href = `mailto:gaviteservice26@gmail.com?subject=${subject}&body=${body}`;
+      } catch (mailtoError) {
+        console.error('Failed to open mailto link:', mailtoError);
+      }
+      
       setIsSubmitting(false);
     }
   };
