@@ -41,6 +41,18 @@ export default async function handler(
     });
   }
 
+  // Log the URL being used to verify it's correct
+  console.log('Enrollment API - Using Google Script URL:', googleScriptUrl);
+  
+  // Verify it's not the contact form URL
+  if (googleScriptUrl.includes('AKfycbzf8TITzhANIMrh-3BiBAaYJpA8B47VrXcxm5qDFzYr1iyJagWcX9Rfi4EJW_zEkfohOQ')) {
+    console.error('ERROR: Enrollment form is using CONTACT form URL! This is wrong!');
+    return response.status(500).json({ 
+      success: false, 
+      error: 'Configuration error: Enrollment form is pointing to contact form URL. Please check environment variables.' 
+    });
+  }
+
   // Validate request body
   if (!request.body) {
     return response.status(400).json({ 
