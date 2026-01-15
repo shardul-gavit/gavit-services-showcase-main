@@ -50,6 +50,12 @@ export default async function handler(
   }
 
   try {
+    // Log the request for debugging
+    console.log('Forwarding request to Google Apps Script:', {
+      url: googleScriptUrl,
+      body: request.body
+    });
+
     // Forward the request to Google Apps Script
     const googleResponse = await fetch(googleScriptUrl, {
       method: 'POST',
@@ -62,11 +68,19 @@ export default async function handler(
     // Get the response data
     const responseData = await googleResponse.text();
     
+    // Log the response for debugging
+    console.log('Google Apps Script response:', {
+      status: googleResponse.status,
+      statusText: googleResponse.statusText,
+      data: responseData
+    });
+    
     // Try to parse as JSON, fallback to text if it fails
     let parsedData;
     try {
       parsedData = JSON.parse(responseData);
-    } catch {
+    } catch (parseError) {
+      console.error('Failed to parse response as JSON:', parseError);
       parsedData = { success: googleResponse.ok, message: responseData };
     }
 
@@ -79,6 +93,7 @@ export default async function handler(
     if (googleResponse.ok) {
       return response.status(200).json(parsedData);
     } else {
+      console.error('Google Apps Script returned error:', parsedData);
       return response.status(googleResponse.status).json({
         success: false,
         error: parsedData.error || 'Failed to submit enrollment',
@@ -89,7 +104,8 @@ export default async function handler(
     console.error('Error forwarding request to Google Apps Script:', error);
     return response.status(500).json({ 
       success: false, 
-      error: 'Failed to submit enrollment. Please try again later.' 
+      error: 'Failed to submit enrollment. Please try again later.',
+      details: error instanceof Error ? error.message : String(error)
     });
   }
 }
