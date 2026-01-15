@@ -34,110 +34,164 @@
  * - Update SPREADSHEET_ID below
  */
 
-// Replace with your Google Sheet ID
-// Get it from the URL: https://docs.google.com/spreadsheets/d/SHEET_ID_HERE/edit
+/******************** CONFIG ********************/
 const SPREADSHEET_ID = '1C-sKPSFg_HA1rLI-ELYM4gu9i8TRrBxdkyM-uaquEt4';
 const SHEET_NAME = 'Student_Enrollments';
+const ADMIN_EMAIL = 'gaviteservice26@gmail.com';
 
-/**
- * Handle POST request from enrollment form
- * This is called by the Vercel serverless function proxy
- */
+/******************** CORE ********************/
+function handleEnrollment(data) {
+  if (!data || typeof data !== 'object') {
+    throw new Error('Invalid enrollment data received');
+  }
+
+  const sheet = getOrCreateSheet();
+
+  const timestamp = new Date();
+
+  // Save to sheet
+  sheet.appendRow([
+    timestamp,
+    data.name || '',
+    data.profession || '',
+    data.contactNumber || '',
+    data.emailId || '',
+    data.gender || '',
+    data.state || '',
+    data.city || '',
+    data.qualification || '',
+    data.collegeUniversity || '',
+    data.courseStream || '',
+    data.selectCourse || '',
+    data.hearAboutUs || '',
+    data.declaration === true || data.declaration === 'true' ? 'Yes' : 'No'
+  ]);
+
+  sendAdminEmail(data, timestamp);
+  sendStudentEmail(data);
+}
+
+/******************** EMAILS ********************/
+function sendAdminEmail(data, timestamp) {
+  if (!data) return;
+
+  const body =
+    'New Student Enrollment Received\n\n' +
+    '━━━━━━━━━━━━━━━━━━━━━━\n\n' +
+    'Name: ' + (data.name || 'N/A') + '\n' +
+    'Email: ' + (data.emailId || 'N/A') + '\n' +
+    'Contact: ' + (data.contactNumber || 'N/A') + '\n' +
+    'Profession: ' + (data.profession || 'N/A') + '\n\n' +
+    'Course Details:\n' +
+    'Selected Course: ' + (data.selectCourse || 'N/A') + '\n' +
+    'Qualification: ' + (data.qualification || 'N/A') + '\n' +
+    'College: ' + (data.collegeUniversity || 'N/A') + '\n\n' +
+    'Location:\n' +
+    (data.city || '') + ', ' + (data.state || '') + '\n\n' +
+    'Declaration: ' +
+    (data.declaration === true || data.declaration === 'true' ? 'Yes' : 'No') +
+    '\n\n━━━━━━━━━━━━━━━━━━━━━━\n' +
+    'Submitted on: ' + timestamp.toLocaleString();
+
+  MailApp.sendEmail({
+    to: ADMIN_EMAIL,
+    subject: '🎓 New Student Enrollment',
+    body: body,
+    name: 'Gavit E-Services'
+  });
+}
+
+function sendStudentEmail(data) {
+  if (!data || !data.emailId) return;
+
+  const email = data.emailId.toString().trim();
+  if (!email || email.indexOf('@') === -1) return;
+
+  const body =
+    'Dear ' + (data.name || 'Student') + ',\n\n' +
+    'Thank you for enrolling with Gavit E-Services!\n\n' +
+    'We have successfully received your enrollment for:\n' +
+    '"' + (data.selectCourse || 'your selected course') + '"\n\n' +
+    'Our team will contact you shortly with further details.\n\n' +
+    'Regards,\n' +
+    'Gavit E-Services Team\n\n' +
+    '---\nThis is an automated email. Please do not reply.';
+
+  MailApp.sendEmail({
+    to: email,
+    subject: 'Enrollment Confirmation – Gavit E-Services',
+    body: body,
+    name: 'Gavit E-Services'
+  });
+}
+
+/******************** HTTP ********************/
 function doPost(e) {
   try {
-    // Validate that we have post data
-    if (!e.postData || !e.postData.contents) {
-      return ContentService
-        .createTextOutput(JSON.stringify({
-          success: false,
-          error: 'No data received'
-        }))
-        .setMimeType(ContentService.MimeType.JSON);
+    if (!e || !e.postData || !e.postData.contents) {
+      throw new Error('No POST data received');
     }
-    
-    // Parse the JSON data from the request
+
     const data = JSON.parse(e.postData.contents);
-    
-    // Open the spreadsheet
-    const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
-    let sheet = spreadsheet.getSheetByName(SHEET_NAME);
-    
-    // If sheet doesn't exist, create it with headers
-    if (!sheet) {
-      sheet = spreadsheet.insertSheet(SHEET_NAME);
-      sheet.appendRow([
-        'Timestamp',
-        'Name',
-        'Profession',
-        'Contact Number',
-        'Email ID',
-        'Gender',
-        'State',
-        'City',
-        'Qualification',
-        'College/University Name',
-        'Course/Stream',
-        'Select Course',
-        'How did you hear about us?',
-        'Declaration'
-      ]);
-      // Format header row
-      const headerRange = sheet.getRange(1, 1, 1, 14);
-      headerRange.setFontWeight('bold');
-      headerRange.setBackground('#4285f4');
-      headerRange.setFontColor('#ffffff');
-    }
-    
-    // Prepare row data - ensure all fields are properly extracted
-    const timestamp = new Date();
-    const rowData = [
-      timestamp,
-      (data.name || '').toString().trim(),
-      (data.profession || '').toString().trim(),
-      (data.contactNumber || '').toString().trim(),
-      (data.emailId || '').toString().trim(),
-      (data.gender || '').toString().trim(),
-      (data.state || '').toString().trim(),
-      (data.city || '').toString().trim(),
-      (data.qualification || '').toString().trim(),
-      (data.collegeUniversity || '').toString().trim(),
-      (data.courseStream || '').toString().trim(),
-      (data.selectCourse || '').toString().trim(),
-      (data.hearAboutUs || '').toString().trim(),
-      data.declaration ? 'Yes' : 'No'
-    ];
-    
-    // Append the data to the sheet
-    sheet.appendRow(rowData);
-    
-    // Return success response
-    return ContentService
-      .createTextOutput(JSON.stringify({
-        success: true,
-        message: 'Enrollment submitted successfully'
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
-      
-  } catch (error) {
-    // Return error response
-    return ContentService
-      .createTextOutput(JSON.stringify({
-        success: false,
-        error: error.toString()
-      }))
-      .setMimeType(ContentService.MimeType.JSON);
+    handleEnrollment(data);
+
+    return jsonResponse({ success: true, message: 'Enrollment saved' });
+  } catch (err) {
+    return jsonResponse({ success: false, error: err.message });
   }
 }
 
-/**
- * Handle GET request (for testing)
- */
 function doGet(e) {
-  return ContentService
-    .createTextOutput(JSON.stringify({
-      status: 'OK',
-      message: 'Enrollment form endpoint is active'
-    }))
-    .setMimeType(ContentService.MimeType.JSON);
+  try {
+    // Health check
+    if (!e || !e.parameter || !e.parameter.submit) {
+      return ContentService.createTextOutput(
+        'Student Enrollment API is running'
+      );
+    }
+
+    // Only save when submit=true
+    const data = {};
+    for (var key in e.parameter) {
+      data[key] = e.parameter[key];
+    }
+
+    handleEnrollment(data);
+    return ContentService.createTextOutput('Enrollment submitted successfully');
+  } catch (err) {
+    return ContentService.createTextOutput(err.message);
+  }
 }
 
+/******************** UTIL ********************/
+function getOrCreateSheet() {
+  const ss = SpreadsheetApp.openById(SPREADSHEET_ID);
+  let sheet = ss.getSheetByName(SHEET_NAME);
+
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+    sheet.appendRow([
+      'Timestamp',
+      'Name',
+      'Profession',
+      'Contact Number',
+      'Email ID',
+      'Gender',
+      'State',
+      'City',
+      'Qualification',
+      'College / University',
+      'Course Stream',
+      'Selected Course',
+      'Hear About Us',
+      'Declaration'
+    ]);
+  }
+  return sheet;
+}
+
+function jsonResponse(obj) {
+  return ContentService
+    .createTextOutput(JSON.stringify(obj))
+    .setMimeType(ContentService.MimeType.JSON);
+}
