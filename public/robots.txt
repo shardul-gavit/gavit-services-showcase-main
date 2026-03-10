@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.gaviteservice.com/sitemap.xml
+
+# Crawl-delay can help AI agents respect rate limits
+Crawl-delay: 2
+
+# Essential resources
+Allow: /services.json
+Allow: /company.json
+Allow: /pricing.json
+Allow: /ai
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /

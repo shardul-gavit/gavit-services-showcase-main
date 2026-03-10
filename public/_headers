@@ -1,0 +1,25 @@
+# Security Headers for Netlify/Vercel
+# These headers are automatically applied when deployed
+
+/*
+  # Content Security Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://script.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self';
+  
+  # XSS Protection
+  X-XSS-Protection: 1; mode=block
+  
+  # Prevent MIME type sniffing
+  X-Content-Type-Options: nosniff
+  
+  # Prevent clickjacking
+  X-Frame-Options: SAMEORIGIN
+  
+  # Referrer Policy
+  Referrer-Policy: strict-origin-when-cross-origin
+  
+  # Permissions Policy
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  
+  # Strict Transport Security (HSTS) - Enable in production
+  # Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
