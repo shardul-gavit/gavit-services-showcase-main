@@ -1,0 +1,32 @@
+{
+  "name": "Gavit E-Services",
+  "tagline": "IT solutions, software development, and staffing company in Vadodara, Gujarat, India.",
+  "mission": "Enable startups, SMEs, and enterprises to build modern digital products while scaling teams through on-demand IT staffing and recruitment solutions.",
+  "overview": "Gavit E-Services delivers IT solutions and consulting, web and app development, digital transformation services, and HR outsourcing for companies in Vadodara, Gujarat, India.",
+  "industries": ["Information Technology", "Staffing & Recruitment", "Digital Agencies", "Product Startups", "SMEs"],
+  "expertise": [
+    "Full-stack development services",
+    "Dedicated developers for hire",
+    "IT staffing services and HR outsourcing",
+    "Business process outsourcing",
+    "Remote staffing services and remote developer hiring"
+  ],
+  "location": {
+    "city": "Vadodara",
+    "state": "Gujarat",
+    "country": "India",
+    "timeZone": "Asia/Kolkata"
+  },
+  "contact": {
+    "email": "info@gaviteservices.com",
+    "phone": "+91-81413-81255",
+    "website": "https://www.gaviteservice.com",
+    "address": "Vadodara, Gujarat, India"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/gavit-e-services",
+    "instagram": "https://www.instagram.com/gaviteservices",
+    "twitter": "https://twitter.com/gaviteservices"
+  }
+}
+

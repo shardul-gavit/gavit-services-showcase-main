@@ -1,0 +1,105 @@
+export const DEFAULT_SITE_TITLE =
+  "VA Services, ERP & Software Development India | Gavit E-Services";
+
+export const DEFAULT_SITE_DESCRIPTION =
+  "Gavit E-Services — India-based VA, ERP, Custom Software, AI & GST Billing company serving USA, UK, Canada, New Zealand, Australia & worldwide. HQ Vadodara, Gujarat. Affordable. Fast. Reliable.";
+
+export const DEFAULT_OG_DESCRIPTION =
+  "VA services, ERP, AI software, GST billing & IT consultancy. Serving USA, UK, Canada, NZ & worldwide from Vadodara, India.";
+
+export const DEFAULT_TWITTER_DESCRIPTION =
+  "VA services, ERP, AI software, GST billing & IT consultancy from Vadodara, India. Serving USA, UK, Canada & NZ.";
+
+export const GLOBAL_KEYWORDS = [
+  "virtual assistant services India",
+  "hire virtual assistant India",
+  "virtual assistant for small business USA",
+  "virtual assistant services UK",
+  "virtual assistant Canada",
+  "virtual assistant New Zealand",
+  "virtual assistant Australia",
+  "ERP development company India",
+  "custom ERP development Vadodara",
+  "ERP software development Gujarat",
+  "affordable ERP development India",
+  "ERP development for small business",
+  "custom software development India",
+  "custom software development Vadodara",
+  "web app development India",
+  "web application development company India",
+  "AI software development India",
+  "AI development company Gujarat",
+  "AI software development company India",
+  "GST billing software India",
+  "GST billing software for small business",
+  "custom billing software India",
+  "IT consultancy India",
+  "IT consulting company Vadodara",
+  "software development company Vadodara",
+  "software development company Gujarat",
+  "software company India USA",
+  "offshore software development India",
+  "outsource software development India",
+  "hire developers India",
+  "IT outsourcing India UK",
+  "IT outsourcing India Canada",
+  "software development company New Zealand",
+  "outsource web development India",
+  "digital transformation company India",
+  "business software solutions India",
+  "software development company for startups",
+  "IT services company Vadodara",
+  "staffing company Vadodara",
+  "remote staffing India",
+  "HR outsourcing India",
+  "custom software development for small business",
+  "bespoke software development India",
+  "offshore custom software development",
+  "hire custom software developers India",
+  "ERP development company UK",
+  "cloud ERP development India",
+  "AI development company India",
+  "hire AI developers India",
+  "LLM integration services India",
+  "generative AI development company India",
+  "application modernization services India",
+  "legacy system modernization India",
+  "virtual CIO services India",
+  "digital transformation consulting India",
+  "web application development India",
+  "custom web app development India",
+  "progressive web app development",
+  "GST invoice software India",
+  "billing software for manufacturing India",
+  "billing software for retailers India",
+  "IT outsourcing company Vadodara",
+  "software development company for startups India",
+  "affordable ERP for small business India",
+];
+
+export const ORGANIZATION_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Gavit E-Services",
+  url: "https://www.gaviteservice.com",
+  logo: "https://www.gaviteservice.com/logo.png",
+  description: "India-based VA, ERP, Custom Software, AI & GST Billing company",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Vadodara",
+    addressRegion: "Gujarat",
+    postalCode: "390007",
+    addressCountry: "IN",
+  },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    availableLanguage: ["English", "Hindi", "Gujarati"],
+  },
+  areaServed: ["IN", "US", "GB", "CA", "NZ", "AU", "SG", "AE"],
+  sameAs: [
+    "https://www.linkedin.com/company/gaviteservices",
+    "https://www.facebook.com/gaviteservices",
+    "https://twitter.com/gaviteservices",
+  ],
+};
