@@ -13,6 +13,10 @@ import WebDevelopment from "./pages/WebDevelopment";
 import AppDevelopment from "./pages/AppDevelopment";
 import ContactPage from "./pages/ContactPage";
 import Blogs from "./pages/Blogs";
+import BlogIndex from "./pages/BlogIndex";
+import BlogPostPage from "./pages/BlogPostPage";
+import BlogCategoryPage from "./pages/BlogCategoryPage";
+import TechRadar from "./pages/TechRadar";
 import Career from "./pages/Career";
 import CareerApply from "./pages/CareerApply";
 import Elearning from "./pages/Elearning";
@@ -69,8 +73,11 @@ const App = () => (
               <Route path="/locations/:slug" element={<LocationPage />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/pricing" element={<Pricing />} />
-              <Route path="/blog" element={<Blogs />} />
-              <Route path="/case-studies" element={<Blogs />} />
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/category/:category" element={<BlogCategoryPage />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+              <Route path="/tech-radar" element={<TechRadar />} />
+              <Route path="/case-studies" element={<BlogIndex />} />
               <Route path="/career" element={<Career />} />
               <Route path="/career/apply" element={<CareerApply />} />
               <Route path="/coming-soon" element={<ComingSoon />} />

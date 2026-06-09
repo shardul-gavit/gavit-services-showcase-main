@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
   ArrowUpRight,
   Instagram,
   Linkedin,
@@ -16,6 +22,7 @@ import {
   Youtube,
   Clock,
   MessageCircle,
+  ChevronDown,
 } from "lucide-react";
 import gavitLogo from "@/assets/gavit-logo.png";
 import WhatsAppChatbot from "@/components/WhatsAppChatbot";
@@ -27,8 +34,14 @@ const navLinks = [
   { label: "Services", path: "/services" },
   { label: "Career", path: "/career" },
   { label: "E-Learning", path: "/elearning" },
-  { label: "Blogs", path: "/blogs" },
   { label: "Contact", path: "/contact" },
+];
+
+const insightsLinks = [
+  { label: "All Articles", path: "/blog" },
+  { label: "Tech Foresight", path: "/blog/category/tech-foresight" },
+  { label: "AI Insights", path: "/blog/category/ai-insights" },
+  { label: "Tech Radar", path: "/tech-radar" },
 ];
 
 const socialLinks = [
@@ -84,6 +97,25 @@ export const Layout = ({ children }: LayoutProps) => {
                   {link.label}
                 </Link>
               ))}
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-medium rounded-full transition-colors ${
+                    location.pathname.startsWith("/blog") || location.pathname === "/tech-radar"
+                      ? "bg-muted text-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  Insights
+                  <ChevronDown className="h-4 w-4" />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="end">
+                  {insightsLinks.map((link) => (
+                    <DropdownMenuItem key={link.path} asChild>
+                      <Link to={link.path}>{link.label}</Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
             </div>
             <div className="flex items-center gap-3">
               <a
@@ -128,6 +160,20 @@ export const Layout = ({ children }: LayoutProps) => {
                           <ArrowUpRight className="h-4 w-4" />
                         </Link>
                       ))}
+                      <div className="rounded-xl border p-3 space-y-2">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground px-1">Insights</p>
+                        {insightsLinks.map((link) => (
+                          <Link
+                            key={link.path}
+                            to={link.path}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="flex items-center justify-between rounded-lg px-3 py-2 text-sm hover:bg-muted transition-colors"
+                          >
+                            {link.label}
+                            <ArrowUpRight className="h-4 w-4" />
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                     <div className="rounded-2xl bg-muted p-4 space-y-3">
                       <p className="text-sm font-semibold">Need a proposal?</p>
@@ -279,8 +325,11 @@ export const Layout = ({ children }: LayoutProps) => {
                   </a>
                 </li>
                 <li>
-                  <Link to="/blogs" className="hover:text-white transition">
-                    Case Studies & Blogs
+                  <Link to="/blog" className="hover:text-white transition">
+                    Gavite Foresight Blog
+                  </Link>
+                  <Link to="/tech-radar" className="hover:text-white transition">
+                    Tech Radar
                   </Link>
                 </li>
               </ul>
