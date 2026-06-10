@@ -1,0 +1,164 @@
+[
+  {
+    "id": "001",
+    "slug": "why-llms-are-becoming-outdated",
+    "title": "Why LLMs Are Becoming Outdated — And What's Replacing Them",
+    "excerpt": "Large Language Models changed the world. But the next wave of AI — World Models and Agentic AI — will make today's LLMs look like calculators. Here's what's coming.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "tech-foresight",
+    "categoryLabel": "Tech Foresight",
+    "tags": ["AI", "LLMs", "World Models", "Agentic AI", "Future of Tech"],
+    "publishedAt": "2026-06-10",
+    "updatedAt": "2026-06-10",
+    "readTime": "6 min read",
+    "featured": true,
+    "featuredImage": "/images/blog/llms-outdated.jpg",
+    "ogImage": "/images/blog/og/llms-outdated-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Why LLMs Are Becoming Outdated | Gavit E-Services Foresight",
+      "metaDescription": "LLMs like ChatGPT are just the beginning. World Models and Agentic AI are coming. Find out what's next and how Indian businesses should prepare.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/why-llms-are-becoming-outdated"
+    }
+  },
+  {
+    "id": "002",
+    "slug": "death-of-the-website-rise-of-custom-software",
+    "title": "The Death of the Website: Why Every Business Will Run on Custom Software by 2028",
+    "excerpt": "Static websites are dying. Web apps, custom software, and SaaS tools are replacing them. Here's why your business needs to make the switch now.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "software-trends",
+    "categoryLabel": "Software Trends",
+    "tags": ["Custom Software", "Web Apps", "Digital Transformation", "SaaS"],
+    "publishedAt": "2026-06-10",
+    "updatedAt": "2026-06-10",
+    "readTime": "5 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/death-of-website.jpg",
+    "ogImage": "/images/blog/og/death-of-website-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "The Death of the Website — Rise of Custom Software | Gavit E-Services",
+      "metaDescription": "Static websites are being replaced by custom software and web apps. Learn why and how to future-proof your business.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/death-of-the-website-rise-of-custom-software"
+    }
+  },
+  {
+    "id": "003",
+    "slug": "world-models-ai-india-businesses",
+    "title": "World Models: The AI Revolution Nobody in India Is Talking About",
+    "excerpt": "Everyone's talking about ChatGPT. Nobody's talking about World Models — the next leap in AI that will make LLMs look primitive. Indian businesses need to prepare now.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "ai-insights",
+    "categoryLabel": "AI Insights",
+    "tags": ["World Models", "AI", "India Tech", "Future of AI"],
+    "publishedAt": "2026-06-10",
+    "updatedAt": "2026-06-10",
+    "readTime": "7 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/world-models.jpg",
+    "ogImage": "/images/blog/og/world-models-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "World Models: The AI Revolution India Isn't Talking About | Gavit E-Services",
+      "metaDescription": "World Models will replace LLMs. Find out what they are, why they matter, and how Indian businesses should prepare for this AI shift.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/world-models-ai-india-businesses"
+    }
+  },
+  {
+    "id": "004",
+    "slug": "why-your-business-needs-ai-software-now",
+    "title": "Why Your Business Needs AI Software Now — Before Your Competitor Gets It First",
+    "excerpt": "AI is no longer a luxury. It's a competitive weapon. Businesses that adopt custom AI software in 2026 will dominate their markets by 2028.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "ai-insights",
+    "categoryLabel": "AI Insights",
+    "tags": ["AI Software", "Business", "Competitive Advantage", "Digital Transformation"],
+    "publishedAt": "2026-06-10",
+    "updatedAt": "2026-06-10",
+    "readTime": "5 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/ai-software-now.jpg",
+    "ogImage": "/images/blog/og/ai-software-now-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Why Your Business Needs AI Software Now | Gavit E-Services",
+      "metaDescription": "Custom AI software is the next competitive moat. Find out why businesses that adopt AI in 2026 will dominate by 2028.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/why-your-business-needs-ai-software-now"
+    }
+  },
+  {
+    "id": "005",
+    "slug": "erp-vs-custom-software-india-sme",
+    "title": "ERP vs Custom Software: What Does Your Indian SME Actually Need in 2026?",
+    "excerpt": "Off-the-shelf ERP costs a fortune and fits nobody perfectly. Custom software costs less and fits exactly. Here's how to choose for your Indian SME.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "india-tech",
+    "categoryLabel": "India Tech",
+    "tags": ["ERP", "Custom Software", "India", "SME", "Business Software"],
+    "publishedAt": "2026-06-10",
+    "updatedAt": "2026-06-10",
+    "readTime": "6 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/erp-vs-custom.jpg",
+    "ogImage": "/images/blog/og/erp-vs-custom-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "ERP vs Custom Software for Indian SMEs 2026 | Gavit E-Services",
+      "metaDescription": "Should your Indian SME buy an ERP or build custom software? We break down costs, pros, cons and what actually works in 2026.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/erp-vs-custom-software-india-sme"
+    }
+  },
+  {
+    "id": "006",
+    "slug": "ceo-desk-building-5-years-ahead",
+    "title": "Why We Build for 2031, Not 2026",
+    "excerpt": "Most companies react to trends. We anticipate them. Here's why Gavit E-Services is already building for a world that doesn't exist yet — and why that matters for our clients.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "ceo-desk",
+    "categoryLabel": "CEO's Desk",
+    "tags": ["Vision", "Leadership", "AI", "Future of Tech", "Gavit E-Services"],
+    "publishedAt": "2026-06-10",
+    "updatedAt": "2026-06-10",
+    "readTime": "4 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/ceo-desk.jpg",
+    "ogImage": "/images/blog/og/ceo-desk-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Why We Build for 2031, Not 2026 | CEO's Desk | Gavit E-Services",
+      "metaDescription": "Gavit E-Services CEO Shardul Gavit on why the company thinks 5 years ahead and what that means for clients in India, USA, UK and beyond.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/ceo-desk-building-5-years-ahead"
+    }
+  }
+]

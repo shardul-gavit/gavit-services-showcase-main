@@ -15,6 +15,7 @@ import ContactPage from "./pages/ContactPage";
 import Blogs from "./pages/Blogs";
 import BlogIndex from "./pages/BlogIndex";
 import BlogPostPage from "./pages/BlogPostPage";
+import BlogNotFound from "./pages/BlogNotFound";
 import BlogCategoryPage from "./pages/BlogCategoryPage";
 import TechRadar from "./pages/TechRadar";
 import Career from "./pages/Career";
@@ -74,6 +75,7 @@ const App = () => (
               <Route path="/industries" element={<Industries />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/404" element={<BlogNotFound />} />
               <Route path="/blog/category/:category" element={<BlogCategoryPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/tech-radar" element={<TechRadar />} />

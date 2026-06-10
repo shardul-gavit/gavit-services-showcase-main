@@ -82,8 +82,12 @@ export const ORGANIZATION_SCHEMA = {
   "@type": "Organization",
   name: "Gavit E-Services",
   url: "https://www.gaviteservice.com",
-  logo: "https://www.gaviteservice.com/logo.png",
-  description: "India-based VA, ERP, Custom Software, AI & GST Billing company",
+  logo: {
+    "@type": "ImageObject",
+    url: "https://www.gaviteservice.com/logo.png",
+  },
+  description:
+    "India-based VA, ERP, Custom Software, AI & GST Billing company serving USA, UK, Canada, New Zealand, Australia and worldwide.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Vadodara",

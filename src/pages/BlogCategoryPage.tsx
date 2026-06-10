@@ -34,7 +34,7 @@ const BlogCategoryPage = () => {
           <Badge variant="secondary" className="mx-auto w-fit uppercase tracking-[0.3em]">
             Gavite Foresight
           </Badge>
-          <h1 className="text-4xl font-bold mt-4">{meta.label}</h1>
+          <h1 className="text-4xl font-bold mt-4">{meta.label} — Gavite Foresight</h1>
           <p className="text-muted-foreground max-w-2xl mx-auto">{meta.description}</p>
           <Link to="/blog" className="text-sm text-blue-600 hover:underline mt-4 inline-block">
             ← All articles

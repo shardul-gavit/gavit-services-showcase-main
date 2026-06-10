@@ -5,19 +5,22 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 import { BlogPostCard } from "@/components/BlogPostCard";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { Clock, ChevronRight } from "lucide-react";
-import NotFound from "@/pages/NotFound";
+import BlogNotFound from "@/pages/BlogNotFound";
 import { getPostBySlug, getRelatedPosts } from "@/data/foresightPosts";
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = slug ? getPostBySlug(slug) : undefined;
 
-  if (!post) return <NotFound />;
+  if (!post) return <BlogNotFound />;
 
   const related = getRelatedPosts(post);
+  const truncatedTitle =
+    post.title.length > 40 ? `${post.title.slice(0, 40)}…` : post.title;
 
   return (
     <Layout>
@@ -44,6 +47,8 @@ const BlogPostPage = () => {
           <Link to={`/blog/category/${post.category}`} className="hover:text-white">
             {post.categoryLabel}
           </Link>
+          <ChevronRight className="w-4 h-4" />
+          <span className="text-white/90">{truncatedTitle}</span>
         </nav>
 
         <header className="space-y-5 mb-10 text-white">
@@ -83,6 +88,16 @@ const BlogPostPage = () => {
           <ShareButtons slug={post.slug} title={post.title} />
         </div>
 
+        <div className="flex flex-wrap gap-2 mt-8">
+          {post.tags.map((tag) => (
+            <Link key={tag} to={`/blog?tag=${encodeURIComponent(tag)}`}>
+              <Badge variant="outline" className="hover:bg-muted cursor-pointer">
+                {tag}
+              </Badge>
+            </Link>
+          ))}
+        </div>
+
         <Card className="mt-10 border-blue-100 dark:border-blue-900/30">
           <CardHeader className="flex flex-row items-center gap-4">
             <img src={post.author.avatar} alt={post.author.name} className="w-16 h-16 rounded-full object-cover" />
@@ -91,28 +106,20 @@ const BlogPostPage = () => {
               <p className="text-sm text-muted-foreground">{post.author.role}</p>
             </div>
           </CardHeader>
-          <CardContent className="space-y-3">
-            <p className="text-sm text-muted-foreground">{post.author.bio}</p>
+          <CardContent className="space-y-4">
+            <p className="text-sm text-muted-foreground">
+              {post.author.bio ??
+                "Shardul leads Gavit E-Services with a focus on building technology that's 5 years ahead of the market. He writes about AI, software trends, and the future of business technology."}
+            </p>
             {post.author.linkedin && (
-              <a
-                href={post.author.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-blue-600 hover:underline"
-              >
-                LinkedIn Profile →
-              </a>
+              <Button variant="outline" size="sm" asChild>
+                <a href={post.author.linkedin} target="_blank" rel="noopener noreferrer">
+                  Connect on LinkedIn
+                </a>
+              </Button>
             )}
           </CardContent>
         </Card>
-
-        <div className="flex flex-wrap gap-2 mt-8">
-          {post.tags.map((tag) => (
-            <Badge key={tag} variant="outline">
-              #{tag.replace(/\s+/g, "")}
-            </Badge>
-          ))}
-        </div>
       </article>
 
       {related.length > 0 && (

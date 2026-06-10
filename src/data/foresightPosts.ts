@@ -26,6 +26,7 @@ export type ForesightPost = {
   categoryLabel: string;
   tags: string[];
   publishedAt: string;
+  updatedAt: string;
   readTime: string;
   featured: boolean;
   featuredImage: string;
@@ -34,8 +35,11 @@ export type ForesightPost = {
     metaTitle: string;
     metaDescription: string;
     ogImage: string;
+    canonicalUrl: string;
   };
 };
+
+export const POSTS_PER_PAGE = 6;
 
 export const FORESIGHT_CATEGORIES: {
   id: ForesightCategory | "all";
@@ -43,11 +47,31 @@ export const FORESIGHT_CATEGORIES: {
   description: string;
 }[] = [
   { id: "all", label: "All", description: "Every Gavite Foresight article" },
-  { id: "tech-foresight", label: "Tech Foresight", description: "Predictions 5 years ahead of the market" },
-  { id: "ai-insights", label: "AI Insights", description: "LLMs, World Models, Agentic AI & business impact" },
-  { id: "software-trends", label: "Software Trends", description: "Custom software, web apps & digital transformation" },
-  { id: "india-tech", label: "India Tech", description: "ERP, GST, outsourcing & Indian SMB technology" },
-  { id: "ceo-desk", label: "CEO's Desk", description: "Vision and leadership from Shardul Gavit" },
+  {
+    id: "tech-foresight",
+    label: "Tech Foresight",
+    description: "Predictions and analysis on where technology is heading in the next 3–5 years.",
+  },
+  {
+    id: "ai-insights",
+    label: "AI Insights",
+    description: "Deep dives into AI trends, tools, and what they mean for businesses in India and globally.",
+  },
+  {
+    id: "software-trends",
+    label: "Software Trends",
+    description: "How software is evolving and why businesses need to adapt their tech stack now.",
+  },
+  {
+    id: "india-tech",
+    label: "India Tech",
+    description: "Technology insights specifically for Indian SMBs, manufacturers, and entrepreneurs.",
+  },
+  {
+    id: "ceo-desk",
+    label: "CEO's Desk",
+    description: "Personal thoughts from Gavit E-Services CEO on building a future-forward company.",
+  },
 ];
 
 export const SITE_URL = "https://www.gaviteservice.com";
@@ -57,7 +81,7 @@ export const shardulAuthor: ForesightAuthor = {
   role: "CEO, Gavit E-Services",
   avatar: shardulAvatar,
   linkedin: "https://www.linkedin.com/in/shardul-gavit-3b63091b8/",
-  bio: "Shardul leads Gavit E-Services with a focus on building tech that's 5 years ahead of the market.",
+  bio: "Shardul leads Gavit E-Services with a focus on building technology that's 5 years ahead of the market. He writes about AI, software trends, and the future of business technology.",
 };
 
 export const pavanAuthor: ForesightAuthor = {
@@ -78,7 +102,7 @@ const img = {
   blogOg: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&h=630&q=80",
 };
 
-export const foresightPosts: ForesightPost[] = [
+const rawForesightPosts: Omit<ForesightPost, "updatedAt" | "seo"> & { seo: Omit<ForesightPost["seo"], "canonicalUrl"> }[] = [
   {
     id: "001",
     slug: "why-llms-are-becoming-outdated",
@@ -89,7 +113,7 @@ export const foresightPosts: ForesightPost[] = [
     category: "tech-foresight",
     categoryLabel: "Tech Foresight",
     tags: ["AI", "LLMs", "World Models", "Future of Tech", "Agentic AI"],
-    publishedAt: "2026-06-09",
+    publishedAt: "2026-06-10",
     readTime: "6 min read",
     featured: true,
     featuredImage: img.llm,
@@ -127,7 +151,7 @@ export const foresightPosts: ForesightPost[] = [
     category: "software-trends",
     categoryLabel: "Software Trends",
     tags: ["Custom Software", "Web Apps", "Digital Transformation"],
-    publishedAt: "2026-06-08",
+    publishedAt: "2026-06-10",
     readTime: "7 min read",
     featured: false,
     featuredImage: img.software,
@@ -163,7 +187,7 @@ export const foresightPosts: ForesightPost[] = [
     category: "ai-insights",
     categoryLabel: "AI Insights",
     tags: ["World Models", "AI", "India Tech", "Future"],
-    publishedAt: "2026-06-07",
+    publishedAt: "2026-06-10",
     readTime: "6 min read",
     featured: false,
     featuredImage: img.world,
@@ -198,7 +222,7 @@ export const foresightPosts: ForesightPost[] = [
     category: "ai-insights",
     categoryLabel: "AI Insights",
     tags: ["AI Software", "Business", "Competitive Advantage"],
-    publishedAt: "2026-06-06",
+    publishedAt: "2026-06-10",
     readTime: "5 min read",
     featured: false,
     featuredImage: img.aiBiz,
@@ -232,7 +256,7 @@ export const foresightPosts: ForesightPost[] = [
     category: "india-tech",
     categoryLabel: "India Tech",
     tags: ["ERP", "Custom Software", "India", "SME"],
-    publishedAt: "2026-06-05",
+    publishedAt: "2026-06-10",
     readTime: "8 min read",
     featured: false,
     featuredImage: img.erp,
@@ -271,7 +295,7 @@ export const foresightPosts: ForesightPost[] = [
     category: "ceo-desk",
     categoryLabel: "CEO's Desk",
     tags: ["Vision", "Leadership", "AI", "Future of Tech"],
-    publishedAt: "2026-06-04",
+    publishedAt: "2026-06-10",
     readTime: "5 min read",
     featured: false,
     featuredImage: img.ceo,
@@ -298,6 +322,15 @@ export const foresightPosts: ForesightPost[] = [
   },
 ];
 
+export const foresightPosts: ForesightPost[] = rawForesightPosts.map((post) => ({
+  ...post,
+  updatedAt: "2026-06-10",
+  seo: {
+    ...post.seo,
+    canonicalUrl: `${SITE_URL}/blog/${post.slug}`,
+  },
+}));
+
 export const BLOG_OG_IMAGE = img.blogOg;
 
 export const getPostBySlug = (slug: string) => foresightPosts.find((p) => p.slug === slug);
@@ -312,3 +345,9 @@ export const getRelatedPosts = (post: ForesightPost, limit = 3) =>
 
 export const getCategoryMeta = (category: ForesightCategory) =>
   FORESIGHT_CATEGORIES.find((c) => c.id === category);
+
+export const getPostsByTag = (tag: string) =>
+  foresightPosts.filter((p) => p.tags.some((t) => t.toLowerCase() === tag.toLowerCase()));
+
+export const getLatestPosts = (limit = 3) =>
+  [...foresightPosts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, limit);

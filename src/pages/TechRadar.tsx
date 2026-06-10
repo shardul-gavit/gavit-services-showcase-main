@@ -64,11 +64,23 @@ const quadrants = [
 const TechRadar = () => (
   <Layout>
     <Seo
-      title="Gavite Tech Radar Q2 2026 — What's Hot & What's Outdated | Gavit E-Services"
-      description="Gavit E-Services quarterly tech radar for Indian and global SMBs. What AI, software, and IT trends to adopt, trial, or drop in 2026."
+      title="Gavite Tech Radar Q2 2026 — What to Adopt, Trial & Drop | Gavit E-Services"
+      description="Gavit E-Services quarterly tech radar for SMBs. What AI, software, and IT trends to adopt, trial, assess or drop in 2026."
       canonical={`${SITE_URL}/tech-radar`}
       keywords={["tech radar 2026", "AI trends India", "software trends SMB"]}
-    />
+    >
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Gavite Tech Radar Q2 2026 | Gavit E-Services" />
+      <meta
+        property="og:description"
+        content="Our honest quarterly take on what tech to adopt, trial, assess or drop. Built for Indian and global SMBs."
+      />
+      <meta property="og:image" content={`${SITE_URL}/images/blog/og/tech-radar-og.jpg`} />
+      <meta property="og:url" content={`${SITE_URL}/tech-radar`} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Gavite Tech Radar Q2 2026 | Gavit E-Services" />
+      <meta name="twitter:image" content={`${SITE_URL}/images/blog/og/tech-radar-og.jpg`} />
+    </Seo>
 
     <section className="py-16 bg-muted/30 text-center space-y-4">
       <div className="container mx-auto px-4">
@@ -79,7 +91,7 @@ const TechRadar = () => (
         <p className="text-muted-foreground max-w-3xl mx-auto">
           Our honest take on what to adopt, what to watch, and what to drop.
         </p>
-        <p className="text-sm text-muted-foreground">Updated: 9 June 2026</p>
+        <p className="text-sm text-muted-foreground">Updated: June 2026 | Reviewed quarterly</p>
       </div>
     </section>
 
