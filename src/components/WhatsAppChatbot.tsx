@@ -1,19 +1,34 @@
-
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { MessageCircle, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { scrollToElementId } from "@/lib/scroll";
+import { trackWhatsAppClick } from "@/utils/analytics";
+
+const WHATSAPP_URL = 'https://wa.me/918141381255';
 
 const openWhatsAppChat = () => {
+  trackWhatsAppClick(WHATSAPP_URL);
   const message = encodeURIComponent("Hello! I'm interested in your services. Can you help me?");
-  window.open(`https://wa.me/918141381255?text=${message}`, '_blank');
+  window.open(`${WHATSAPP_URL}?text=${message}`, '_blank');
 };
 
 const WhatsAppChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleExploreServices = () => {
+    if (location.pathname === '/') {
+      scrollToElementId('services');
+    } else {
+      navigate('/services');
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -67,10 +82,7 @@ const WhatsAppChatbot = () => {
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    scrollToElementId('services');
-                    setIsOpen(false);
-                  }}
+                  onClick={handleExploreServices}
                   className="w-full text-left p-2 text-sm bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
                 >
                   🔍 Explore Our Services

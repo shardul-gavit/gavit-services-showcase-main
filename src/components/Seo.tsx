@@ -1,12 +1,15 @@
 import { Helmet } from "react-helmet-async";
-import { DEFAULT_OG_DESCRIPTION, DEFAULT_TWITTER_DESCRIPTION, GLOBAL_KEYWORDS, ORGANIZATION_SCHEMA } from "@/constants/seo";
+import { DEFAULT_OG_DESCRIPTION, DEFAULT_TWITTER_DESCRIPTION, GLOBAL_KEYWORDS } from "@/constants/seo";
 
-type SeoProps = {
+export const DEFAULT_OG_IMAGE = "https://www.gaviteservice.com/og-image.jpg";
+
+export type SeoProps = {
   title: string;
   description: string;
   canonical: string;
   keywords?: string[];
   robots?: string;
+  ogImage?: string;
   children?: React.ReactNode;
 };
 
@@ -18,8 +21,10 @@ export const Seo = ({
   canonical,
   keywords = EMPTY_KEYWORDS,
   robots = "index,follow",
+  ogImage,
   children,
 }: SeoProps) => {
+  const resolvedOgImage = ogImage || DEFAULT_OG_IMAGE;
   const keywordString = [...keywords, ...GLOBAL_KEYWORDS].filter((k, i, arr) => arr.indexOf(k) === i).join(", ");
 
   return (
@@ -44,6 +49,9 @@ export const Seo = ({
 
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description || DEFAULT_OG_DESCRIPTION} />
+      <meta property="og:image" content={resolvedOgImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:url" content={canonical} />
       <meta property="og:locale:alternate" content="en_US" />
       <meta property="og:locale:alternate" content="en_GB" />
@@ -53,13 +61,12 @@ export const Seo = ({
 
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description || DEFAULT_TWITTER_DESCRIPTION} />
+      <meta name="twitter:image" content={resolvedOgImage} />
 
       <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="icon" type="image/png" href="/favicon.png" />
       <link rel="icon" type="image/x-icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png" />
-
-      <script type="application/ld+json">{JSON.stringify(ORGANIZATION_SCHEMA)}</script>
 
       {children}
     </Helmet>

@@ -2,11 +2,12 @@
 /* eslint-env serviceworker */
 
 const CACHE_NAME = "gavit-v1";
+const OFFLINE_URL = "/offline.html";
 const STATIC_ASSETS = [
   "/",
   "/favicon.ico",
   "/placeholder.svg",
-  "/ai",
+  OFFLINE_URL,
   "/services.json",
   "/company.json",
   "/pricing.json",
@@ -44,7 +45,7 @@ self.addEventListener("fetch", (event) => {
   // Skip non-GET and external
   if (request.method !== "GET" || url.origin !== self.location.origin) return;
 
-  // HTML – network first, fallback to cache
+  // HTML – network first, fallback to cache then offline page
   if (request.mode === "navigate" || request.headers.get("accept")?.includes("text/html")) {
     event.respondWith(
       fetch(request)
@@ -53,7 +54,11 @@ self.addEventListener("fetch", (event) => {
           caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           return response;
         })
-        .catch(() => caches.match(request))
+        .catch(async () => {
+          const cached = await caches.match(request);
+          if (cached) return cached;
+          return caches.match(OFFLINE_URL);
+        })
     );
     return;
   }
@@ -77,4 +82,3 @@ self.addEventListener("fetch", (event) => {
     })
   );
 });
-

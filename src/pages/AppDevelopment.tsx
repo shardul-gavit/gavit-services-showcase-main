@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import { Seo } from "@/components/Seo";
+import { Seo, type SeoProps } from "@/components/Seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -27,14 +27,26 @@ const faqs = [
   { q: "What industries benefit?", a: "Fintech, logistics, healthcare, education, and retail teams needing digital transformation services." },
 ];
 
-const AppDevelopment = () => (
+const DEFAULT_SEO: Pick<SeoProps, "title" | "description" | "canonical" | "keywords"> = {
+  title: "App Development Services | Gavit E-Services",
+  description:
+    "App development for SMEs in Vadodara, Gujarat with native and cross-platform builds, remote developer hiring, and digital transformation services.",
+  canonical: "https://www.gaviteservice.com/app-development",
+  keywords: [
+    "app development for SMEs in Vadodara",
+    "remote developer hiring",
+    "mobile app modernization",
+    "digital transformation services",
+  ],
+};
+
+type AppDevelopmentProps = {
+  seo?: Pick<SeoProps, "title" | "description" | "canonical" | "keywords">;
+};
+
+const AppDevelopment = ({ seo = DEFAULT_SEO }: AppDevelopmentProps) => (
   <Layout>
-    <Seo
-      title="App Development Services | Gavit E-Services"
-      description="App development for SMEs in Vadodara, Gujarat with native and cross-platform builds, remote developer hiring, and digital transformation services."
-      canonical="https://www.gaviteservice.com/app-development"
-      keywords={["app development for SMEs in Vadodara", "remote developer hiring", "mobile app modernization", "digital transformation services"]}
-    />
+    <Seo {...seo} />
 
     <section className="py-16 bg-muted/30 text-center space-y-4">
       <div className="container mx-auto px-4">

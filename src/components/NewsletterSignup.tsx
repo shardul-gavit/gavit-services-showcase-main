@@ -54,13 +54,17 @@ export const NewsletterSignup = ({
         <p className="text-sm text-green-600 font-medium">✓ You&apos;re in! Watch your inbox.</p>
       ) : (
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <label htmlFor="newsletter-email" className="sr-only">
+            Email address
+          </label>
           <Input
+            id="newsletter-email"
             type="email"
             placeholder="Your email address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            aria-label="Email address"
+            aria-label="Email address for newsletter"
             className="bg-background"
           />
           <Button

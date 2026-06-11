@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Instagram, Linkedin, Globe, CheckCircle, Loader2 } from 'lucide-react';
 import { SERVICE_OPTIONS } from "@/constants/serviceOptions";
 import { DpdpConsentFields } from "@/components/DpdpConsentFields";
+import { trackGenerateLead, trackPhoneClick } from "@/utils/analytics";
 
 // API endpoint for contact form submission
 // This uses a Vercel serverless function as a proxy to handle CORS
@@ -16,6 +17,7 @@ const openEmail = () => {
 };
 
 const openPhone = () => {
+  trackPhoneClick();
   window.location.href = 'tel:+918141381255';
 };
 
@@ -23,6 +25,7 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -43,10 +46,11 @@ const Contact = () => {
     e.preventDefault();
 
     if (!formData.privacyConsent) {
-      alert("Please provide consent to process your personal data under our Privacy Policy.");
+      setSubmitError("Please provide consent to process your personal data under our Privacy Policy.");
       return;
     }
 
+    setSubmitError('');
     setIsSubmitting(true);
 
     const submissionData = {
@@ -78,6 +82,7 @@ const Contact = () => {
         throw new Error(result.error || "Failed to submit contact form");
       }
 
+      trackGenerateLead('contact_form');
       setIsSubmitted(true);
       setFormData({
         firstName: '',
@@ -92,22 +97,8 @@ const Contact = () => {
     } catch (error) {
       console.error('Form submission failed:', error);
       
-      let errorMessage = "Failed to submit contact form. ";
-      if (error instanceof Error) {
-        if (error.message.includes("Network") || error.message.includes("fetch")) {
-          errorMessage += "Network error. Please check your internet connection.";
-        } else if (error.message.includes("timeout")) {
-          errorMessage += "Request timed out. Please try again.";
-        } else {
-          errorMessage += error.message;
-        }
-      } else {
-        errorMessage += "Please try again or contact us directly.";
-      }
-      
-      // Show error alert
-      alert(errorMessage);
-      
+      setSubmitError('Something went wrong. Please try again or WhatsApp us.');
+
       // Fallback: Open mailto link
       try {
         const subject = encodeURIComponent(`New Inquiry from ${formData.firstName} ${formData.lastName} - ${formData.service}`);
@@ -383,6 +374,10 @@ const Contact = () => {
                       'Send Message'
                     )}
                 </Button>
+
+                  {submitError && (
+                    <p role="alert" className="text-red-500 text-sm mt-2">{submitError}</p>
+                  )}
                   
                   <p className="text-xs text-center text-muted-foreground">
                     Your data is processed per India&apos;s DPDP Act, 2023. See our Privacy Policy for rights and grievance contact.

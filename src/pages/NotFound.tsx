@@ -50,16 +50,13 @@ const NotFound = () => {
               </Link>
             </Button>
             <Button
-              asChild
               variant="outline"
               size="lg"
               className="gap-2"
               onClick={() => window.history.back()}
             >
-              <button type="button">
-                <ArrowLeft className="w-4 h-4" />
-                Go Back
-              </button>
+              <ArrowLeft className="w-4 h-4" />
+              Go Back
             </Button>
             <Button asChild variant="outline" size="lg" className="gap-2">
               <Link to="/services">

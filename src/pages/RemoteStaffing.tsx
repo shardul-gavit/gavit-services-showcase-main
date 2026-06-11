@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import { Seo } from "@/components/Seo";
+import { Seo, type SeoProps } from "@/components/Seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -25,14 +25,26 @@ const faqs = [
   { q: "Can pods include product or growth roles?", a: "We assemble hybrid pods with PM, design, marketing ops, and HR outsourcing & HR solutions if required." },
 ];
 
-const RemoteStaffing = () => (
+const DEFAULT_SEO: Pick<SeoProps, "title" | "description" | "canonical" | "keywords"> = {
+  title: "Remote Staffing Services | Gavit E-Services",
+  description:
+    "Remote staffing services, remote developers for hire in India, remote staffing vs in-house hiring playbooks, and managed pods for startups.",
+  canonical: "https://www.gaviteservice.com/remote-staffing",
+  keywords: [
+    "remote staffing services",
+    "remote developers for hire in India",
+    "remote staffing vs in-house hiring",
+    "tech team scaling for startups",
+  ],
+};
+
+type RemoteStaffingProps = {
+  seo?: Pick<SeoProps, "title" | "description" | "canonical" | "keywords">;
+};
+
+const RemoteStaffing = ({ seo = DEFAULT_SEO }: RemoteStaffingProps) => (
   <Layout>
-    <Seo
-      title="Remote Staffing Services | Gavit E-Services"
-      description="Remote staffing services, remote developers for hire in India, remote staffing vs in-house hiring playbooks, and managed pods for startups."
-      canonical="https://www.gaviteservice.com/remote-staffing"
-      keywords={["remote staffing services", "remote developers for hire in India", "remote staffing vs in-house hiring", "tech team scaling for startups"]}
-    />
+    <Seo {...seo} />
 
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 text-center space-y-4">

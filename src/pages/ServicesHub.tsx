@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { trackPhoneClick } from "@/utils/analytics";
 import { Layout } from "@/components/Layout";
 import { Seo } from "@/components/Seo";
 import { OptimizedImage } from "@/components/OptimizedImage";
@@ -208,7 +209,7 @@ const ServicesHub = () => {
                 Book Free Consultation <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
-            <a href="tel:+918141381255">
+            <a href="tel:+918141381255" onClick={() => trackPhoneClick()}>
               <Button
                 size="lg"
                 variant="outline"
@@ -365,7 +366,7 @@ const ServicesHub = () => {
                 Book Free Consultation
               </Button>
             </Link>
-            <a href="tel:+918141381255">
+            <a href="tel:+918141381255" onClick={() => trackPhoneClick()}>
               <Button
                 size="lg"
                 variant="outline"

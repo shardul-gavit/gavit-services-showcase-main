@@ -36,6 +36,7 @@ import Industries from "./pages/Industries";
 import Pricing from "./pages/Pricing";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { ALIAS_ROUTE_SEO } from "./constants/aliasRouteSeo";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -67,10 +68,10 @@ const App = () => (
               <Route path="/ai-software" element={<AiSoftware />} />
               <Route path="/gst-billing-software" element={<GstBillingSoftware />} />
               <Route path="/custom-billing-software" element={<CustomBillingSoftware />} />
-              <Route path="/web-app-development" element={<AppDevelopment />} />
-              <Route path="/virtual-assistant" element={<RemoteStaffing />} />
-              <Route path="/custom-software" element={<ItServices />} />
-              <Route path="/it-consultancy" element={<ItServices />} />
+              <Route path="/web-app-development" element={<AppDevelopment seo={ALIAS_ROUTE_SEO.webAppDevelopment} />} />
+              <Route path="/virtual-assistant" element={<RemoteStaffing seo={ALIAS_ROUTE_SEO.virtualAssistant} />} />
+              <Route path="/custom-software" element={<ItServices seo={ALIAS_ROUTE_SEO.customSoftware} />} />
+              <Route path="/it-consultancy" element={<ItServices seo={ALIAS_ROUTE_SEO.itConsultancy} />} />
               <Route path="/locations/:slug" element={<LocationPage />} />
               <Route path="/industries" element={<Industries />} />
               <Route path="/pricing" element={<Pricing />} />
@@ -79,7 +80,6 @@ const App = () => (
               <Route path="/blog/category/:category" element={<BlogCategoryPage />} />
               <Route path="/blog/:slug" element={<BlogPostPage />} />
               <Route path="/tech-radar" element={<TechRadar />} />
-              <Route path="/case-studies" element={<BlogIndex />} />
               <Route path="/career" element={<Career />} />
               <Route path="/career/apply" element={<CareerApply />} />
               <Route path="/coming-soon" element={<ComingSoon />} />

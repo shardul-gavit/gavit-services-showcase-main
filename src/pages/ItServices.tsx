@@ -1,5 +1,5 @@
 import { Layout } from "@/components/Layout";
-import { Seo } from "@/components/Seo";
+import { Seo, type SeoProps } from "@/components/Seo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -68,14 +68,26 @@ const testimonials = [
   },
 ];
 
-const ItServices = () => (
+const DEFAULT_SEO: Pick<SeoProps, "title" | "description" | "canonical" | "keywords"> = {
+  title: "IT Services in Vadodara | Gavit E-Services",
+  description:
+    "IT solutions and consulting, software development services, digital transformation services, and IT infrastructure and support services for Gujarat and India.",
+  canonical: "https://www.gaviteservice.com/it-services",
+  keywords: [
+    "IT solutions and consulting",
+    "software development services",
+    "digital transformation services",
+    "IT infrastructure and support services",
+  ],
+};
+
+type ItServicesProps = {
+  seo?: Pick<SeoProps, "title" | "description" | "canonical" | "keywords">;
+};
+
+const ItServices = ({ seo = DEFAULT_SEO }: ItServicesProps) => (
   <Layout>
-    <Seo
-      title="IT Services in Vadodara | Gavit E-Services"
-      description="IT solutions and consulting, software development services, digital transformation services, and IT infrastructure and support services for Gujarat and India."
-      canonical="https://www.gaviteservice.com/it-services"
-      keywords={["IT solutions and consulting", "software development services", "digital transformation services", "IT infrastructure and support services"]}
-    />
+    <Seo {...seo} />
 
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4 space-y-4 text-center">

@@ -27,6 +27,7 @@ import {
 import gavitLogo from "@/assets/gavit-logo.png";
 import WhatsAppChatbot from "@/components/WhatsAppChatbot";
 import { DpdpNoticeBanner } from "@/components/DpdpNoticeBanner";
+import { trackPhoneClick, trackWhatsAppClick } from "@/utils/analytics";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -131,6 +132,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 href="https://wa.me/918141381255"
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => trackWhatsAppClick()}
                 className="hidden md:inline-flex w-10 h-10 items-center justify-center rounded-full border text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
                 aria-label="Contact us on WhatsApp"
               >
@@ -186,7 +188,7 @@ export const Layout = ({ children }: LayoutProps) => {
                     </div>
                     <div className="space-y-2 text-sm">
                       <p className="font-medium">Instant contact</p>
-                      <a className="flex items-center gap-2 text-muted-foreground hover:text-foreground" href="tel:+918141381255">
+                      <a className="flex items-center gap-2 text-muted-foreground hover:text-foreground" href="tel:+918141381255" onClick={() => trackPhoneClick()}>
                         <Phone className="w-4 h-4" />
                         +91 81413 81255
                       </a>
@@ -224,7 +226,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 <Clock className="h-4 w-4" />
                 Mon - Sat · 9:00 AM – 8:00 PM IST
               </span>
-              <a className="flex items-center gap-2 text-white/80 hover:text-white transition-colors" href="tel:+918141381255">
+              <a className="flex items-center gap-2 text-white/80 hover:text-white transition-colors" href="tel:+918141381255" onClick={() => trackPhoneClick()}>
                 <Phone className="h-4 w-4" />
                 +91 81413 81255
               </a>
@@ -320,14 +322,16 @@ export const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <a href="mailto:info@gaviteservices.com" className="hover:text-white transition">
+                  <Link to="/career" className="hover:text-white transition">
                     Careers
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <Link to="/blog" className="hover:text-white transition">
                     Gavite Foresight Blog
                   </Link>
+                </li>
+                <li>
                   <Link to="/tech-radar" className="hover:text-white transition">
                     Tech Radar
                   </Link>
@@ -406,9 +410,9 @@ export const Layout = ({ children }: LayoutProps) => {
               <Link to="/privacy-policy" className="hover:text-white transition">
                 Privacy
               </Link>
-              <button type="button" className="hover:text-white transition">Security</button>
-              <button type="button" className="hover:text-white transition">SLA</button>
-              <button type="button" className="hover:text-white transition">Support</button>
+              <Link to="/contact?ref=security" className="hover:text-white transition">Security</Link>
+              <Link to="/contact?ref=sla" className="hover:text-white transition">SLA</Link>
+              <Link to="/contact?ref=support" className="hover:text-white transition">Support</Link>
             </div>
           </div>
         </div>

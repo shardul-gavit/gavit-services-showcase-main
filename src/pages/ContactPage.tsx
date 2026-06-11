@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { trackPhoneClick } from "@/utils/analytics";
 
 const touchpoints = [
   { icon: MapPin, label: "Office", detail: "Vadodara, Gujarat, India" },
@@ -42,7 +43,11 @@ const ContactPage = () => (
             <div>
               <CardTitle>{touch.label}</CardTitle>
               {touch.href ? (
-                <a href={touch.href} className="text-muted-foreground text-sm">
+                <a
+                  href={touch.href}
+                  className="text-muted-foreground text-sm"
+                  onClick={touch.href.startsWith("tel:") ? () => trackPhoneClick() : undefined}
+                >
                   {touch.detail}
                 </a>
               ) : (
