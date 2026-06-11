@@ -14,6 +14,17 @@
       {
         "files": ["src/components/ui/button.tsx", "src/components/ui/badge.tsx", "src/components/ui/sonner.tsx"],
         "rules": ["react-doctor/only-export-components"]
+      },
+      {
+        "files": [
+          "src/components/Layout.tsx",
+          "src/components/Contact.tsx",
+          "src/components/EnrollmentForm.tsx",
+          "src/pages/Index.tsx",
+          "src/pages/CareerApply.tsx",
+          "src/pages/HrCertification.tsx"
+        ],
+        "rules": ["react-doctor/no-giant-component"]
       }
     ]
   }
