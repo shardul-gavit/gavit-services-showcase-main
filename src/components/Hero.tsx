@@ -2,19 +2,35 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Code, Users } from 'lucide-react';
 import { OptimizedImage } from "@/components/OptimizedImage";
+import { scrollToElementId } from "@/lib/scroll";
+
+const HERO_FEATURES = [
+  {
+    icon: Globe,
+    title: "Global Reach",
+    description: "Serving clients across India, US, UAE, UK & Canada",
+    color: "text-blue-400",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    icon: Code,
+    title: "Tech Excellence",
+    description: "Cutting-edge solutions in web, mobile & cloud",
+    color: "text-purple-400",
+    image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
+  },
+  {
+    icon: Users,
+    title: "Expert Team",
+    description: "Industry professionals delivering quality results",
+    color: "text-green-400",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
+  }
+] as const;
 
 const Hero = () => {
-  const handleGetStarted = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleViewWork = () => {
-    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80" 
@@ -46,7 +62,7 @@ const Hero = () => {
             <Button 
               size="lg" 
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
-              onClick={handleGetStarted}
+              onClick={() => scrollToElementId('contact')}
             >
               Get Started <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
@@ -54,37 +70,15 @@ const Hero = () => {
               size="lg" 
               variant="outline" 
               className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-              onClick={handleViewWork}
+              onClick={() => scrollToElementId('projects')}
             >
               View Our Work
             </Button>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            {[
-              {
-                icon: Globe,
-                title: "Global Reach",
-                description: "Serving clients across India, US, UAE, UK & Canada",
-                color: "text-blue-400",
-                image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80"
-              },
-              {
-                icon: Code,
-                title: "Tech Excellence",
-                description: "Cutting-edge solutions in web, mobile & cloud",
-                color: "text-purple-400",
-                image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
-              },
-              {
-                icon: Users,
-                title: "Expert Team",
-                description: "Industry professionals delivering quality results",
-                color: "text-green-400",
-                image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
-              }
-            ].map((feature, index) => (
-              <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white/20">
+            {HERO_FEATURES.map((feature) => (
+              <div key={feature.title} className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white/20">
                 <div className="relative h-32">
                   <OptimizedImage
                     src={feature.image} 

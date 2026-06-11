@@ -401,14 +401,14 @@ export const Layout = ({ children }: LayoutProps) => {
           </div>
 
           <div className="border-t border-white/10 pt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-xs text-white/60">
-            <p>© {new Date().getFullYear()} Gavit E-Services. Built proudly in Vadodara, Gujarat, India.</p>
+            <p>© <span suppressHydrationWarning>{new Date().getFullYear()}</span> Gavit E-Services. Built proudly in Vadodara, Gujarat, India.</p>
             <div className="flex flex-wrap items-center gap-4">
               <Link to="/privacy-policy" className="hover:text-white transition">
                 Privacy
               </Link>
-              <button className="hover:text-white transition">Security</button>
-              <button className="hover:text-white transition">SLA</button>
-              <button className="hover:text-white transition">Support</button>
+              <button type="button" className="hover:text-white transition">Security</button>
+              <button type="button" className="hover:text-white transition">SLA</button>
+              <button type="button" className="hover:text-white transition">Support</button>
             </div>
           </div>
         </div>

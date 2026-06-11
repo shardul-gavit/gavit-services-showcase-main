@@ -1,0 +1,20 @@
+{
+  "$schema": "https://react.doctor/schema/config.json",
+  "ignore": {
+    "files": ["api/**", "google-apps-script*.js"],
+    "overrides": [
+      {
+        "files": ["src/pages/BlogPostPage.tsx"],
+        "rules": ["react-doctor/no-danger"]
+      },
+      {
+        "files": ["src/components/ui/card.tsx"],
+        "rules": ["react-doctor/heading-has-content"]
+      },
+      {
+        "files": ["src/components/ui/button.tsx", "src/components/ui/badge.tsx", "src/components/ui/sonner.tsx"],
+        "rules": ["react-doctor/only-export-components"]
+      }
+    ]
+  }
+}

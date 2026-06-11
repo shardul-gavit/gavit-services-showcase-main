@@ -10,11 +10,13 @@ type SeoProps = {
   children?: React.ReactNode;
 };
 
+const EMPTY_KEYWORDS: string[] = [];
+
 export const Seo = ({
   title,
   description,
   canonical,
-  keywords = [],
+  keywords = EMPTY_KEYWORDS,
   robots = "index,follow",
   children,
 }: SeoProps) => {

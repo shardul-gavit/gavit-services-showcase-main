@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { useMemo, useState } from "react";
+import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { Layout } from "@/components/Layout";
 import { Seo } from "@/components/Seo";
 import { Badge } from "@/components/ui/badge";
@@ -19,6 +19,7 @@ import {
   shardulAuthor,
   type ForesightCategory,
 } from "@/data/foresightPosts";
+import { scrollToElementId } from "@/lib/scroll";
 import { ArrowRight, BookOpen, ChevronLeft, ChevronRight, Radar, Sparkles, TrendingUp } from "lucide-react";
 
 const BlogIndex = () => {
@@ -50,19 +51,19 @@ const BlogIndex = () => {
   }, [activeCategory, tagFilter, page, featured.slug]);
 
   const totalPages = Math.max(1, Math.ceil(filteredPosts.length / POSTS_PER_PAGE));
-  const currentPage = Math.min(page, totalPages);
+
+  if (page > totalPages && totalPages > 0) {
+    const next = new URLSearchParams(searchParams);
+    next.set("page", String(totalPages));
+    const query = next.toString();
+    return <Navigate to={query ? `/blog?${query}` : "/blog"} replace />;
+  }
+
+  const currentPage = page;
   const paginatedPosts = filteredPosts.slice(
     (currentPage - 1) * POSTS_PER_PAGE,
     currentPage * POSTS_PER_PAGE,
   );
-
-  useEffect(() => {
-    if (page > totalPages && totalPages > 0) {
-      const next = new URLSearchParams(searchParams);
-      next.set("page", String(totalPages));
-      setSearchParams(next, { replace: true });
-    }
-  }, [page, totalPages, searchParams, setSearchParams]);
 
   const setPage = (nextPage: number) => {
     const next = new URLSearchParams(searchParams);
@@ -85,10 +86,6 @@ const BlogIndex = () => {
 
   const showFeatured = activeCategory === "all" && !tagFilter && currentPage === 1;
   const showCeoSpotlight = showFeatured && ceoPost;
-
-  const scrollToNewsletter = () => {
-    document.getElementById("newsletter")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <Layout>
@@ -144,7 +141,7 @@ const BlogIndex = () => {
             Tech predictions, AI insights, and software trends — written by our CEO & CTO for builders and business owners in India and worldwide.
           </p>
           <Button
-            onClick={scrollToNewsletter}
+            onClick={() => scrollToElementId("newsletter")}
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:opacity-90"
           >
             Subscribe Free

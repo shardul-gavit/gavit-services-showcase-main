@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Layout } from "@/components/Layout";
 import { Seo } from "@/components/Seo";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -100,7 +100,7 @@ const ACCEPTED_RESUME_TYPES = [".pdf", ".doc", ".docx"];
 const CareerApply = () => {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [resumeFile, setResumeFile] = useState<File | null>(null);
-  const [resumeBase64, setResumeBase64] = useState<string | null>(null);
+  const resumeBase64Ref = useRef<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -129,26 +129,28 @@ const CareerApply = () => {
     const file = e.target.files?.[0];
     if (!file) {
       setResumeFile(null);
-      setResumeBase64(null);
+      resumeBase64Ref.current = null;
       return;
     }
     const ext = "." + file.name.split(".").pop()?.toLowerCase();
     if (!ACCEPTED_RESUME_TYPES.includes(ext)) {
       setError("Please upload a PDF or DOC/DOCX file.");
       setResumeFile(null);
-      setResumeBase64(null);
+      resumeBase64Ref.current = null;
       return;
     }
     if (file.size > MAX_RESUME_SIZE_MB * 1024 * 1024) {
       setError(`Resume must be under ${MAX_RESUME_SIZE_MB}MB.`);
       setResumeFile(null);
-      setResumeBase64(null);
+      resumeBase64Ref.current = null;
       return;
     }
     setResumeFile(file);
     setError("");
     const reader = new FileReader();
-    reader.onload = () => setResumeBase64((reader.result as string) || null);
+    reader.onload = () => {
+      resumeBase64Ref.current = (reader.result as string) || null;
+    };
     reader.readAsDataURL(file);
   };
 
@@ -293,7 +295,7 @@ const CareerApply = () => {
         preferredDuration: sanitizeInput(formData.preferredDuration),
         workPreference: formData.workPreference,
         resumeFileName: resumeFile?.name || null,
-        resumeBase64: resumeBase64 || null,
+        resumeBase64: resumeBase64Ref.current || null,
         declaration: formData.declaration,
         privacyConsent: formData.privacyConsent,
         marketingConsent: formData.marketingConsent,
@@ -318,7 +320,7 @@ const CareerApply = () => {
       setIsSuccess(true);
       setFormData(initialFormData);
       setResumeFile(null);
-      setResumeBase64(null);
+      resumeBase64Ref.current = null;
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "Failed to submit. Please try again or contact us."

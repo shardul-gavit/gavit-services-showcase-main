@@ -350,4 +350,4 @@ export const getPostsByTag = (tag: string) =>
   foresightPosts.filter((p) => p.tags.some((t) => t.toLowerCase() === tag.toLowerCase()));
 
 export const getLatestPosts = (limit = 3) =>
-  [...foresightPosts].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, limit);
+  foresightPosts.toSorted((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, limit);

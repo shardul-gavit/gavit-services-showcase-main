@@ -11,6 +11,14 @@ import { DpdpConsentFields } from "@/components/DpdpConsentFields";
 // This uses a Vercel serverless function as a proxy to handle CORS
 const API_ENDPOINT = "/api/contact";
 
+const openEmail = () => {
+  window.location.href = 'mailto:gaviteservice26@gmail.com';
+};
+
+const openPhone = () => {
+  window.location.href = 'tel:+918141381255';
+};
+
 const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -119,14 +127,6 @@ const Contact = () => {
     }
   };
 
-  const handleEmailClick = () => {
-    window.location.href = 'mailto:gaviteservice26@gmail.com';
-  };
-
-  const handlePhoneClick = () => {
-    window.location.href = 'tel:+918141381255';
-  };
-
   const resetForm = () => {
     setIsSubmitted(false);
   };
@@ -168,9 +168,10 @@ const Contact = () => {
                   </div>
                 </div>
                 
-                <div 
-                  className="flex items-start space-x-4 cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={handlePhoneClick}
+                <button
+                  type="button"
+                  className="flex items-start space-x-4 cursor-pointer hover:opacity-80 transition-opacity text-left w-full"
+                  onClick={openPhone}
                 >
                   <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
                     <Phone className="w-6 h-6 text-green-600" />
@@ -179,11 +180,12 @@ const Contact = () => {
                     <h4 className="font-semibold mb-1 text-white">Phone Number</h4>
                     <p className="text-white/80">+91 81413 81255</p>
                   </div>
-                </div>
+                </button>
                 
-                <div 
-                  className="flex items-start space-x-4 cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={handleEmailClick}
+                <button
+                  type="button"
+                  className="flex items-start space-x-4 cursor-pointer hover:opacity-80 transition-opacity text-left w-full"
+                  onClick={openEmail}
                 >
                   <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
                     <Mail className="w-6 h-6 text-purple-600" />
@@ -192,7 +194,7 @@ const Contact = () => {
                     <h4 className="font-semibold mb-1 text-white">Email Address</h4>
                     <p className="text-white/80">gaviteservice26@gmail.com</p>
                   </div>
-                </div>
+                </button>
                 
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
@@ -225,12 +227,14 @@ const Contact = () => {
                 >
                   <Instagram className="w-6 h-6 text-pink-600" />
                 </a>
-                <div 
+                <button
+                  type="button"
                   className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-indigo-200 transition-colors"
-                  onClick={handleEmailClick}
+                  onClick={openEmail}
+                  aria-label="Email Gavit E-Services"
                 >
                   <Mail className="w-6 h-6 text-indigo-600" />
-                </div>
+                </button>
               </div>
             </div>
             
@@ -277,8 +281,9 @@ const Contact = () => {
                 <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-sm font-medium mb-2 block">First Name</label>
+                      <label htmlFor="contact-firstName" className="text-sm font-medium mb-2 block">First Name</label>
                       <Input 
+                        id="contact-firstName"
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleInputChange}
@@ -287,8 +292,9 @@ const Contact = () => {
                       />
                     </div>
                     <div>
-                      <label className="text-sm font-medium mb-2 block">Last Name</label>
+                      <label htmlFor="contact-lastName" className="text-sm font-medium mb-2 block">Last Name</label>
                       <Input 
+                        id="contact-lastName"
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleInputChange}
@@ -299,8 +305,9 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Email</label>
+                  <label htmlFor="contact-email" className="text-sm font-medium mb-2 block">Email</label>
                     <Input 
+                      id="contact-email"
                       type="email" 
                       name="email"
                       value={formData.email}
@@ -311,8 +318,9 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Phone</label>
+                  <label htmlFor="contact-phone" className="text-sm font-medium mb-2 block">Phone</label>
                     <Input 
+                      id="contact-phone"
                       type="tel" 
                       name="phone"
                       value={formData.phone}
@@ -323,8 +331,9 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Service Interest</label>
+                  <label htmlFor="contact-service" className="text-sm font-medium mb-2 block">Service Interest</label>
                     <select 
+                      id="contact-service"
                       name="service"
                       value={formData.service}
                       onChange={handleInputChange}
@@ -341,8 +350,9 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Message</label>
+                  <label htmlFor="contact-message" className="text-sm font-medium mb-2 block">Message</label>
                     <Textarea 
+                      id="contact-message"
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}

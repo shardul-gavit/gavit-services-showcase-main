@@ -2,14 +2,15 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+import { scrollToElementId } from "@/lib/scroll";
+
+const openWhatsAppChat = () => {
+  const message = encodeURIComponent("Hello! I'm interested in your services. Can you help me?");
+  window.open(`https://wa.me/918141381255?text=${message}`, '_blank');
+};
 
 const WhatsAppChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Hello! I'm interested in your services. Can you help me?");
-    window.open(`https://wa.me/918141381255?text=${message}`, '_blank');
-  };
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
@@ -17,12 +18,13 @@ const WhatsAppChatbot = () => {
 
   return (
     <>
-      {/* Floating WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <Button
+          type="button"
           onClick={toggleChat}
           className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg"
           size="icon"
+          aria-label={isOpen ? "Close WhatsApp chat" : "Open WhatsApp chat"}
         >
           {isOpen ? (
             <X className="w-6 h-6 text-white" />
@@ -32,7 +34,6 @@ const WhatsAppChatbot = () => {
         </Button>
       </div>
 
-      {/* Chat Window */}
       {isOpen && (
         <div className="fixed bottom-24 right-6 w-80 bg-white rounded-lg shadow-xl border z-50 overflow-hidden">
           <div className="bg-green-500 text-white p-4">
@@ -42,7 +43,7 @@ const WhatsAppChatbot = () => {
               </div>
               <div>
                 <h3 className="font-semibold">Gavit E-Services</h3>
-                <p className="text-sm opacity-90">We're here to help!</p>
+                <p className="text-sm opacity-90">We&apos;re here to help!</p>
               </div>
             </div>
           </div>
@@ -58,14 +59,16 @@ const WhatsAppChatbot = () => {
               <p className="text-sm font-medium text-gray-700">Quick Actions:</p>
               <div className="space-y-2">
                 <button
-                  onClick={handleWhatsAppClick}
+                  type="button"
+                  onClick={openWhatsAppChat}
                   className="w-full text-left p-2 text-sm bg-green-50 hover:bg-green-100 rounded-lg transition-colors"
                 >
                   💬 Chat with us on WhatsApp
                 </button>
                 <button
+                  type="button"
                   onClick={() => {
-                    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' });
+                    scrollToElementId('services');
                     setIsOpen(false);
                   }}
                   className="w-full text-left p-2 text-sm bg-blue-50 hover:bg-blue-100 rounded-lg transition-colors"
@@ -73,8 +76,9 @@ const WhatsAppChatbot = () => {
                   🔍 Explore Our Services
                 </button>
                 <button
+                  type="button"
                   onClick={() => {
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                    scrollToElementId('contact');
                     setIsOpen(false);
                   }}
                   className="w-full text-left p-2 text-sm bg-purple-50 hover:bg-purple-100 rounded-lg transition-colors"
@@ -86,7 +90,8 @@ const WhatsAppChatbot = () => {
             
             <div className="text-center">
               <Button
-                onClick={handleWhatsAppClick}
+                type="button"
+                onClick={openWhatsAppChat}
                 className="w-full bg-green-500 hover:bg-green-600 text-white"
               >
                 Start WhatsApp Chat

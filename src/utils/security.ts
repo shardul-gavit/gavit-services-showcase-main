@@ -124,61 +124,6 @@ export class RateLimiter {
 }
 
 /**
- * Generate CSRF token (for future use with backend)
- */
-export const generateCSRFToken = (): string => {
-  const array = new Uint8Array(32);
-  if (typeof window !== 'undefined' && window.crypto) {
-    window.crypto.getRandomValues(array);
-    return Array.from(array, byte => byte.toString(16).padStart(2, '0')).join('');
-  }
-  // Fallback for environments without crypto
-  return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-};
-
-/**
- * Validate URL to prevent open redirects
- */
-export const validateUrl = (url: string, allowedDomains: string[] = []): boolean => {
-  if (!url || typeof url !== 'string') {
-    return false;
-  }
-
-  try {
-    const urlObj = new URL(url);
-    
-    // Only allow http/https protocols
-    if (!['http:', 'https:'].includes(urlObj.protocol)) {
-      return false;
-    }
-
-    // If allowed domains specified, check against them
-    if (allowedDomains.length > 0) {
-      return allowedDomains.some(domain => urlObj.hostname === domain || urlObj.hostname.endsWith('.' + domain));
-    }
-
-    return true;
-  } catch {
-    return false;
-  }
-};
-
-/**
- * Escape HTML to prevent XSS
- */
-export const escapeHtml = (text: string): string => {
-  const map: Record<string, string> = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;',
-  };
-  
-  return text.replace(/[&<>"']/g, (m) => map[m]);
-};
-
-/**
  * Validate form data for common injection attacks
  */
 export const validateFormData = (data: Record<string, any>): { valid: boolean; errors: string[] } => {

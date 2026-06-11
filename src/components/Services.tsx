@@ -3,8 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Code, Smartphone, Users, Layers, Brain, Briefcase, Receipt, CreditCard } from 'lucide-react';
 import { OptimizedImage } from "@/components/OptimizedImage";
 
-const Services = () => {
-  const services = [
+const SERVICES = [
     {
       icon: Users,
       title: "Virtual Assistant",
@@ -69,8 +68,9 @@ const Services = () => {
       color: "from-teal-500 to-teal-600",
       image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=400&q=80"
     }
-  ];
+] as const;
 
+const Services = () => {
   return (
     <section id="services" className="py-20 relative">
       {/* Background Image */}
@@ -93,8 +93,8 @@ const Services = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden">
+          {SERVICES.map((service) => (
+            <Card key={service.title} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden">
               <div className="relative h-48">
                 <OptimizedImage
                   src={service.image} 
@@ -115,8 +115,8 @@ const Services = () => {
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-sm text-muted-foreground">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center text-sm text-muted-foreground">
                       <div className="w-2 h-2 bg-blue-500 rounded-full mr-3"></div>
                       {feature}
                     </li>

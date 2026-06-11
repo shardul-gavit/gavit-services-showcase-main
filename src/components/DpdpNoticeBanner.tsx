@@ -1,19 +1,17 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 
 const STORAGE_KEY = "gavit-dpdp-notice-accepted";
 
-export const DpdpNoticeBanner = () => {
-  const [visible, setVisible] = useState(false);
+const getInitialVisibility = () => {
+  if (typeof window === "undefined") return false;
+  return !localStorage.getItem(STORAGE_KEY);
+};
 
-  useEffect(() => {
-    const accepted = localStorage.getItem(STORAGE_KEY);
-    if (!accepted) {
-      setVisible(true);
-    }
-  }, []);
+export const DpdpNoticeBanner = () => {
+  const [visible, setVisible] = useState(getInitialVisibility);
 
   const accept = () => {
     localStorage.setItem(STORAGE_KEY, new Date().toISOString());
@@ -35,10 +33,10 @@ export const DpdpNoticeBanner = () => {
             . You may manage preferences or withdraw consent anytime.
           </p>
           <div className="flex items-center gap-2 shrink-0">
-            <Button size="sm" className="bg-white text-slate-900 hover:bg-white/90" onClick={accept}>
+            <Button type="button" size="sm" className="bg-white text-slate-900 hover:bg-white/90" onClick={accept}>
               Accept
             </Button>
-            <Button size="icon" variant="ghost" className="text-white/70 hover:text-white" onClick={accept} aria-label="Dismiss notice">
+            <Button type="button" size="icon" variant="ghost" className="text-white/70 hover:text-white" onClick={accept} aria-label="Dismiss notice">
               <X className="h-4 w-4" />
             </Button>
           </div>

@@ -6,8 +6,11 @@ import { OptimizedImage } from "@/components/OptimizedImage";
 import shardulPhoto from "@/assets/shardul-gavit.jpeg";
 import pavanPhoto from "@/assets/pavan-gavit.jpeg";
 
-const Team = () => {
-  const team = [
+const openMemberEmail = (email: string) => {
+  window.location.href = `mailto:${email}`;
+};
+
+const TEAM = [
     {
       name: "Shardul Gavit",
       role: "CEO & Director",
@@ -26,12 +29,9 @@ const Team = () => {
       email: "pavan@gaviteservices.com",
       linkedin: "https://www.linkedin.com/in/pavan-gavit-1a8b94226?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     }
-  ];
+] as const;
 
-  const handleEmailClick = (email: string) => {
-    window.location.href = `mailto:${email}`;
-  };
-
+const Team = () => {
   return (
     <section id="team" className="py-20 relative">
       {/* Background Image */}
@@ -54,8 +54,8 @@ const Team = () => {
         </div>
         
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {team.map((member, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden">
+          {TEAM.map((member) => (
+            <Card key={member.name} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden">
               <div className="relative">
                 <div className="w-full h-96 md:h-[450px] overflow-hidden bg-muted">
                   <img 
@@ -74,8 +74,8 @@ const Team = () => {
                 <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
                 
                 <div className="flex flex-wrap gap-1 justify-center mb-4">
-                  {member.skills.slice(0, 2).map((skill, skillIndex) => (
-                    <Badge key={skillIndex} variant="secondary" className="text-xs">
+                  {member.skills.slice(0, 2).map((skill) => (
+                    <Badge key={skill} variant="secondary" className="text-xs">
                       {skill}
                     </Badge>
                   ))}
@@ -85,7 +85,7 @@ const Team = () => {
                   <button 
                     type="button"
                     className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors"
-                    onClick={() => handleEmailClick(member.email)}
+                    onClick={() => openMemberEmail(member.email)}
                     aria-label={`Email ${member.name}`}
                   >
                     <Mail className="w-4 h-4 text-blue-600" />

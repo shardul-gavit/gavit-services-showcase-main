@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import { Link } from "react-router-dom";
 import { DEFAULT_SITE_DESCRIPTION, DEFAULT_SITE_TITLE, GLOBAL_KEYWORDS } from "@/constants/seo";
 import { ArrowRight, Globe, Target, Users, Shield, Building, Briefcase, GraduationCap, BookOpen, Video } from "lucide-react";
+import { scrollToElementId } from "@/lib/scroll";
 
 const summaryPoints = [
   {
@@ -181,10 +182,6 @@ const testimonials = [
 ];
 
 const Index = () => {
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <Layout>
       <Seo
@@ -501,13 +498,13 @@ const Index = () => {
             We operate as HR outsourcing for IT companies, a staffing agency for tech startups, and the most affordable IT solutions for small business clients that need a Gujarat-based partner.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button className="bg-slate-900 text-white px-6 py-3" onClick={scrollToContact}>
+            <Button className="bg-slate-900 text-white px-6 py-3" onClick={() => scrollToElementId("contact")}>
               Book Free IT Consultation <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
-            <Button variant="outline" className="px-6 py-3" onClick={scrollToContact}>
+            <Button variant="outline" className="px-6 py-3" onClick={() => scrollToElementId("contact")}>
               Get Staffing Quote
             </Button>
-            <Button variant="outline" className="px-6 py-3" onClick={scrollToContact}>
+            <Button variant="outline" className="px-6 py-3" onClick={() => scrollToElementId("contact")}>
               Schedule Recruitment Call
             </Button>
           </div>

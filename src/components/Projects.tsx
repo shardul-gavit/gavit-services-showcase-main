@@ -4,9 +4,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Globe, Smartphone, ShoppingCart, GraduationCap, Heart, Building, Truck } from 'lucide-react';
 import { OptimizedImage } from "@/components/OptimizedImage";
+import { scrollToElementId } from "@/lib/scroll";
 
-const Projects = () => {
-  const projects = [
+const PROJECTS = [
     {
       icon: ShoppingCart,
       title: "E-Commerce Platform - GlobalMart",
@@ -67,16 +67,9 @@ const Projects = () => {
       category: "Marketing",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80"
     }
-  ];
+] as const;
 
-  const handleCaseStudy = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const handleViewAllProjects = () => {
-    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
+const Projects = () => {
   return (
     <section id="projects" className="py-20 relative">
       {/* Background Image */}
@@ -99,8 +92,8 @@ const Projects = () => {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
+          {PROJECTS.map((project) => (
+            <Card key={project.title} className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group">
               <div className="relative h-48">
                 <OptimizedImage
                   src={project.image} 
@@ -129,8 +122,8 @@ const Projects = () => {
                   <div>
                     <h4 className="text-sm font-semibold mb-2">Technologies Used:</h4>
                     <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="outline" className="text-xs">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs">
                           {tech}
                         </Badge>
                       ))}
@@ -140,8 +133,8 @@ const Projects = () => {
                   <div>
                     <h4 className="text-sm font-semibold mb-2">Key Results:</h4>
                     <ul className="space-y-1">
-                      {project.results.map((result, resultIndex) => (
-                        <li key={resultIndex} className="flex items-center text-xs text-muted-foreground">
+                      {project.results.map((result) => (
+                        <li key={result} className="flex items-center text-xs text-muted-foreground">
                           <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
                           {result}
                         </li>
@@ -153,7 +146,7 @@ const Projects = () => {
                     size="sm" 
                     variant="outline" 
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
-                    onClick={handleCaseStudy}
+                    onClick={() => scrollToElementId('contact')}
                   >
                     View Case Study <ExternalLink className="ml-2 w-3 h-3" />
                   </Button>
@@ -164,7 +157,7 @@ const Projects = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" onClick={handleViewAllProjects}>
+          <Button size="lg" variant="outline" onClick={() => scrollToElementId('contact')}>
             View All Projects
           </Button>
         </div>
