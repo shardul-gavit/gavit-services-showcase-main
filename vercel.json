@@ -11,12 +11,6 @@
       "source": "/blogs",
       "destination": "/blog",
       "permanent": true
-    },
-    {
-      "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.gaviteservice.com" }],
-      "destination": "https://gaviteservice.com/:path*",
-      "permanent": true
     }
   ],
   "headers": [
@@ -66,7 +60,10 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/(.*)",
+      "handle": "filesystem"
+    },
+    {
+      "source": "/((?!assets/|api/).*)",
       "destination": "/index.html"
     }
   ]
