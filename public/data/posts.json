@@ -160,5 +160,140 @@
       "metaDescription": "Gavit E-Services CEO Shardul Gavit on why the company thinks 5 years ahead and what that means for clients in India, USA, UK and beyond.",
       "canonicalUrl": "https://www.gaviteservice.com/blog/ceo-desk-building-5-years-ahead"
     }
+  },
+  {
+    "id": "007",
+    "slug": "dedicated-indian-developer-cost-2026",
+    "title": "How Much Does It Cost to Hire a Dedicated Indian Developer in 2026?",
+    "excerpt": "US and UK founders ask this first: what does a full-time Indian developer actually cost in 2026? Here is a transparent breakdown of rates, roles, and what you get for your budget.",
+    "author": {
+      "name": "Pavan Gavit",
+      "role": "Co-founder & CTO, Gavit E-Services",
+      "avatar": "/images/authors/cto.jpg",
+      "linkedin": "https://www.linkedin.com/in/pavan-gavit-1a8b94226/"
+    },
+    "category": "india-tech",
+    "categoryLabel": "India Tech",
+    "tags": ["Remote Staffing", "India Tech", "Dedicated Developers", "Cost Guide", "Offshore Development"],
+    "publishedAt": "2026-05-20",
+    "updatedAt": "2026-05-28",
+    "readTime": "7 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/dedicated-developer-cost.jpg",
+    "ogImage": "/images/blog/og/dedicated-developer-cost-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Dedicated Indian Developer Cost 2026 | Gavit E-Services",
+      "metaDescription": "Transparent 2026 pricing for hiring dedicated Indian developers — junior to senior rates, hidden costs, and how Gavit E-Services structures remote teams from Vadodara.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/dedicated-indian-developer-cost-2026"
+    }
+  },
+  {
+    "id": "008",
+    "slug": "staff-augmentation-vs-outsourcing-startup",
+    "title": "IT Staff Augmentation vs Outsourcing: Which Is Right for Your Startup?",
+    "excerpt": "Staff augmentation and project outsourcing both use Indian talent — but they solve different problems. Here is a practical 2026 decision guide for early-stage and growth-stage startups.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "software-trends",
+    "categoryLabel": "Software Trends",
+    "tags": ["Staff Augmentation", "Outsourcing", "Startups", "Remote Teams", "Software Trends"],
+    "publishedAt": "2026-05-22",
+    "updatedAt": "2026-05-28",
+    "readTime": "7 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/staff-augmentation-outsourcing.jpg",
+    "ogImage": "/images/blog/og/staff-augmentation-outsourcing-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Staff Augmentation vs Outsourcing for Startups 2026 | Gavit Foresight",
+      "metaDescription": "Staff augmentation vs outsourcing for startups in 2026 — control, cost, speed, and when Indian IT partners like Gavit E-Services fit each model.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/staff-augmentation-vs-outsourcing-startup"
+    }
+  },
+  {
+    "id": "009",
+    "slug": "best-web-development-companies-vadodara-2026",
+    "title": "Best Web Development Companies in Vadodara, Gujarat (2026)",
+    "excerpt": "Vadodara is no longer just an industrial city — it is a growing software hub. Here is how to evaluate web development partners in Gujarat's cultural capital in 2026.",
+    "author": {
+      "name": "Pavan Gavit",
+      "role": "Co-founder & CTO, Gavit E-Services",
+      "avatar": "/images/authors/cto.jpg",
+      "linkedin": "https://www.linkedin.com/in/pavan-gavit-1a8b94226/"
+    },
+    "category": "india-tech",
+    "categoryLabel": "India Tech",
+    "tags": ["Vadodara", "Web Development", "Gujarat", "India Tech", "Local SEO"],
+    "publishedAt": "2026-05-24",
+    "updatedAt": "2026-05-28",
+    "readTime": "8 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/vadodara-web-dev.jpg",
+    "ogImage": "/images/blog/og/vadodara-web-dev-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Best Web Development Companies Vadodara 2026 | Gavit E-Services",
+      "metaDescription": "How to choose a web development company in Vadodara, Gujarat in 2026 — evaluation criteria, red flags, and why Gavit E-Services ranks among top local IT partners.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/best-web-development-companies-vadodara-2026"
+    }
+  },
+  {
+    "id": "010",
+    "slug": "gst-compliant-erp-small-indian-businesses",
+    "title": "How to Build a GST-Compliant ERP for Small Indian Businesses",
+    "excerpt": "Generic billing tools break when your workflow gets specific. Here is a practical blueprint for GST-compliant ERP that small Indian manufacturers, traders, and service firms can actually adopt.",
+    "author": {
+      "name": "Pavan Gavit",
+      "role": "Co-founder & CTO, Gavit E-Services",
+      "avatar": "/images/authors/cto.jpg",
+      "linkedin": "https://www.linkedin.com/in/pavan-gavit-1a8b94226/"
+    },
+    "category": "india-tech",
+    "categoryLabel": "India Tech",
+    "tags": ["GST", "ERP", "India Tech", "SMB", "Billing Software"],
+    "publishedAt": "2026-05-26",
+    "updatedAt": "2026-05-28",
+    "readTime": "8 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/gst-erp-smb.jpg",
+    "ogImage": "/images/blog/og/gst-erp-smb-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "GST-Compliant ERP for Small Indian Businesses | Gavit E-Services",
+      "metaDescription": "Step-by-step guide to building GST-compliant ERP for Indian SMBs — invoices, e-way bills, inventory, and how Gavit E-Services delivers affordable custom ERP from Vadodara.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/gst-compliant-erp-small-indian-businesses"
+    }
+  },
+  {
+    "id": "011",
+    "slug": "us-startups-indian-it-partners-2026",
+    "title": "Why US Startups Are Choosing Indian IT Partners Over Local Agencies in 2026",
+    "excerpt": "Runway is tighter, AI expectations are higher, and local dev shops are expensive. Here is why US startups increasingly ship product with Indian IT partners — and how to do it without horror stories.",
+    "author": {
+      "name": "Shardul Gavit",
+      "role": "CEO, Gavit E-Services",
+      "avatar": "/images/authors/ceo.jpg",
+      "linkedin": "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
+    },
+    "category": "software-trends",
+    "categoryLabel": "Software Trends",
+    "tags": ["US Startups", "India Tech", "Offshore Development", "Remote Staffing", "2026 Trends"],
+    "publishedAt": "2026-05-28",
+    "updatedAt": "2026-05-28",
+    "readTime": "7 min read",
+    "featured": false,
+    "featuredImage": "/images/blog/us-startups-india.jpg",
+    "ogImage": "/images/blog/og/us-startups-india-og.jpg",
+    "content": "",
+    "seo": {
+      "metaTitle": "Why US Startups Choose Indian IT Partners 2026 | Gavit E-Services",
+      "metaDescription": "Why US startups pick Indian IT partners over local agencies in 2026 — cost, talent, timezone strategy, and how Gavit E-Services delivers founder-friendly remote teams.",
+      "canonicalUrl": "https://www.gaviteservice.com/blog/us-startups-indian-it-partners-2026"
+    }
   }
 ]
