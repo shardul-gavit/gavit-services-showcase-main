@@ -16,8 +16,39 @@ import {
   Sparkles,
   MapPin,
   CheckCircle2,
+  Shield,
+  Clock,
+  ExternalLink,
 } from "lucide-react";
 import shardulPhoto from "@/assets/shardul-gavit.jpeg";
+import pavanPhoto from "@/assets/pavan-gavit.jpeg";
+
+const clientSolutions = [
+  {
+    client: "US/UK startup needing a dev team",
+    problem: "US agency quotes are too high and hiring locally takes months.",
+    solution:
+      "Gavit E-Services provides affordable dedicated Indian developers with 10–15 day onboarding, timezone overlap, and direct founder involvement — no big-agency markup.",
+  },
+  {
+    client: "Indian SMB needing ERP",
+    problem: "Excel and generic software cannot handle GST, inventory, and production together.",
+    solution:
+      "Gavit E-Services builds GST-compliant custom ERP with local Vadodara support, phased delivery, and modules mapped to your manufacturing or trading workflow.",
+  },
+  {
+    client: "Company needing virtual assistants",
+    problem: "Admin, finance, and support tasks are eating founder time.",
+    solution:
+      "Gavit E-Services supplies trained Indian VAs for admin, finance, HR, and customer support — onboarded in as little as 48 hours at 40–60% lower cost than local hires.",
+  },
+  {
+    client: "Business needing AI in existing software",
+    problem: "You want LLM features but lack in-house AI engineering capacity.",
+    solution:
+      "Gavit E-Services integrates OpenAI, Claude, and open-source models into your apps — chatbots, automation, and custom AI software built for production.",
+  },
+];
 
 const stats = [
   { value: "100+", label: "Clients served" },
@@ -110,11 +141,12 @@ const testimonials = [
 const About = () => (
   <Layout>
     <Seo
-      title="About Gavit E-Services | VA, ERP & Software Company in Vadodara"
-      description="Learn how Gavit E-Services delivers VA, ERP, custom software, AI, GST billing, and staffing from Vadodara to India and worldwide since 2020."
+      title="About Gavit E-Services | Founder Pavan Gavit — IT Company Vadodara"
+      description="Gavit E-Services is an IT services and remote staffing company founded in 2020 by Pavan Gavit in Vadodara, Gujarat. 100+ clients across India, USA, UK, UAE, Canada & Australia."
       canonical="https://www.gaviteservice.com/about"
       keywords={[
         "IT services company in Vadodara",
+        "Pavan Gavit Gavit E-Services",
         "software company Gujarat",
         "VA ERP software India",
       ]}
@@ -141,8 +173,9 @@ const About = () => (
             software that scales
           </span>
         </h1>
-        <p className="text-white/80 text-lg max-w-2xl mx-auto">
-          From Vadodara to the world — we help businesses adopt technology before their market forces them to.
+        <p className="text-white/80 text-lg max-w-3xl mx-auto">
+          Gavit E-Services is an IT services and remote staffing company based in Vadodara, Gujarat, India.
+          Founded in 2020 by Pavan Gavit, we serve 100+ clients across India, USA, UK, UAE, Canada, and Australia.
         </p>
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <Button className="bg-gradient-to-r from-blue-600 to-purple-600" onClick={() => window.location.assign("/contact")}>
@@ -164,6 +197,112 @@ const About = () => (
               {stat.value}
             </p>
             <p className="text-xs text-white/60 uppercase tracking-[0.25em] mt-1">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    {/* Founder — Pavan Gavit (EEAT) */}
+    <section className="py-16 container mx-auto px-4">
+      <div className="grid gap-10 lg:grid-cols-2 items-center max-w-5xl mx-auto">
+        <Card className="overflow-hidden border-0 shadow-xl">
+          <div className="relative h-72 sm:h-80">
+            <img src={pavanPhoto} alt="Pavan Gavit, Founder of Gavit E-Services" className="w-full h-full object-cover object-top" width={640} height={720} loading="lazy" decoding="async" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
+            <div className="absolute bottom-0 p-6 text-white">
+              <p className="text-sm text-white/70 uppercase tracking-[0.2em]">Founder</p>
+              <p className="text-2xl font-bold">Pavan Gavit</p>
+              <p className="text-sm text-white/80">Founder, Gavit E-Services</p>
+            </div>
+          </div>
+          <CardContent className="p-6 space-y-4">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              B.E. Information Technology &amp; Diploma IT, Parul University, Vadodara. Multi-venture entrepreneur
+              behind Iddasia Security Services Pvt. Ltd. (PSARA licensed) and AdvanceSafe Vardhan.
+            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Expertise: web development, AI systems, IT staffing, and industrial safety technology. Pavan Gavit
+              leads Gavit E-Services with hands-on involvement in client projects and team onboarding.
+            </p>
+            <a
+              href="https://www.linkedin.com/in/pavan-gavit-1a8b94226/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-blue-600 hover:underline font-medium"
+            >
+              Pavan Gavit on LinkedIn <ExternalLink className="w-4 h-4" />
+            </a>
+          </CardContent>
+        </Card>
+        <div className="space-y-6">
+          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Why clients trust us</p>
+          <h2 className="text-3xl font-bold leading-snug">Built by a founder who ships — not just sells</h2>
+          <p className="text-muted-foreground leading-relaxed">
+            Gavit E-Services combines PSARA-linked business credibility with fast-moving tech delivery. Clients get
+            direct access to leadership, transparent pricing, and teams that onboard in days — not months.
+          </p>
+          <ul className="space-y-3">
+            {[
+              "10–15 day onboarding for dedicated developer pods",
+              "Response to new inquiries within 24 hours",
+              "ISO-ready processes, NDAs, and secure delivery",
+              "Specialists in web, ERP, AI, VA, and remote staffing",
+            ].map((point) => (
+              <li key={point} className="flex items-start gap-3 text-sm">
+                <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    {/* Problem → Solution */}
+    <section className="py-16 bg-muted/30">
+      <div className="container mx-auto px-4 space-y-10">
+        <div className="text-center space-y-3 max-w-3xl mx-auto">
+          <p className="text-sm uppercase tracking-[0.3em] text-muted-foreground">Why Gavit E-Services</p>
+          <h2 className="text-3xl font-bold">If you are facing this — here is how we solve it</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto">
+          {clientSolutions.map((item) => (
+            <Card key={item.client} className="h-full">
+              <CardHeader>
+                <Badge variant="secondary" className="w-fit text-xs">{item.client}</Badge>
+                <CardTitle className="text-base text-muted-foreground font-normal mt-2">
+                  Problem: {item.problem}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm leading-relaxed">
+                  <span className="font-semibold text-foreground">Solution: </span>
+                  {item.solution}
+                </p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Trust signals */}
+    <section className="py-12 border-y border-border/60">
+      <div className="container mx-auto px-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl">
+        {[
+          { icon: Shield, label: "Clutch verified", detail: "Reviewed IT services profile on Clutch.co" },
+          { icon: Clock, label: "24-hour response", detail: "New inquiries answered within one business day" },
+          { icon: Users, label: "10+ specialists", detail: "Developers, VAs, designers & project leads" },
+          { icon: Award, label: "100+ clients", detail: "India, USA, UK, UAE, Canada & Australia" },
+        ].map((signal) => (
+          <div key={signal.label} className="flex gap-4 items-start">
+            <div className="w-10 h-10 rounded-lg bg-blue-50 dark:bg-blue-950 flex items-center justify-center shrink-0">
+              <signal.icon className="w-5 h-5 text-blue-600" />
+            </div>
+            <div>
+              <p className="font-semibold text-sm">{signal.label}</p>
+              <p className="text-xs text-muted-foreground mt-1">{signal.detail}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -220,7 +359,7 @@ const About = () => (
         </div>
         <Card className="overflow-hidden border-0 shadow-xl">
           <div className="relative h-64">
-            <img src={shardulPhoto} alt="Shardul Gavit, CEO" className="w-full h-full object-cover object-top" />
+            <img src={shardulPhoto} alt="Shardul Gavit, CEO" className="w-full h-full object-cover object-top" width={640} height={720} loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
             <div className="absolute bottom-0 p-6 text-white">
               <p className="text-sm text-white/70 uppercase tracking-[0.2em]">CEO's Desk</p>

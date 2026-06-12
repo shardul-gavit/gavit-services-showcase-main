@@ -189,7 +189,20 @@ const Index = () => {
         description={DEFAULT_SITE_DESCRIPTION}
         canonical="https://www.gaviteservice.com/"
         keywords={GLOBAL_KEYWORDS.slice(0, 10)}
-      />
+      >
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            url: "https://www.gaviteservice.com/",
+            name: DEFAULT_SITE_TITLE,
+            speakable: {
+              "@type": "SpeakableSpecification",
+              cssSelector: [".geo-speakable-hero", ".geo-speakable-services"],
+            },
+          })}
+        </script>
+      </Seo>
       <Hero />
 
       <section className="py-12 bg-slate-950 text-white">

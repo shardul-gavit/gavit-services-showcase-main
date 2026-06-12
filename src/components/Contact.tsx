@@ -130,7 +130,10 @@ const Contact = () => {
           src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1920&q=80" 
           alt="Contact background"
           className="w-full h-full object-cover"
+          width={1920}
+          height={1080}
           loading="lazy"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-blue-900/90"></div>
       </div>
@@ -235,7 +238,10 @@ const Contact = () => {
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=80" 
                 alt="Modern office workspace"
                 className="w-full h-48 object-cover"
+                width={500}
+                height={192}
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

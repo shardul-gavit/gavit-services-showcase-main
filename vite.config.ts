@@ -27,15 +27,14 @@ export default defineConfig(({ mode }) => ({
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          "react-vendor": ["react", "react-dom", "react-router-dom"],
-          "ui-vendor": [
-            "@radix-ui/react-dialog",
-            "@radix-ui/react-dropdown-menu",
-            "@radix-ui/react-tooltip",
-            "@radix-ui/react-select",
-            "@radix-ui/react-checkbox",
-          ],
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (id.includes("react-router-dom")) return "react-vendor";
+          if (id.includes("react-helmet-async")) return "helmet-vendor";
+          if (id.includes("@tanstack/react-query")) return "query-vendor";
+          if (id.includes("lucide-react")) return "icons-vendor";
+          if (id.includes("@radix-ui")) return "ui-vendor";
+          if (id.includes("react-dom") || id.includes("/react/")) return "react-vendor";
         },
         chunkFileNames: "assets/[name]-[hash].js",
         entryFileNames: "assets/[name]-[hash].js",

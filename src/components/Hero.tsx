@@ -8,21 +8,21 @@ const HERO_FEATURES = [
   {
     icon: Globe,
     title: "Global Reach",
-    description: "Serving clients across India, US, UAE, UK & Canada",
+    description: "Gavit E-Services serves USA, UK, Canada, UAE & India from Vadodara",
     color: "text-blue-400",
     image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=400&q=80"
   },
   {
     icon: Code,
     title: "Tech Excellence",
-    description: "Cutting-edge solutions in web, mobile & cloud",
+    description: "Web apps, ERP, AI & custom software — founder-led delivery",
     color: "text-purple-400",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80"
   },
   {
     icon: Users,
     title: "Expert Team",
-    description: "Industry professionals delivering quality results",
+    description: "Dedicated developers & VAs onboarded in 10–15 days",
     color: "text-green-400",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=400&q=80"
   }
@@ -30,12 +30,14 @@ const HERO_FEATURES = [
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+    <section id="home" className="geo-speakable-hero min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       <div className="absolute inset-0">
         <OptimizedImage
           src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80" 
           alt="Technology background – IT services company in Vadodara"
           className="w-full h-full"
+          width={1920}
+          height={1080}
           priority
           sizes="100vw"
         />
@@ -46,16 +48,19 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <span className="inline-block px-4 py-2 bg-blue-100/90 text-blue-700 rounded-full text-sm font-medium mb-6">
-              🚀 Founded in 2020 • Growing Rapidly
+              🚀 Founded in 2020 • Vadodara, Gujarat, India
             </span>
           </div>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent animate-fade-in">
-            One Partner for VA, ERP, AI & Software
+            Need an Indian IT partner to build your product fast — without US agency prices?
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-fade-in">
-            India-based operations & tech company trusted by businesses in USA, UK, Canada & beyond. Get started in 48 hours.
+          <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto animate-fade-in">
+            <strong className="text-white">Gavit E-Services</strong> gives you dedicated developers, web apps, ERP, and AI teams from India — onboarded in 10–15 days, with direct founder involvement and transparent pricing.
+          </p>
+          <p className="text-base md:text-lg text-white/75 mb-8 max-w-2xl mx-auto animate-fade-in">
+            Trusted by 100+ clients in the USA, UK, Canada, Australia & India. No big-agency overhead — just skilled teams that ship.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
@@ -70,9 +75,9 @@ const Hero = () => {
               size="lg" 
               variant="outline" 
               className="bg-white/10 border-white/20 text-white hover:bg-white/20"
-              onClick={() => scrollToElementId('projects')}
+              onClick={() => scrollToElementId('services')}
             >
-              View Our Work
+              See How We Help
             </Button>
           </div>
           
@@ -84,6 +89,8 @@ const Hero = () => {
                     src={feature.image} 
                     alt={feature.title}
                     className="w-full h-full"
+                    width={400}
+                    height={128}
                     placeholder="blur"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />

@@ -27,6 +27,7 @@ import {
 import gavitLogo from "@/assets/gavit-logo.png";
 import WhatsAppChatbot from "@/components/WhatsAppChatbot";
 import { DpdpNoticeBanner } from "@/components/DpdpNoticeBanner";
+import { GeoKnowledgeLayer } from "@/components/GeoKnowledgeLayer";
 import { trackPhoneClick, trackWhatsAppClick } from "@/utils/analytics";
 
 const navLinks = [
@@ -80,7 +81,7 @@ export const Layout = ({ children }: LayoutProps) => {
         <nav className="bg-background/95 backdrop-blur-xl border-b border-border/60">
           <div className="container mx-auto px-6 h-20 flex items-center justify-between gap-6">
             <Link to="/" className="flex items-center gap-2 sm:gap-3">
-              <img src={gavitLogo} alt="Gavit E-Services" className="h-10 md:h-12 w-auto object-contain" loading="lazy" />
+              <img src={gavitLogo} alt="Gavit E-Services" className="h-10 md:h-12 w-auto object-contain" width={120} height={48} decoding="async" fetchPriority="high" />
               <div className="flex flex-col">
                 <p className="font-bold text-sm sm:text-lg md:text-xl tracking-tight">Gavit E-Services</p>
                 <p className="text-[9px] sm:text-[10px] text-muted-foreground -mt-1 hidden sm:block">Accelerate your digital journey</p>
@@ -288,7 +289,7 @@ export const Layout = ({ children }: LayoutProps) => {
           <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <img src={gavitLogo} alt="Gavit E-Services" className="h-12 w-auto" loading="lazy" />
+                <img src={gavitLogo} alt="Gavit E-Services" className="h-12 w-auto" width={120} height={48} loading="lazy" decoding="async" />
                 <div>
                   <p className="font-bold text-lg">Gavit E-Services</p>
                   <p className="text-xs text-white/60 -mt-1">Accelerate your digital journey</p>
@@ -407,6 +408,9 @@ export const Layout = ({ children }: LayoutProps) => {
           <div className="border-t border-white/10 pt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-xs text-white/60">
             <p>© <span suppressHydrationWarning>{new Date().getFullYear()}</span> Gavit E-Services. Built proudly in Vadodara, Gujarat, India.</p>
             <div className="flex flex-wrap items-center gap-4">
+              <Link to="/faq" className="hover:text-white transition">
+                FAQ
+              </Link>
               <Link to="/privacy-policy" className="hover:text-white transition">
                 Privacy
               </Link>
@@ -418,6 +422,7 @@ export const Layout = ({ children }: LayoutProps) => {
         </div>
       </footer>
 
+      <GeoKnowledgeLayer />
       <DpdpNoticeBanner />
       <WhatsAppChatbot />
     </div>

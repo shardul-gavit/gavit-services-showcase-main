@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-5QJZLMRG');</script>
+    <!-- Google Tag Manager (deferred until after load — non-blocking) -->
+    <script>
+      window.addEventListener("load", function () {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != "dataLayer" ? "&l=" + l : "";
+          j.async = true;
+          j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, "script", "dataLayer", "GTM-5QJZLMRG");
+      });
+    </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -29,10 +38,18 @@
     <link rel="canonical" href="https://www.gaviteservice.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
+      fetchpriority="high"
+    />
     <!-- Preload critical fonts (Inter + system fallback) -->
     <link
       rel="preload"
@@ -189,6 +206,70 @@
                   "@type": "Answer",
                   "text": "We support IT, SaaS, fintech, education, and non-IT staffing services with remote staffing, HR outsourcing, IT support and maintenance, and workforce outsourcing capabi[...]"
                 }
+              },
+              {
+                "@type": "Question",
+                "name": "What does Gavit E-Services do?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Gavit E-Services is an India-based IT company offering web development, custom software, ERP, AI integration, remote staffing, and virtual assistant services. Based in Vadodara, Gujarat, it serves clients in India, USA, UK, UAE, and Australia."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How quickly can Gavit E-Services start a project?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Dedicated remote teams can onboard within 10-15 days. Web development projects typically kick off within a week of requirement sign-off."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Gavit E-Services suitable for US startups?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Gavit E-Services specializes in providing affordable Indian development teams to US and UK startups, offering significant cost savings without sacrificing quality."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What technologies does Gavit E-Services use?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The team works with React, Next.js, Node.js, Python, Flutter, WordPress, and modern AI/LLM stacks."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Gavit E-Services offer ERP solutions?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Gavit E-Services provides ERP consulting and development for SMBs, including GST-compliant billing software tailored for Indian businesses."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Who founded Gavit E-Services?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Pavan Gavit, an IT engineer and multi-venture entrepreneur from Vadodara, Gujarat, founded Gavit E-Services."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Gavit E-Services located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Headquartered in Vadodara, Gujarat, India."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can Gavit E-Services help with AI and LLM integration?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Gavit E-Services offers LLM integration, AI software development, and automation solutions for businesses looking to adopt AI tools."
+                }
               }
             ]
           }
@@ -199,14 +280,72 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
+      "@id": "https://www.gaviteservice.com/#organization",
       "name": "Gavit E-Services",
       "url": "https://www.gaviteservice.com",
       "logo": "https://www.gaviteservice.com/og-image.jpg",
       "description": "Trusted by 100+ clients worldwide. India-based VA, ERP, Custom Software, AI & GST Billing company.",
-      "foundingLocation": "Vadodara, Gujarat, India",
-      "areaServed": ["US", "GB", "CA", "NZ", "AU", "IN"],
+      "foundingDate": "2020",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Vadodara, Gujarat, India"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Pavan Gavit",
+        "jobTitle": "Founder",
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Parul University"
+        },
+        "sameAs": "https://www.linkedin.com/in/pavan-gavit-1a8b94226/"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["IN", "US", "GB", "AE", "CA", "AU", "NZ"],
       "numberOfEmployees": {"@type": "QuantitativeValue", "value": "10+"},
-      "sameAs": ["https://twitter.com/gaviteservices"]
+      "sameAs": [
+        "https://www.linkedin.com/company/gavit-e-services/",
+        "https://www.instagram.com/gaviteservices",
+        "https://twitter.com/gaviteservices"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Gavit E-Services",
+      "url": "https://www.gaviteservice.com",
+      "image": "https://www.gaviteservice.com/og-image.jpg",
+      "telephone": "+91-81413-81255",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Vadodara",
+        "addressRegion": "Gujarat",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["India", "United States", "United Kingdom", "United Arab Emirates", "Canada", "Australia", "New Zealand"],
+      "provider": { "@id": "https://www.gaviteservice.com/#organization" },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "IT Services",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "description": "React, Next.js, Node.js, WordPress, and Flutter websites and web applications." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom Software Development", "description": "Bespoke software, APIs, and business applications for SMBs and enterprises." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Staff Augmentation & Remote Staffing", "description": "Dedicated developers and managed pods with 10-15 day onboarding." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ERP Development & Consulting", "description": "Custom ERP and GST-compliant systems for Indian businesses." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Software & LLM Integration", "description": "AI automation, LLM integration, and custom AI products." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GST Billing Software", "description": "GST-compliant invoicing and billing for Indian SMBs." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Virtual Assistant Services", "description": "Trained VAs for admin, finance, HR, and customer support." } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "IT Managed Services", "description": "Cloud, support, and digital transformation consulting." } }
+        ]
+      }
     }
     </script>
   </head>

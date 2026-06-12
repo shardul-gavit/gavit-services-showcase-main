@@ -34,6 +34,9 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const srcSet = generateSrcSet(src);
 
+  const aspectStyle =
+    width && height ? { width, height } : !className?.includes("h-full") ? { aspectRatio: "16 / 9" } : undefined;
+
   return (
     <div
       className={cn(
@@ -41,7 +44,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
         placeholder === "blur" && !isLoaded && "bg-slate-200 animate-pulse",
         className
       )}
-      style={{ width, height }}
+      style={aspectStyle}
     >
       <img
         src={src}
