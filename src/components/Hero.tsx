@@ -48,7 +48,7 @@ const Hero = () => {
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8 animate-fade-in">
             <span className="inline-block px-4 py-2 bg-blue-100/90 text-blue-700 rounded-full text-sm font-medium mb-6">
-              🚀 Founded in 2020 • Vadodara, Gujarat, India
+              🚀 Founded in 2022 • Vadodara, Gujarat, India
             </span>
           </div>
           

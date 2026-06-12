@@ -100,7 +100,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         question: "What countries does Gavit E-Services serve?",
         answer:
-          "Gavit E-Services serves clients in India, USA, UK, UAE, Canada, Australia, and New Zealand. Delivery teams are based in Vadodara, Gujarat, with timezone overlap for US, UK, and APAC regions. Gavit E-Services has supported 100+ clients across these markets since 2020.",
+          "Gavit E-Services serves clients in India, USA, UK, UAE, Canada, Australia, and New Zealand. Delivery teams are based in Vadodara, Gujarat, with timezone overlap for US, UK, and APAC regions. Gavit E-Services has supported 100+ clients across these markets since 2022.",
       },
       {
         question: "How do I contact Gavit E-Services?",

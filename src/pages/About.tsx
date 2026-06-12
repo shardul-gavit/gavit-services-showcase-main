@@ -54,14 +54,14 @@ const stats = [
   { value: "100+", label: "Clients served" },
   { value: "5+", label: "Countries" },
   { value: "48hr", label: "Team onboarding" },
-  { value: "5+ Years", label: "Since 2020" },
+  { value: "4+ Years", label: "Since 2022" },
 ];
 
 const summary = [
   {
     icon: MapPin,
     title: "HQ in Vadodara",
-    detail: "Founded in 2020 in Gujarat to bridge VA, ERP, custom software, and staffing for Indian SMBs and global founders.",
+    detail: "Founded in 2022 in Gujarat to bridge VA, ERP, custom software, and staffing for Indian SMBs and global founders.",
   },
   {
     icon: Layers,
@@ -100,8 +100,8 @@ const culturePillars = [
 ];
 
 const milestones = [
-  { year: "2020", event: "Gavit E-Services founded in Vadodara, Gujarat" },
-  { year: "2022", event: "Expanded remote staffing & custom software for global clients" },
+  { year: "2022", event: "Gavit E-Services founded in Vadodara, Gujarat" },
+  { year: "2023", event: "Expanded remote staffing & custom software for global clients" },
   { year: "2024", event: "Launched GST billing & ERP modules for Indian SMBs" },
   { year: "2026", event: "Gavite Foresight — thought leadership on AI & World Models" },
 ];
@@ -142,7 +142,7 @@ const About = () => (
   <Layout>
     <Seo
       title="About Gavit E-Services | Founder Pavan Gavit — IT Company Vadodara"
-      description="Gavit E-Services is an IT services and remote staffing company founded in 2020 by Pavan Gavit in Vadodara, Gujarat. 100+ clients across India, USA, UK, UAE, Canada & Australia."
+      description="Gavit E-Services is an IT services and remote staffing company founded in 2022 by Pavan Gavit in Vadodara, Gujarat. 100+ clients across India, USA, UK, UAE, Canada & Australia."
       canonical="https://www.gaviteservice.com/about"
       keywords={[
         "IT services company in Vadodara",
@@ -175,7 +175,7 @@ const About = () => (
         </h1>
         <p className="text-white/80 text-lg max-w-3xl mx-auto">
           Gavit E-Services is an IT services and remote staffing company based in Vadodara, Gujarat, India.
-          Founded in 2020 by Pavan Gavit, we serve 100+ clients across India, USA, UK, UAE, Canada, and Australia.
+          Founded in 2022 by Pavan Gavit, we serve 100+ clients across India, USA, UK, UAE, Canada, and Australia.
         </p>
         <div className="flex flex-wrap justify-center gap-4 pt-4">
           <Button className="bg-gradient-to-r from-blue-600 to-purple-600" onClick={() => window.location.assign("/contact")}>
@@ -401,7 +401,7 @@ const About = () => (
       <div className="container mx-auto px-4 space-y-10">
         <div className="text-center space-y-3">
           <p className="text-sm uppercase tracking-[0.3em] text-white/50">Our journey</p>
-          <h2 className="text-3xl font-bold">Growing since 2020</h2>
+          <h2 className="text-3xl font-bold">Growing since 2022</h2>
         </div>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {milestones.map((m) => (
