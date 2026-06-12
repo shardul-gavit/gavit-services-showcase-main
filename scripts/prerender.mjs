@@ -86,6 +86,25 @@ const BLOCKED_HOSTS = [
   "hotjar.com",
 ];
 
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const chromium = await import("@sparticuz/chromium");
+    const puppeteer = await import("puppeteer-core");
+    return puppeteer.default.launch({
+      args: chromium.default.args,
+      defaultViewport: chromium.default.defaultViewport,
+      executablePath: await chromium.default.executablePath(),
+      headless: chromium.default.headless,
+    });
+  }
+
+  const puppeteer = await import("puppeteer");
+  return puppeteer.default.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
+  });
+}
+
 async function setupPage(page) {
   await page.setRequestInterception(true);
   page.on("request", (req) => {
@@ -143,21 +162,17 @@ async function main() {
   const routes = getRoutesFromSitemap();
   console.log(`[prerender] ${routes.length} routes from sitemap.xml`);
 
-  let puppeteer;
-  try {
-    puppeteer = await import("puppeteer");
-  } catch {
-    console.warn("[prerender] puppeteer not installed — skipping prerender. Run: npm i -D puppeteer");
-    return;
-  }
-
   const preview = await startPreview();
   await waitForServer();
 
-  const browser = await puppeteer.default.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage"],
-  });
+  let browser;
+  try {
+    browser = await launchBrowser();
+  } catch (err) {
+    console.error("[prerender] Fatal:", err instanceof Error ? err.message : err);
+    preview.kill("SIGTERM");
+    process.exit(1);
+  }
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 800 });
