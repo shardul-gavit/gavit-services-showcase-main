@@ -77,9 +77,35 @@ function startPreview() {
   });
 }
 
+const BLOCKED_HOSTS = [
+  "googletagmanager.com",
+  "google-analytics.com",
+  "googleadservices.com",
+  "doubleclick.net",
+  "facebook.net",
+  "hotjar.com",
+];
+
+async function setupPage(page) {
+  await page.setRequestInterception(true);
+  page.on("request", (req) => {
+    try {
+      const hostname = new URL(req.url()).hostname;
+      if (BLOCKED_HOSTS.some((host) => hostname.includes(host))) {
+        req.abort();
+        return;
+      }
+    } catch {
+      // non-URL requests (e.g. data:) — allow through
+    }
+    req.continue();
+  });
+}
+
 async function prerenderRoute(page, route) {
   const url = `${BASE}${route}`;
-  await page.goto(url, { waitUntil: "networkidle0", timeout: 120000 });
+  // domcontentloaded — networkidle0 hangs on GTM/analytics in CI (Vercel)
+  await page.goto(url, { waitUntil: "domcontentloaded", timeout: 120000 });
 
   await page.waitForFunction(
     () => {
@@ -135,6 +161,7 @@ async function main() {
 
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 800 });
+  await setupPage(page);
 
   let failures = 0;
   for (const route of routes) {

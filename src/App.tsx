@@ -66,6 +66,19 @@ const App = () => (
                 <Route path="/" element={<Index />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/services" element={<ServicesHub />} />
+                <Route path="/services/web-development" element={<WebDevelopment />} />
+                <Route path="/services/it-staff-augmentation" element={<Staffing />} />
+                <Route
+                  path="/services/custom-software"
+                  element={<ItServices seo={ALIAS_ROUTE_SEO.customSoftware} />}
+                />
+                <Route path="/services/erp-development" element={<ErpDevelopment />} />
+                <Route path="/services/ai-development" element={<AiSoftware />} />
+                <Route
+                  path="/services/virtual-assistant"
+                  element={<RemoteStaffing seo={ALIAS_ROUTE_SEO.virtualAssistant} />}
+                />
+                <Route path="/services/seo" element={<WebDevelopment />} />
                 <Route path="/it-services" element={<ItServices />} />
                 <Route path="/staffing" element={<Staffing />} />
                 <Route path="/remote-staffing" element={<RemoteStaffing />} />
