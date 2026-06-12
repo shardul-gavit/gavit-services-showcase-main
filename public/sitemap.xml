@@ -1,79 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.gaviteservice.com/</loc>
+    <loc>https://gaviteservice.com/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/about</loc>
+    <loc>https://gaviteservice.com/about</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services</loc>
+    <loc>https://gaviteservice.com/services</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/web-development</loc>
+    <loc>https://gaviteservice.com/services/web-development</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/it-staff-augmentation</loc>
+    <loc>https://gaviteservice.com/services/it-staff-augmentation</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/custom-software</loc>
+    <loc>https://gaviteservice.com/services/custom-software</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/erp-development</loc>
+    <loc>https://gaviteservice.com/services/erp-development</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/ai-development</loc>
+    <loc>https://gaviteservice.com/services/ai-development</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/virtual-assistant</loc>
+    <loc>https://gaviteservice.com/services/virtual-assistant</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/services/seo</loc>
+    <loc>https://gaviteservice.com/services/seo</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/faq</loc>
+    <loc>https://gaviteservice.com/faq</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/blog</loc>
+    <loc>https://gaviteservice.com/blog</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.gaviteservice.com/contact</loc>
+    <loc>https://gaviteservice.com/blog/why-llms-are-becoming-outdated</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/death-of-the-website-rise-of-custom-software</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/world-models-ai-india-businesses</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/why-your-business-needs-ai-software-now</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/erp-vs-custom-software-india-sme</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/ceo-desk-building-5-years-ahead</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/dedicated-indian-developer-cost-2026</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/staff-augmentation-vs-outsourcing-startup</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/best-web-development-companies-vadodara-2026</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/gst-compliant-erp-small-indian-businesses</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/blog/us-startups-indian-it-partners-2026</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaviteservice.com/contact</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

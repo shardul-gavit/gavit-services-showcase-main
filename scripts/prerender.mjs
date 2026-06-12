@@ -18,7 +18,7 @@ const BASE = `http://127.0.0.1:${PORT}`;
 function getRoutesFromSitemap() {
   const sitemapPath = path.join(ROOT, "public", "sitemap.xml");
   const xml = fs.readFileSync(sitemapPath, "utf8");
-  const routes = [...xml.matchAll(/<loc>https:\/\/www\.gaviteservice\.com([^<]*)<\/loc>/g)].map(
+  const routes = [...xml.matchAll(/<loc>https:\/\/(?:www\.)?gaviteservice\.com([^<]*)<\/loc>/g)].map(
     (match) => match[1] || "/",
   );
   return [...new Set(routes)];

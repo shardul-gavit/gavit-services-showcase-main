@@ -11,6 +11,12 @@
       "source": "/blogs",
       "destination": "/blog",
       "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.gaviteservice.com" }],
+      "destination": "https://gaviteservice.com/:path*",
+      "permanent": true
     }
   ],
   "headers": [
@@ -24,7 +30,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2)",
+      "source": "/(.*)\\.(js|css|png|jpg|jpeg|gif|svg|webp|ico|woff|woff2|xml|txt)",
       "headers": [
         {
           "key": "Cache-Control",

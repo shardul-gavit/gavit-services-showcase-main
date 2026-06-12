@@ -16,4 +16,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://www.gaviteservice.com/sitemap.xml
+Sitemap: https://gaviteservice.com/sitemap.xml
