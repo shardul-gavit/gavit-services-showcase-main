@@ -106,8 +106,8 @@ export const BlogSeo = ({ post }: BlogSeoProps) => {
       <meta name="twitter:title" content={post.title} />
       <meta name="twitter:description" content={post.excerpt} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@gaviteservices" />
-      <meta name="twitter:creator" content="@gaviteservices" />
+      <meta name="twitter:site" content="@gaviteservice" />
+      <meta name="twitter:creator" content="@gaviteservice" />
 
       <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

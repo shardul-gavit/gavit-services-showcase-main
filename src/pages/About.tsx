@@ -55,7 +55,7 @@ const stats = [
   { value: "100+", label: "Clients served" },
   { value: "5+", label: "Countries" },
   { value: "48hr", label: "Team onboarding" },
-  { value: "4+ Years", label: "Since 2022" },
+  { value: "3+ Years", label: "Since 2022" },
 ];
 
 const summary = [

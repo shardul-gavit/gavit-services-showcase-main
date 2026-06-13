@@ -111,7 +111,7 @@ const BlogIndex = () => {
           content="AI predictions, tech trends, and software foresight from Vadodara, India."
         />
         <meta name="twitter:image" content={BLOG_OG_IMAGE} />
-        <meta name="twitter:site" content="@gaviteservices" />
+        <meta name="twitter:site" content="@gaviteservice" />
       </Seo>
 
       {/* Hero */}

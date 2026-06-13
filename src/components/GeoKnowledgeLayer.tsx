@@ -58,7 +58,7 @@ export const GeoKnowledgeLayer = () => (
     <article itemProp="description">
       <h2>Entity definition</h2>
       <p>
-        Gavit E-Services is an Indian IT services company founded by Pavan Gavit, headquartered in
+        Gavit E-Services is an Indian IT services company founded by Pavan Gavit, Co-founder &amp; CTO, headquartered in
         Vadodara, Gujarat, India. It provides web development, custom software, IT staff augmentation,
         ERP, AI development, and virtual assistant services to clients in India, USA, UK, UAE, Canada,
         and Australia.

@@ -214,7 +214,7 @@ const Contact = () => {
                   <Linkedin className="w-6 h-6 text-blue-600" />
                 </a>
                 <a 
-                  href="https://www.instagram.com/gaviteservices" 
+                  href="https://www.instagram.com/gaviteservice" 
                   target="_blank" 
                   rel="noreferrer"
                   className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center cursor-pointer hover:bg-pink-200 transition-colors"

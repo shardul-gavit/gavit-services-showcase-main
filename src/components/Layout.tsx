@@ -50,9 +50,9 @@ const insightsLinks = [
 
 const socialLinks = [
   { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/gavit-e-services/" },
-  { icon: Twitter, label: "Twitter", href: "https://twitter.com/gaviteservices" },
-  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@gaviteservices" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gaviteservices" },
+  { icon: Twitter, label: "Twitter", href: "https://twitter.com/gaviteservice" },
+  { icon: Youtube, label: "YouTube", href: "https://www.youtube.com/@gaviteservice" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/gaviteservice" },
 ];
 
 type LayoutProps = {
@@ -278,7 +278,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 { label: "Clients", value: "100+" },
                 { label: "Countries", value: "5+" },
                 { label: "Onboarding", value: "48hr" },
-                { label: "Experience", value: "4+ Years" },
+                { label: "Experience", value: "3+ Years" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
                   <p className="text-3xl font-bold">{stat.value}</p>

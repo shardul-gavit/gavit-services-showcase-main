@@ -102,8 +102,8 @@ export const ORGANIZATION_SCHEMA = {
   },
   areaServed: ["IN", "US", "GB", "CA", "NZ", "AU", "SG", "AE"],
   sameAs: [
-    "https://www.linkedin.com/company/gaviteservices",
-    "https://www.facebook.com/gaviteservices",
-    "https://twitter.com/gaviteservices",
+    "https://www.linkedin.com/company/gavit-e-services/",
+    "https://www.facebook.com/gaviteservice",
+    "https://twitter.com/gaviteservice",
   ],
 };

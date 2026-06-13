@@ -91,7 +91,7 @@ const services = [
       "E-commerce Platforms",
       "CMS & Headless Solutions",
     ],
-    link: "/web-development",
+    link: "/services/web-development",
     image:
       "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80",
   },

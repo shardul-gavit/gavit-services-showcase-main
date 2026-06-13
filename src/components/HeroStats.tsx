@@ -2,7 +2,7 @@ const STATS = [
   { value: "100+", label: "Clients" },
   { value: "5+", label: "Countries" },
   { value: "48hr", label: "Onboarding" },
-  { value: "4+", label: "Years" },
+  { value: "3+", label: "Years" },
 ] as const;
 
 export const HeroStats = () => (

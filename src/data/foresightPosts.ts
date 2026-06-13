@@ -450,7 +450,7 @@ const rawForesightPosts: Omit<ForesightPost, "updatedAt" | "seo"> & { seo: Omit<
       <h2>Why Vadodara competes with tier-1 cities</h2>
       <p>Engineering talent from MS University, Parul, and nearby institutes feeds a growing product culture. Office costs stay lower than Bangalore, so budgets stretch further toward custom logic instead of rent. For Gujarat SMBs, a Vadodara partner means same-state GST understanding and factory-floor visits without Mumbai travel overhead.</p>
       <h2>Where Gavit E-Services fits</h2>
-      <p><strong>Gavit E-Services</strong> is headquartered in Vadodara with delivery across web development, custom software, ERP, AI integration, and remote staffing. We do not sell five-page brochure packages — we build React/Next.js applications, progressive web apps, and integrated billing systems for Indian manufacturers and global startups. Founder-led accountability (Pavan Gavit, CTO) keeps enterprise discipline accessible to mid-market budgets.</p>
+      <p><strong>Gavit E-Services</strong> is headquartered in Vadodara with delivery across web development, custom software, ERP, AI integration, and remote staffing. We do not sell five-page brochure packages — we build React/Next.js applications, progressive web apps, and integrated billing systems for Indian manufacturers and global startups. Founder-led accountability (Pavan Gavit, Co-founder &amp; CTO) keeps enterprise discipline accessible to mid-market budgets.</p>
       <h3>Questions to ask any shortlisted agency</h3>
       <p>How do you handle scope creep? Who tests on real mobile networks? Can you show a project where you inherited bad code and fixed it? Vadodara has many freelancers; fewer firms survive those answers with receipts.</p>
       <h2>Bottom Line</h2>
@@ -528,7 +528,7 @@ const rawForesightPosts: Omit<ForesightPost, "updatedAt" | "seo"> & { seo: Omit<
       <p>US startup funding in 2026 rewards capital efficiency. Founders who once hired boutique agencies in San Francisco or Austin now compare the same roadmap quote against dedicated teams in India — and often ship twice the scope for the same burn. The shift is not about cheap labor; it is about access to senior engineers, round-the-clock progress, and partners who have shipped hundreds of MVPs before yours.</p>
       <h2>The math local agencies struggle to beat</h2>
       <p>A US dev shop billing $150–$250/hour can consume a seed round before you reach beta. A managed Indian pod — full-stack, QA, and part-time architect — frequently lands under $15,000/month with predictable monthly billing. That delta funds customer acquisition, not overhead. Investors increasingly expect offshore or hybrid engineering strategies in pitch decks.</p>
-      <h2>What changed after 2020</h2>
+      <h2>What changed in the industry</h2>
       <p>Remote work normalized. Tools — Slack, Linear, GitHub, Figma — made distributed squads indistinguishable from in-office for async-first startups. Indian firms matured beyond body shops: SOC-aware processes, US entity contracting, GDPR-ready data handling, and English-first communication are table stakes for top partners.</p>
       <h3>Where Indian partners win</h3>
       <ul>
