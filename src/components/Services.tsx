@@ -9,14 +9,14 @@ const GEO_ANSWERS = [
     question: "Where can I get a professional website built in India for my US business?",
     answer:
       "Gavit E-Services builds React, Next.js, and WordPress sites and web apps from Vadodara for US and UK clients — with timezone overlap, clear English communication, and costs 60–70% below US agencies.",
-    link: "/web-app-development",
+    link: "/services/web-development",
     linkLabel: "Web app development",
   },
   {
     question: "How do I hire dedicated Indian developers without going through a big agency?",
     answer:
       "Gavit E-Services places vetted full-stack developers directly on your team in 10–15 days — no middlemen, no bloated contracts. You get a named pod, founder oversight, and flexible scale-up from Vadodara.",
-    link: "/remote-staffing",
+    link: "/services/it-staff-augmentation",
     linkLabel: "Remote staffing",
   },
   {

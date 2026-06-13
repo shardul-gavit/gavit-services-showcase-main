@@ -10,7 +10,7 @@ import { trackPhoneClick } from "@/utils/analytics";
 const touchpoints = [
   { icon: MapPin, label: "Office", detail: "Vadodara, Gujarat, India" },
   { icon: Phone, label: "Phone", detail: "+91 81413 81255", href: "tel:+918141381255" },
-  { icon: Mail, label: "Email", detail: "info@gaviteservices.com", href: "mailto:info@gaviteservices.com" },
+  { icon: Mail, label: "Email", detail: "info@gaviteservice.com", href: "mailto:info@gaviteservice.com" },
   { icon: Clock, label: "Hours", detail: "Mon - Sat • 9:00 AM – 8:00 PM IST" },
 ];
 

@@ -311,7 +311,7 @@ const rawForesightPosts: Omit<ForesightPost, "updatedAt" | "seo"> & { seo: Omit<
       ogImage: img.ceo,
     },
     content: `
-      <p>When we founded Gavit E-Services in 2020, we could have been another staffing agency with a website. We chose a harder path: become the partner that helps businesses adopt technology <em>before</em> their market forces them to.</p>
+      <p>When we founded Gavit E-Services in 2022, we could have been another staffing agency with a website. We chose a harder path: become the partner that helps businesses adopt technology <em>before</em> their market forces them to.</p>
       <h2>Five years ahead means saying no</h2>
       <p>We don't sell brochure websites, manual data entry, or saturated LLM chatbot projects. We say yes to custom software, ERP, AI embeddings, GST billing, and VA teams that scale operations.</p>
       <h2>India-first, globally capable</h2>

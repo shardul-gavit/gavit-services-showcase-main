@@ -95,7 +95,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         question: "Who is Pavan Gavit?",
         answer:
-          "Pavan Gavit is the founder of Gavit E-Services and an IT engineer (B.E. Information Technology, Parul University, Vadodara). He also leads ventures including Iddasia Security Services Pvt. Ltd. (PSARA licensed) and AdvanceSafe Vardhan. Pavan Gavit brings expertise in web development, AI systems, IT staffing, and industrial safety technology to Gavit E-Services clients.",
+          "Pavan Gavit is the Co-founder & CTO of Gavit E-Services and an IT engineer (B.E. Information Technology, Parul University, Vadodara). He also leads ventures including Iddasia Security Services Pvt. Ltd. (PSARA licensed) and AdvanceSafe Vardhan. Pavan Gavit brings expertise in web development, AI systems, IT staffing, and industrial safety technology to Gavit E-Services clients.",
       },
       {
         question: "What countries does Gavit E-Services serve?",
@@ -105,7 +105,7 @@ export const FAQ_CATEGORIES: FaqCategory[] = [
       {
         question: "How do I contact Gavit E-Services?",
         answer:
-          "Reach Gavit E-Services at +91 81413 81255, info@gaviteservices.com, or via the contact form at gaviteservice.com/contact. WhatsApp chat is available on every page. Gavit E-Services responds to new inquiries within 24 hours on business days (Mon–Sat, 9 AM–8 PM IST).",
+          "Reach Gavit E-Services at +91 81413 81255, info@gaviteservice.com, or via the contact form at gaviteservice.com/contact. WhatsApp chat is available on every page. Gavit E-Services responds to new inquiries within 24 hours on business days (Mon–Sat, 9 AM–8 PM IST).",
       },
     ],
   },

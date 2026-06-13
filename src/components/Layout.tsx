@@ -193,9 +193,9 @@ export const Layout = ({ children }: LayoutProps) => {
                         <Phone className="w-4 h-4" />
                         +91 81413 81255
                       </a>
-                      <a className="flex items-center gap-2 text-muted-foreground hover:text-foreground" href="mailto:info@gaviteservices.com">
+                      <a className="flex items-center gap-2 text-muted-foreground hover:text-foreground" href="mailto:info@gaviteservice.com">
                         <Mail className="w-4 h-4" />
-                        info@gaviteservices.com
+                        info@gaviteservice.com
                       </a>
                     </div>
                   </div>
@@ -231,9 +231,9 @@ export const Layout = ({ children }: LayoutProps) => {
                 <Phone className="h-4 w-4" />
                 +91 81413 81255
               </a>
-              <a className="flex items-center gap-2 text-white/80 hover:text-white transition-colors" href="mailto:info@gaviteservices.com">
+              <a className="flex items-center gap-2 text-white/80 hover:text-white transition-colors" href="mailto:info@gaviteservice.com">
                 <Mail className="h-4 w-4" />
-                info@gaviteservices.com
+                info@gaviteservice.com
               </a>
               <div className="hidden md:flex items-center gap-2">
                 {socialLinks.map(({ icon: Icon, label, href }) => (
@@ -348,7 +348,7 @@ export const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/remote-staffing" className="hover:text-white transition">
+                  <Link to="/services/it-staff-augmentation" className="hover:text-white transition">
                     Remote Staffing Pods
                   </Link>
                 </li>
@@ -358,7 +358,7 @@ export const Layout = ({ children }: LayoutProps) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/app-development" className="hover:text-white transition">
+                  <Link to="/services/web-development" className="hover:text-white transition">
                     App Development
                   </Link>
                 </li>

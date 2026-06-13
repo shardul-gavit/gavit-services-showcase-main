@@ -37,7 +37,7 @@ const sections = [
   {
     title: "7. Grievance Redressal",
     content:
-      "For privacy requests, consent withdrawal, or complaints, contact our Grievance Officer at privacy@gaviteservices.com or write to Gavit E-Services Private Limited, Vadodara, Gujarat 390007, India. We will respond within timelines prescribed under applicable law.",
+      "For privacy requests, consent withdrawal, or complaints, contact our Grievance Officer at info@gaviteservice.com or write to Gavit E-Services Private Limited, Vadodara, Gujarat 390007, India. We will respond within timelines prescribed under applicable law.",
   },
   {
     title: "8. Data Sharing & Cross-Border Transfer",
@@ -107,10 +107,10 @@ const PrivacyPolicy = () => (
         </CardHeader>
         <CardContent className="text-sm text-muted-foreground space-y-2">
           <p>
-            <strong>Grievance Officer:</strong> privacy@gaviteservices.com
+            <strong>Grievance Officer:</strong> info@gaviteservice.com
           </p>
           <p>
-            <strong>General inquiries:</strong> info@gaviteservices.com · +91 81413 81255
+            <strong>General inquiries:</strong> info@gaviteservice.com · +91 81413 81255
           </p>
           <p>
             <strong>Address:</strong> Vadodara, Gujarat 390007, India

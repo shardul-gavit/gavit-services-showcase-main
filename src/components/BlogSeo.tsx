@@ -88,6 +88,11 @@ export const BlogSeo = ({ post }: BlogSeoProps) => {
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content="Gavit E-Services" />
       <meta property="og:locale" content="en_IN" />
+      <meta property="og:locale:alternate" content="en_US" />
+      <meta property="og:locale:alternate" content="en_GB" />
+      <meta property="og:locale:alternate" content="en_AU" />
+      <meta property="og:locale:alternate" content="en_CA" />
+      <meta property="og:locale:alternate" content="en_NZ" />
 
       <meta property="article:published_time" content={toIst(post.publishedAt)} />
       <meta property="article:modified_time" content={toIst(post.updatedAt)} />

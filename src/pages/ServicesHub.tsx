@@ -72,7 +72,7 @@ const services = [
       "Time-zone Aligned Pods",
       "Managed Remote Operations",
     ],
-    link: "/remote-staffing",
+    link: "/services/it-staff-augmentation",
     image:
       "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=80",
   },
@@ -108,7 +108,7 @@ const services = [
       "App Store Optimization",
       "Backend & API Integration",
     ],
-    link: "/app-development",
+    link: "/services/web-development",
     image:
       "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&q=80",
   },

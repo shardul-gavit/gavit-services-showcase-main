@@ -37,7 +37,7 @@
 /******************** CONFIG ********************/
 const SPREADSHEET_ID = '1C-sKPSFg_HA1rLI-ELYM4gu9i8TRrBxdkyM-uaquEt4';
 const SHEET_NAME = 'Student_Enrollments';
-const ADMIN_EMAIL = 'gaviteservice26@gmail.com';
+const ADMIN_EMAIL = 'info@gaviteservice.com';
 
 // Expected column headers (must match exactly)
 const EXPECTED_HEADERS = [

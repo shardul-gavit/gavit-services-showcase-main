@@ -17,16 +17,16 @@ const TEAM = [
       description: "Visionary leader with expertise in business strategy and digital transformation",
       skills: ["Business Strategy", "Digital Transformation", "Leadership", "Innovation"],
       image: shardulPhoto,
-      email: "shardul@gaviteservices.com",
+      email: "info@gaviteservice.com",
       linkedin: "https://www.linkedin.com/in/shardul-gavit-3b63091b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     {
       name: "Pavan Gavit",
-      role: "Co-founder",
+      role: "Co-founder & CTO",
       description: "Technical expert driving innovation and product development initiatives",
       skills: ["Product Development", "Technology Strategy", "Team Building", "Innovation"],
       image: pavanPhoto,
-      email: "pavan@gaviteservices.com",
+      email: "info@gaviteservice.com",
       linkedin: "https://www.linkedin.com/in/pavan-gavit-1a8b94226?utm_source=share_via&utm_content=profile&utm_medium=member_android"
     }
 ] as const;

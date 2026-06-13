@@ -141,7 +141,7 @@ const testimonials = [
 const About = () => (
   <Layout>
     <Seo
-      title="About Gavit E-Services | Founder Pavan Gavit — IT Company Vadodara"
+      title="About Gavit E-Services | Co-founder & CTO Pavan Gavit — IT Company Vadodara"
       description="Gavit E-Services is an IT services and remote staffing company founded in 2022 by Pavan Gavit in Vadodara, Gujarat. 100+ clients across India, USA, UK, UAE, Canada & Australia."
       canonical="https://www.gaviteservice.com/about"
       keywords={[
@@ -207,12 +207,12 @@ const About = () => (
       <div className="grid gap-10 lg:grid-cols-2 items-center max-w-5xl mx-auto">
         <Card className="overflow-hidden border-0 shadow-xl">
           <div className="relative h-72 sm:h-80">
-            <img src={pavanPhoto} alt="Pavan Gavit, Founder of Gavit E-Services" className="w-full h-full object-cover object-top" width={640} height={720} loading="lazy" decoding="async" />
+            <img src={pavanPhoto} alt="Pavan Gavit, Co-founder & CTO of Gavit E-Services" className="w-full h-full object-cover object-top" width={640} height={720} loading="lazy" decoding="async" />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-transparent" />
             <div className="absolute bottom-0 p-6 text-white">
-              <p className="text-sm text-white/70 uppercase tracking-[0.2em]">Founder</p>
+              <p className="text-sm text-white/70 uppercase tracking-[0.2em]">Co-founder &amp; CTO</p>
               <p className="text-2xl font-bold">Pavan Gavit</p>
-              <p className="text-sm text-white/80">Founder, Gavit E-Services</p>
+              <p className="text-sm text-white/80">Co-founder &amp; CTO, Gavit E-Services</p>
             </div>
           </div>
           <CardContent className="p-6 space-y-4">

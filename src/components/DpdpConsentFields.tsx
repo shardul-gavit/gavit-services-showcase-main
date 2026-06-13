@@ -33,8 +33,8 @@ export const DpdpConsentFields = ({
           Privacy Policy
         </Link>
         . I understand I may withdraw consent or exercise my rights by contacting{" "}
-        <a href="mailto:privacy@gaviteservices.com" className="text-blue-600 underline hover:text-blue-800">
-          privacy@gaviteservices.com
+        <a href="mailto:info@gaviteservice.com" className="text-blue-600 underline hover:text-blue-800">
+          info@gaviteservice.com
         </a>
         . <span className="text-red-500">*</span>
       </Label>

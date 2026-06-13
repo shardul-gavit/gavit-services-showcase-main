@@ -17,13 +17,13 @@ Founded by Pavan Gavit (B.E. Information Technology, Parul University, Vadodara)
 
 - [Web Development](https://www.gaviteservice.com/web-development): React, Next.js, Node.js, WordPress, Flutter websites and web apps
 - [Custom Software](https://www.gaviteservice.com/custom-software): Bespoke software for SMBs and enterprises
-- [IT Staffing & Remote Staffing](https://www.gaviteservice.com/remote-staffing): Dedicated developers and managed pods, 10–15 day onboarding
+- [IT Staffing & Remote Staffing](https://www.gaviteservice.com/services/it-staff-augmentation): Dedicated developers and managed pods, 10–15 day onboarding
 - [ERP Development](https://www.gaviteservice.com/erp-development): Custom ERP for manufacturing, retail, healthcare, and trading
 - [AI Software](https://www.gaviteservice.com/ai-software): LLM integration, AI automation, custom AI products
 - [GST Billing Software](https://www.gaviteservice.com/gst-billing-software): GST-compliant billing for Indian businesses
 - [Virtual Assistant](https://www.gaviteservice.com/virtual-assistant): Admin, research, customer support, and back-office VA teams
 - [IT Services & Consultancy](https://www.gaviteservice.com/it-services): IT consulting, cloud, microservices, managed support
-- [App Development](https://www.gaviteservice.com/app-development): iOS, Android, React Native, Flutter
+- [App Development](https://www.gaviteservice.com/services/web-development): iOS, Android, React Native, Flutter
 - [Pricing](https://www.gaviteservice.com/pricing): Transparent plans for GST billing, VA, ERP, and dev teams
 
 ## Ideal clients
@@ -58,5 +58,5 @@ Founded by Pavan Gavit (B.E. Information Technology, Parul University, Vadodara)
 
 - Website: https://www.gaviteservice.com
 - Phone: +91 81413 81255
-- Email: info@gaviteservices.com
+- Email: info@gaviteservice.com
 - WhatsApp: https://wa.me/918141381255

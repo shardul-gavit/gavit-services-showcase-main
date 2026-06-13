@@ -33,7 +33,7 @@ const SPREADSHEET_ID = '1jSdMTR0zBnEHHRccryZc15CmL55F5r7b5J1P2cr7Ggg';
 const SHEET_NAME = 'Contact_Enquiries';
 
 // Email configuration - Change this to your email address
-const RECIPIENT_EMAIL = 'gaviteservice26@gmail.com';
+const RECIPIENT_EMAIL = 'info@gaviteservice.com';
 
 /**
  * Handle POST request from contact form

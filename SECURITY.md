@@ -142,7 +142,7 @@ The CSP is configured to:
 
 If you discover a security vulnerability, please:
 1. Do not create a public issue
-2. Contact: info@gaviteservices.com
+2. Contact: info@gaviteservice.com
 3. Provide detailed information about the vulnerability
 4. Allow time for the issue to be addressed before disclosure
 

@@ -29,7 +29,7 @@ Make sure your deployed script includes the email sending code:
      body: emailBody
    });
    ```
-3. Verify `RECIPIENT_EMAIL` is set to: `gaviteservice26@gmail.com`
+3. Verify `RECIPIENT_EMAIL` is set to: `info@gaviteservice.com`
 
 ## Step 3: Check Execution Logs
 
@@ -48,7 +48,7 @@ Create a test function to verify email sending works:
    ```javascript
    function testEmail() {
      MailApp.sendEmail({
-       to: 'gaviteservice26@gmail.com',
+       to: 'info@gaviteservice.com',
        subject: 'Test Email from Script',
        body: 'This is a test email to verify email sending works.'
      });
@@ -64,7 +64,7 @@ Create a test function to verify email sending works:
 
 Sometimes emails from automated scripts go to spam:
 
-1. Check your spam/junk folder for emails from `gaviteservice26@gmail.com`
+1. Check your spam/junk folder for emails from `info@gaviteservice.com`
 2. If found, mark them as "Not Spam"
 3. Add the sender to your contacts/whitelist
 
@@ -72,7 +72,7 @@ Sometimes emails from automated scripts go to spam:
 
 Double-check the recipient email address:
 
-1. Make sure `RECIPIENT_EMAIL` in the script is exactly: `gaviteservice26@gmail.com`
+1. Make sure `RECIPIENT_EMAIL` in the script is exactly: `info@gaviteservice.com`
 2. Verify this email address is correct and accessible
 3. Try sending a test email to this address manually to confirm it works
 

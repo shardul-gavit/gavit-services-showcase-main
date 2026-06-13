@@ -13,7 +13,7 @@ import { trackGenerateLead, trackPhoneClick } from "@/utils/analytics";
 const API_ENDPOINT = "/api/contact";
 
 const openEmail = () => {
-  window.location.href = 'mailto:gaviteservice26@gmail.com';
+  window.location.href = 'mailto:info@gaviteservice.com';
 };
 
 const openPhone = () => {
@@ -109,7 +109,7 @@ const Contact = () => {
           `Service Interest: ${formData.service}\n\n` +
           `Message:\n${formData.message}`
         );
-        window.location.href = `mailto:gaviteservice26@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:info@gaviteservice.com?subject=${subject}&body=${body}`;
       } catch (mailtoError) {
         console.error('Failed to open mailto link:', mailtoError);
       }
@@ -186,7 +186,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-white">Email Address</h4>
-                    <p className="text-white/80">gaviteservice26@gmail.com</p>
+                    <p className="text-white/80">info@gaviteservice.com</p>
                   </div>
                 </button>
                 
