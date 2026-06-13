@@ -20,6 +20,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Critical above-fold CSS — full bundle loads asynchronously via Vite build transform -->
+    <style>
+      *,*::before,*::after{box-sizing:border-box}
+      html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+      body{margin:0;font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;background:#fff;color:#0f172a}
+      #root{min-height:100vh;display:flex;flex-direction:column}
+      .geo-speakable-hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding-top:5rem}
+      img,video{max-width:100%;height:auto;display:block}
+    </style>
+    <script>
+      /*! loadCSS rel=preload polyfill. Filament Group, MIT */
+      !function(e){"use strict";var t=function(t,n,o){var i,r=e.document,a=r.createElement("link");if(n)i=n;else{var l=(r.body||r.getElementsByTagName("head")[0]).childNodes;i=l[l.length-1]}var d=r.styleSheets;a.rel="stylesheet",a.href=t,a.media="only x",function e(t){if(r.body)return t();setTimeout(function(){e(t)})}(function(){i.parentNode.insertBefore(a,n?i:i.nextSibling)});var f=function(e){for(var t=a.href,n=d.length;n--;)if(d[n].href===t)return e();setTimeout(function(){f(e)})};return a.addEventListener&&a.addEventListener("load",function(){this.media=o||"all"}),a.onloadcssdefined=f,f(function(){a.media=o||"all"}),a};"undefined"!=typeof exports?exports.loadCSS=t:e.loadCSS=t}("undefined"!=typeof global?global:this);
+    </script>
     <title>VA Services, ERP & Software Development India | Gavit E-Services — 100+ Clients Served</title>
     <meta name="description" content="Gavit E-Services — Trusted by 100+ clients across USA, UK, Canada, NZ & Australia. India-based VA, ERP, Custom Software, AI & GST Billing. HQ Vadodara, Gujarat. Affordable. Fast. Reliable." />
     <meta name="keywords" content="virtual assistant services India, ERP development company India, custom software development Vadodara, AI software development India, GST billing software India, IT outsourcing India, remote staffing India, web app development India, hire developers India, offshore software development India, LLM integration services India, digital transformation company India, software development company Gujarat, IT consultancy Vadodara, affordable ERP small business India" />
@@ -42,16 +55,9 @@
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
     <link
       rel="preload"
-      as="image"
-      href="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
-      fetchpriority="high"
-    />
-    <!-- Preload critical fonts (Inter + system fallback) -->
-    <link
-      rel="preload"
-      as="style"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      onload="this.rel='stylesheet'"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
     <noscript>
       <link
@@ -59,6 +65,12 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       />
     </noscript>
+    <link
+      rel="preload"
+      as="image"
+      href="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
+      fetchpriority="high"
+    />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta property="og:locale" content="en_IN" />
