@@ -21,6 +21,7 @@ import {
   Twitter,
   Youtube,
   Clock,
+  MapPin,
   MessageCircle,
   ChevronDown,
 } from "lucide-react";
@@ -28,6 +29,7 @@ import gavitLogo from "@/assets/gavit-logo.png";
 import WhatsAppChatbot from "@/components/WhatsAppChatbot";
 import { DpdpNoticeBanner } from "@/components/DpdpNoticeBanner";
 import { GeoKnowledgeLayer } from "@/components/GeoKnowledgeLayer";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 import { trackPhoneClick, trackWhatsAppClick } from "@/utils/analytics";
 
 const navLinks = [
@@ -140,7 +142,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 <MessageCircle className="w-4 h-4" />
               </a>
               <Button onClick={handleContactNav} className="hidden md:inline-flex bg-gradient-to-r from-blue-600 to-purple-600">
-                Get Started
+                {PRIMARY_CTA_LABEL}
               </Button>
               <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
                 <SheetTrigger asChild>
@@ -184,7 +186,7 @@ export const Layout = ({ children }: LayoutProps) => {
                         Share timelines, tech stack, and hiring needs to receive a roadmap within 24 hours.
                       </p>
                       <Button onClick={handleContactNav} className="w-full">
-                        Start Project
+                        {PRIMARY_CTA_LABEL}
                       </Button>
                     </div>
                     <div className="space-y-2 text-sm">
@@ -267,7 +269,7 @@ export const Layout = ({ children }: LayoutProps) => {
               </div>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Button className="bg-white text-slate-900 hover:bg-white/90" onClick={handleContactNav}>
-                  Get Started
+                  {PRIMARY_CTA_LABEL}
                 </Button>
               </div>
             </div>
@@ -276,7 +278,7 @@ export const Layout = ({ children }: LayoutProps) => {
                 { label: "Clients", value: "100+" },
                 { label: "Countries", value: "5+" },
                 { label: "Onboarding", value: "48hr" },
-                { label: "Experience", value: "5+ Years" },
+                { label: "Experience", value: "4+ Years" },
               ].map((stat) => (
                 <div key={stat.label} className="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
                   <p className="text-3xl font-bold">{stat.value}</p>
@@ -298,7 +300,24 @@ export const Layout = ({ children }: LayoutProps) => {
               <p className="text-sm text-white/70">
                 Gavit E-Services is a full-stack VA, ERP, AI & software company headquartered in Vadodara, Gujarat, India — serving businesses in USA, UK, Canada, New Zealand, Australia & worldwide.
               </p>
-              <p className="text-sm text-white/60">Vadodara, Gujarat, India</p>
+              <div className="rounded-2xl bg-white/5 border border-white/10 p-4 space-y-3 text-sm">
+                <p className="font-semibold text-white flex items-center gap-2">
+                  <MapPin className="w-4 h-4 text-blue-300 shrink-0" />
+                  Contact &amp; location
+                </p>
+                <p className="text-white/80">
+                  Gavit E-Services Private Limited<br />
+                  Vadodara, Gujarat 390007, India
+                </p>
+                <a className="flex items-center gap-2 text-white/80 hover:text-white transition-colors" href="tel:+918141381255" onClick={() => trackPhoneClick()}>
+                  <Phone className="w-4 h-4 shrink-0" />
+                  +91 81413 81255
+                </a>
+                <a className="flex items-center gap-2 text-white/80 hover:text-white transition-colors" href="mailto:info@gaviteservice.com">
+                  <Mail className="w-4 h-4 shrink-0" />
+                  info@gaviteservice.com
+                </a>
+              </div>
               <div className="flex flex-wrap gap-2 text-xs text-white/60">
                 {["#GavitEServices", "#ITServices", "#ITSolutions", "#ITConsulting", "#StaffingSolutions", "#RemoteStaffing", "#Vadodara", "#Gujarat", "#IndiaBusiness"].map(
                   (tag) => (

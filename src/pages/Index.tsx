@@ -11,21 +11,46 @@ import Team from "@/components/Team";
 import Contact from "@/components/Contact";
 import { Link } from "react-router-dom";
 import { DEFAULT_SITE_DESCRIPTION, DEFAULT_SITE_TITLE, GLOBAL_KEYWORDS } from "@/constants/seo";
-import { ArrowRight, Globe, Target, Users, Shield, Building, Briefcase, GraduationCap, BookOpen, Video } from "lucide-react";
-import { scrollToElementId } from "@/lib/scroll";
+import {
+  ArrowRight,
+  Globe,
+  Target,
+  Users,
+  Shield,
+  Building,
+  Briefcase,
+  GraduationCap,
+  BookOpen,
+  Video,
+  Sparkles,
+  Compass,
+  Layers,
+  Rocket,
+  HelpCircle,
+  Factory,
+  ShoppingBag,
+  HeartPulse,
+  Scale,
+  Home,
+  ShoppingCart,
+} from "lucide-react";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 const summaryPoints = [
   {
     title: "IT services company in Vadodara",
     detail: "Trusted by SMEs and enterprises for IT solutions and consulting, website and app development, and digital transformation services across Gujarat.",
+    icon: Building,
   },
   {
     title: "IT staffing services for SMEs in Vadodara",
     detail: "Dedicated developers for hire, recruitment and staffing solutions, HR outsourcing & HR solutions, and business process outsourcing for tech startups.",
+    icon: Users,
   },
   {
     title: "Remote staffing services in India",
     detail: "How to hire remote IT talent with remote staffing vs in-house hiring guidance, talent acquisition support, and remote developer hiring pods.",
+    icon: Globe,
   },
 ];
 
@@ -33,14 +58,17 @@ const featureHighlights = [
   {
     title: "Cost-effective IT outsourcing in India",
     description: "Microservices architecture, cloud-based IT solutions, and enterprise-grade applications that reduce project cost while improving velocity.",
+    icon: Target,
   },
   {
     title: "Best IT staffing services for startups",
     description: "Technical recruitment pipeline, talent acquisition support, and IT staffing vs recruitment agencies benchmarks for scaling teams.",
+    icon: Briefcase,
   },
   {
     title: "End-to-end IT solutions for small businesses",
     description: "Digital business solutions, UI/UX design services, IT support and maintenance, and app modernization for SMEs in Vadodara and Gujarat.",
+    icon: Shield,
   },
 ];
 
@@ -66,19 +94,32 @@ const processSteps = [
   {
     title: "Discovery & Strategy",
     detail: "Book free IT consultation to analyse business process outsourcing goals and define KPIs for digital transformation services.",
+    icon: Compass,
   },
   {
     title: "Solution Blueprint",
     detail: "Architect microservices, frontend development, and backend development workflows with cloud governance and data privacy controls.",
+    icon: Layers,
   },
   {
     title: "Build & Staffing",
     detail: "Hire remote team today, deploy full-stack development services, and activate IT staffing services or remote staffing pods.",
+    icon: Users,
   },
   {
     title: "Launch & Optimization",
     detail: "IT support and maintenance with measurable impact on app development for SMEs in Vadodara, Gujarat, and India.",
+    icon: Rocket,
   },
+];
+
+const industryItems = [
+  { name: "Manufacturing", icon: Factory },
+  { name: "Retail", icon: ShoppingBag },
+  { name: "Healthcare", icon: HeartPulse },
+  { name: "Legal", icon: Scale },
+  { name: "Real Estate", icon: Home },
+  { name: "E-Commerce", icon: ShoppingCart },
 ];
 
 const comparisonData = [
@@ -205,24 +246,6 @@ const Index = () => {
       </Seo>
       <Hero />
 
-      <section className="py-12 bg-slate-950 text-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { label: "Clients", value: "100+" },
-              { label: "Countries", value: "5+" },
-              { label: "Onboarding", value: "48hr" },
-              { label: "Experience", value: "5+ Years" },
-            ].map((stat) => (
-              <div key={stat.label} className="rounded-2xl bg-white/5 p-4 text-center border border-white/10">
-                <p className="text-3xl font-bold">{stat.value}</p>
-                <p className="text-xs text-white/70 uppercase tracking-[0.3em]">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 bg-muted/30" id="summary">
         <div className="container mx-auto px-4 space-y-10">
           <div className="text-center space-y-4">
@@ -236,6 +259,9 @@ const Index = () => {
             {summaryPoints.map((item) => (
               <Card key={item.title} className="h-full">
                 <CardHeader>
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mb-2">
+                    <item.icon className="w-5 h-5 text-blue-600" />
+                  </div>
                   <CardTitle>{item.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -256,6 +282,9 @@ const Index = () => {
           {featureHighlights.map((feature) => (
             <Card key={feature.title}>
               <CardHeader>
+                <div className="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center mb-2">
+                  <feature.icon className="w-5 h-5 text-purple-600" />
+                </div>
                 <CardTitle>{feature.title}</CardTitle>
                 <CardDescription>{feature.description}</CardDescription>
               </CardHeader>
@@ -272,9 +301,14 @@ const Index = () => {
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {aiPhrases.map((item) => (
-              <Card key={item.phrase}>
+              <Card key={item.phrase} className="border-t-4 border-t-blue-500/80">
                 <CardHeader>
-                  <Badge variant="secondary">{item.phrase}</Badge>
+                  <div className="flex items-start gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+                      <Sparkles className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <Badge variant="secondary" className="text-left whitespace-normal">{item.phrase}</Badge>
+                  </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-slate-600">{item.answer}</p>
@@ -308,11 +342,17 @@ const Index = () => {
         </div>
         <div className="grid gap-6 md:grid-cols-4">
           {processSteps.map((step, index) => (
-            <Card key={step.title}>
+            <Card key={step.title} className="relative overflow-hidden">
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
               <CardHeader>
-                <Badge variant="secondary" className="w-fit">
-                  Step {index + 1}
-                </Badge>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <step.icon className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <Badge variant="secondary" className="w-fit">
+                    Step {index + 1}
+                  </Badge>
+                </div>
                 <CardTitle>{step.title}</CardTitle>
                 <CardDescription>{step.detail}</CardDescription>
               </CardHeader>
@@ -393,10 +433,13 @@ const Index = () => {
           <h2 className="text-3xl font-bold">Solutions for every sector</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-6">
-          {["Manufacturing", "Retail", "Healthcare", "Legal", "Real Estate", "E-Commerce"].map((industry) => (
-            <Card key={industry} className="text-center">
+          {industryItems.map((industry) => (
+            <Card key={industry.name} className="text-center hover:shadow-md transition-shadow">
               <CardHeader>
-                <CardTitle className="text-lg">{industry}</CardTitle>
+                <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                  <industry.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <CardTitle className="text-lg">{industry.name}</CardTitle>
               </CardHeader>
             </Card>
           ))}
@@ -493,8 +536,13 @@ const Index = () => {
           {faqs.map((faq) => (
             <Card key={faq.question}>
               <CardHeader>
-                <CardTitle className="text-lg">{faq.question}</CardTitle>
-                <CardDescription>{faq.answer}</CardDescription>
+                <div className="flex items-start gap-3">
+                  <HelpCircle className="w-5 h-5 text-blue-600 shrink-0 mt-1" />
+                  <div className="space-y-2">
+                    <CardTitle className="text-lg">{faq.question}</CardTitle>
+                    <CardDescription>{faq.answer}</CardDescription>
+                  </div>
+                </div>
               </CardHeader>
             </Card>
           ))}
@@ -512,13 +560,7 @@ const Index = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button className="bg-slate-900 text-white px-6 py-3" onClick={() => scrollToElementId("contact")}>
-              Book Free IT Consultation <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button variant="outline" className="px-6 py-3" onClick={() => scrollToElementId("contact")}>
-              Get Staffing Quote
-            </Button>
-            <Button variant="outline" className="px-6 py-3" onClick={() => scrollToElementId("contact")}>
-              Schedule Recruitment Call
+              {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
         </div>
@@ -572,7 +614,7 @@ const Index = () => {
               <CardContent>
                 <Button asChild variant="outline">
                   <Link to="/contact">
-                    Hire Your VA or Dev Team <ArrowRight className="ml-2 w-4 h-4" />
+                    {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
                   </Link>
                 </Button>
               </CardContent>

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 import { trackPhoneClick } from "@/utils/analytics";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 const touchpoints = [
   { icon: MapPin, label: "Office", detail: "Vadodara, Gujarat, India" },
@@ -66,10 +67,12 @@ const ContactPage = () => (
       </p>
       <div className="flex flex-wrap justify-center gap-4">
         <Button className="px-6 py-3" onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}>
-          Book Free IT Consultation <ArrowRight className="ml-2 w-4 h-4" />
+          {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
-        <Button variant="outline" className="px-6 py-3" onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}>
-          Get Staffing Quote
+        <Button variant="outline" className="px-6 py-3" asChild>
+          <a href="tel:+918141381255" onClick={() => trackPhoneClick()}>
+            Call +91 81413 81255
+          </a>
         </Button>
       </div>
     </section>

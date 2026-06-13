@@ -2,6 +2,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, LucideIcon } from "lucide-react";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 type Highlight = { title: string; detail: string };
 type Capability = { icon: LucideIcon; title: string; detail: string };
@@ -43,8 +44,8 @@ export const ServicePageLayout = ({
   faqs,
   ctaTitle,
   ctaDescription,
-  primaryCta = "Get Started",
-  secondaryCta = "Book Consultation",
+  primaryCta = PRIMARY_CTA_LABEL,
+  secondaryCta = "View Services",
   primaryCtaLink = "/contact",
 }: ServicePageLayoutProps) => (
   <>

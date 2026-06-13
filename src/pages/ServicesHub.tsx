@@ -20,6 +20,7 @@ import {
   PenTool,
   TrendingUp,
 } from "lucide-react";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 const services = [
   {
@@ -206,7 +207,7 @@ const ServicesHub = () => {
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               >
-                Book Free Consultation <ArrowRight className="ml-2 w-4 h-4" />
+                {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
             </Link>
             <a href="tel:+918141381255" onClick={() => trackPhoneClick()}>
@@ -363,7 +364,7 @@ const ServicesHub = () => {
                 size="lg"
                 className="bg-white text-slate-900 hover:bg-white/90"
               >
-                Book Free Consultation
+                {PRIMARY_CTA_LABEL}
               </Button>
             </Link>
             <a href="tel:+918141381255" onClick={() => trackPhoneClick()}>

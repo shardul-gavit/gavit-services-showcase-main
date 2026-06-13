@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Server, Cpu, Cloud, Workflow, Layers } from "lucide-react";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 const features = [
   {
@@ -208,10 +209,10 @@ const ItServices = ({ seo = DEFAULT_SEO }: ItServicesProps) => (
       </p>
       <div className="flex flex-wrap justify-center gap-4">
         <Button className="px-6 py-3" onClick={() => window.location.assign("/contact")}>
-          Start Project <ArrowRight className="ml-2 w-4 h-4" />
+          {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
-        <Button variant="outline" className="px-6 py-3" onClick={() => window.location.assign("/contact")}>
-          Get Staffing Quote
+        <Button variant="outline" className="px-6 py-3" onClick={() => window.location.assign("/services")}>
+          View All Services
         </Button>
       </div>
     </section>

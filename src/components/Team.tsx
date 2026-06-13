@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Linkedin } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { Mail, Linkedin, ExternalLink } from 'lucide-react';
 import { OptimizedImage } from "@/components/OptimizedImage";
 import shardulPhoto from "@/assets/shardul-gavit.jpeg";
 import pavanPhoto from "@/assets/pavan-gavit.jpeg";
@@ -18,7 +19,7 @@ const TEAM = [
       skills: ["Business Strategy", "Digital Transformation", "Leadership", "Innovation"],
       image: shardulPhoto,
       email: "info@gaviteservice.com",
-      linkedin: "https://www.linkedin.com/in/shardul-gavit-3b63091b8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+      linkedin: "https://www.linkedin.com/in/shardul-gavit-3b63091b8/"
     },
     {
       name: "Pavan Gavit",
@@ -27,14 +28,13 @@ const TEAM = [
       skills: ["Product Development", "Technology Strategy", "Team Building", "Innovation"],
       image: pavanPhoto,
       email: "info@gaviteservice.com",
-      linkedin: "https://www.linkedin.com/in/pavan-gavit-1a8b94226?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+      linkedin: "https://www.linkedin.com/in/pavan-gavit-1a8b94226/"
     }
 ] as const;
 
 const Team = () => {
   return (
     <section id="team" className="py-20 relative">
-      {/* Background Image */}
       <div className="absolute inset-0">
         <OptimizedImage
           src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80" 
@@ -49,56 +49,62 @@ const Team = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Leadership Team</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Meet the passionate professionals driving Gavit E-Services forward
+            Meet the founders driving Gavit E-Services — direct access, no account-manager layers
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {TEAM.map((member) => (
-            <Card key={member.name} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group overflow-hidden">
+            <Card key={member.name} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-blue-100/80">
               <div className="relative">
-                <div className="w-full h-96 md:h-[450px] overflow-hidden bg-muted">
+                <div className="w-full h-[420px] md:h-[480px] overflow-hidden bg-muted">
                   <img 
                     src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    alt={`${member.name}, ${member.role} at Gavit E-Services`}
+                    className="w-full h-full object-cover object-top"
                     loading="lazy"
                   />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <p className="text-sm text-white/70 uppercase tracking-[0.2em] mb-1">{member.role}</p>
+                  <h3 className="text-2xl md:text-3xl font-bold">{member.name}</h3>
+                </div>
               </div>
               
-              <CardContent className="pt-6">
-                <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                <p className="text-blue-600 font-medium text-sm mb-3">{member.role}</p>
-                <p className="text-muted-foreground text-sm mb-4">{member.description}</p>
+              <CardContent className="pt-6 space-y-4">
+                <p className="text-muted-foreground text-sm leading-relaxed">{member.description}</p>
                 
-                <div className="flex flex-wrap gap-1 justify-center mb-4">
-                  {member.skills.slice(0, 2).map((skill) => (
+                <div className="flex flex-wrap gap-2">
+                  {member.skills.map((skill) => (
                     <Badge key={skill} variant="secondary" className="text-xs">
                       {skill}
                     </Badge>
                   ))}
                 </div>
                 
-                <div className="flex justify-center space-x-3">
-                  <button 
+                <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                  <Button
                     type="button"
-                    className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center hover:bg-blue-200 transition-colors"
+                    variant="outline"
+                    size="sm"
+                    className="gap-2"
                     onClick={() => openMemberEmail(member.email)}
-                    aria-label={`Email ${member.name}`}
                   >
-                    <Mail className="w-4 h-4 text-blue-600" />
-                  </button>
-                  <a
-                    href={member.linkedin}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center hover:bg-slate-200 transition-colors"
-                    aria-label={`Connect with ${member.name} on LinkedIn`}
+                    <Mail className="w-4 h-4" />
+                    Email
+                  </Button>
+                  <Button
+                    size="sm"
+                    className="gap-2 bg-[#0A66C2] hover:bg-[#0A66C2]/90"
+                    asChild
                   >
-                    <Linkedin className="w-4 h-4 text-slate-700" />
-                  </a>
+                    <a href={member.linkedin} target="_blank" rel="noreferrer">
+                      <Linkedin className="w-4 h-4" />
+                      LinkedIn Profile
+                      <ExternalLink className="w-3 h-3 opacity-70" />
+                    </a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>

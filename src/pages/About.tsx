@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import shardulPhoto from "@/assets/shardul-gavit.jpeg";
 import pavanPhoto from "@/assets/pavan-gavit.jpeg";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 const clientSolutions = [
   {
@@ -513,7 +514,7 @@ const About = () => (
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button className="bg-white text-slate-900 hover:bg-white/90" onClick={() => window.location.assign("/contact")}>
-            Book Free Consultation <ArrowRight className="ml-2 w-4 h-4" />
+            {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button variant="outline" className="border-white/40 text-white hover:bg-white/10" asChild>
             <Link to="/blog">Read Our Insights</Link>

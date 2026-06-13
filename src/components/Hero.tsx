@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Globe, Code, Users } from 'lucide-react';
 import { OptimizedImage } from "@/components/OptimizedImage";
 import { scrollToElementId } from "@/lib/scroll";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
+import HeroStats from "@/components/HeroStats";
+import TrustedBy from "@/components/TrustedBy";
 
 const HERO_FEATURES = [
   {
@@ -46,8 +49,8 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
-          <div className="mb-8 animate-fade-in">
-            <span className="inline-block px-4 py-2 bg-blue-100/90 text-blue-700 rounded-full text-sm font-medium mb-6">
+          <div className="mb-6 animate-fade-in">
+            <span className="inline-block px-4 py-2 bg-blue-100/90 text-blue-700 rounded-full text-sm font-medium">
               🚀 Founded in 2022 • Vadodara, Gujarat, India
             </span>
           </div>
@@ -56,12 +59,13 @@ const Hero = () => {
             Need an Indian IT partner to build your product fast — without US agency prices?
           </h1>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-4 max-w-3xl mx-auto animate-fade-in">
+          <p className="text-xl md:text-2xl text-white/90 mb-6 max-w-3xl mx-auto animate-fade-in">
             <strong className="text-white">Gavit E-Services</strong> gives you dedicated developers, web apps, ERP, and AI teams from India — onboarded in 10–15 days, with direct founder involvement and transparent pricing.
           </p>
-          <p className="text-base md:text-lg text-white/75 mb-8 max-w-2xl mx-auto animate-fade-in">
-            Trusted by 100+ clients in the USA, UK, Canada, Australia & India. No big-agency overhead — just skilled teams that ship.
-          </p>
+
+          <HeroStats />
+
+          <TrustedBy variant="dark" className="mb-8 animate-fade-in" />
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in">
             <Button 
@@ -69,7 +73,7 @@ const Hero = () => {
               className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
               onClick={() => scrollToElementId('contact')}
             >
-              Get Started <ArrowRight className="ml-2 w-4 h-4" />
+              {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button 
               size="lg" 
@@ -77,11 +81,11 @@ const Hero = () => {
               className="bg-white/10 border-white/20 text-white hover:bg-white/20"
               onClick={() => scrollToElementId('services')}
             >
-              See How We Help
+              View Services
             </Button>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             {HERO_FEATURES.map((feature) => (
               <div key={feature.title} className="bg-white/10 backdrop-blur-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow border border-white/20">
                 <div className="relative h-32">

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { locations } from "@/data/locations";
+import { PRIMARY_CTA_LABEL } from "@/constants/cta";
 
 const LocationPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -90,7 +91,7 @@ const LocationPage = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <Button className="px-6 py-3" onClick={() => window.location.assign("/contact")}>
-            Hire Your VA or Dev Team <ArrowRight className="ml-2 w-4 h-4" />
+            {PRIMARY_CTA_LABEL} <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button variant="outline" className="px-6 py-3" onClick={() => window.location.assign("/services")}>
             View All Services

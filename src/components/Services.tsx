@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Code, Smartphone, Users, Layers, Brain, Briefcase, Receipt, CreditCard } from 'lucide-react';
+import { Code, Smartphone, Users, Layers, Brain, Briefcase, Receipt, CreditCard, HelpCircle } from 'lucide-react';
 import { OptimizedImage } from "@/components/OptimizedImage";
+
+const GEO_ICONS = [HelpCircle, Users, Layers, Brain, Briefcase] as const;
 
 const GEO_ANSWERS = [
   {
@@ -131,11 +133,21 @@ const Services = () => {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16 max-w-6xl mx-auto">
-          {GEO_ANSWERS.map((item) => (
-            <Card key={item.question} className="h-full border-blue-100/80 bg-background/80">
+          {GEO_ANSWERS.map((item, index) => {
+            const Icon = GEO_ICONS[index] ?? HelpCircle;
+            return (
+            <Card key={item.question} className="h-full border-blue-100/80 bg-background/80 overflow-hidden">
+              <div className="h-1.5 bg-gradient-to-r from-blue-600 to-purple-600" />
               <CardHeader>
-                <p className="text-xs font-medium uppercase tracking-wide text-blue-600 mb-2">You asked</p>
-                <CardTitle className="text-base leading-snug">{item.question}</CardTitle>
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center shrink-0">
+                    <Icon className="w-5 h-5 text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-medium uppercase tracking-wide text-blue-600 mb-1">You asked</p>
+                    <CardTitle className="text-base leading-snug">{item.question}</CardTitle>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent className="space-y-3">
                 <CardDescription className="text-sm leading-relaxed text-foreground/80">
@@ -146,9 +158,15 @@ const Services = () => {
                 </Link>
               </CardContent>
             </Card>
-          ))}
+          );
+          })}
         </div>
 
+        <div className="flex items-center gap-4 mb-10 max-w-6xl mx-auto">
+          <div className="h-px flex-1 bg-border" />
+          <span className="text-xs uppercase tracking-[0.3em] text-muted-foreground shrink-0">Our services</span>
+          <div className="h-px flex-1 bg-border" />
+        </div>
         <div className="text-center mb-10">
           <h3 className="text-2xl font-bold mb-2">All services from Gavit E-Services</h3>
           <p className="text-muted-foreground max-w-2xl mx-auto">
