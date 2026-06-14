@@ -1,3 +1,5 @@
+export const SITE_URL = "https://gaviteservice.com";
+
 export const DEFAULT_SITE_TITLE =
   "VA Services, ERP & Software Development India | Gavit E-Services";
 
@@ -81,10 +83,10 @@ export const ORGANIZATION_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Gavit E-Services",
-  url: "https://www.gaviteservice.com",
+  url: SITE_URL,
   logo: {
     "@type": "ImageObject",
-    url: "https://www.gaviteservice.com/logo.png",
+    url: `${SITE_URL}/logo.png`,
   },
   description:
     "India-based VA, ERP, Custom Software, AI & GST Billing company serving USA, UK, Canada, New Zealand, Australia and worldwide.",

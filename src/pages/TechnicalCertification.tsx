@@ -16,7 +16,7 @@ const TechnicalCertification = () => {
     <Seo
       title="Technical Certification Programs | Gavit E-Services"
       description="Explore our technical certification programs including Full Stack Web Development, Frontend Developer Program, Backend Developer Program, and Digital Marketing Certification."
-      canonical="https://www.gaviteservice.com/technical-certification"
+      canonical="https://gaviteservice.com/technical-certification"
       keywords={["technical certification", "web development training", "full stack development", "frontend developer", "backend developer", "digital marketing certification"]}
     />
 

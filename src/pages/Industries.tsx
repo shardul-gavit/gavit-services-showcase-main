@@ -18,7 +18,7 @@ const Industries = () => (
     <Seo
       title="Industries We Serve | VA, ERP & Software — Gavit E-Services"
       description="Custom software, ERP, VA, and billing solutions for manufacturing, retail, healthcare, legal, real estate, and e-commerce."
-      canonical="https://www.gaviteservice.com/industries"
+      canonical="https://gaviteservice.com/industries"
       keywords={["ERP manufacturing India", "billing software retail", "custom software healthcare"]}
     />
     <section className="py-16 bg-muted/30 text-center space-y-4">

@@ -11,7 +11,7 @@ const WhyJoinUs = () => (
     <Seo
       title="Why Join Us | Gavit E-Services"
       description="Discover why Gavit E-Services is the perfect place to grow your career. Work with cutting-edge technologies and be part of a dynamic team."
-      canonical="https://www.gaviteservice.com/why-join-us"
+      canonical="https://gaviteservice.com/why-join-us"
       keywords={["career", "why join us", "company culture", "Gavit E-Services", "IT jobs"]}
     />
 

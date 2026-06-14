@@ -9,7 +9,7 @@ const ErpDevelopment = () => (
     <Seo
       title="ERP Development Company in India | Custom ERP Solutions — Gavit E-Services"
       description="Affordable, scalable ERP systems built for manufacturing, retail, healthcare & more. Custom ERP development from Vadodara, India."
-      canonical="https://www.gaviteservice.com/erp-development"
+      canonical="https://gaviteservice.com/erp-development"
       keywords={[...GLOBAL_KEYWORDS.slice(0, 12), "ERP development company India"]}
     />
     <ServicePageLayout

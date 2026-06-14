@@ -44,7 +44,7 @@ const WebDevelopment = () => (
     <Seo
       title="Web Development Services in Vadodara | Gavit E-Services"
       description="Website and app development, UI/UX design services, frontend development, backend development, and SEO-ready builds for Gujarat businesses."
-      canonical="https://www.gaviteservice.com/web-development"
+      canonical="https://gaviteservice.com/web-development"
       keywords={["website and app development", "full-stack development services", "UI/UX design services", "digital business solutions in Gujarat"]}
     />
 

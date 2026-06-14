@@ -16,7 +16,7 @@ const HrCertification = () => {
     <Seo
       title="HR Certification Programs | Gavit E-Services"
       description="Explore our HR certification programs including Payroll Management, Statutory Compliance, HR Outsourcing, Recruitment, and Performance Appraisal training."
-      canonical="https://www.gaviteservice.com/hr-certification"
+      canonical="https://gaviteservice.com/hr-certification"
       keywords={["HR certification", "payroll management", "statutory compliance", "HR training", "recruitment training", "HR analytics"]}
     />
 

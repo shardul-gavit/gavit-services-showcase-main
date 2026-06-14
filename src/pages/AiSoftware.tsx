@@ -9,7 +9,7 @@ const AiSoftware = () => (
     <Seo
       title="AI Software Development Company India | Gavit E-Services"
       description="Custom AI software, LLM integrations, and intelligent automation built for your business. 92% of companies now want AI in outsourcing contracts."
-      canonical="https://www.gaviteservice.com/ai-software"
+      canonical="https://gaviteservice.com/ai-software"
       keywords={[...GLOBAL_KEYWORDS.slice(18, 24), "AI development company India"]}
     />
     <ServicePageLayout

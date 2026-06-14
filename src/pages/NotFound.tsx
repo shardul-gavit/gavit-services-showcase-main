@@ -20,7 +20,7 @@ const NotFound = () => {
       <Seo
         title="404 - Page Not Found | Gavit E-Services"
         description="The page you're looking for doesn't exist."
-        canonical="https://www.gaviteservice.com/404"
+        canonical="https://gaviteservice.com/404"
         robots="noindex, nofollow"
       />
       <div className="min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-blue-50 to-orange-50 dark:from-blue-950 dark:to-orange-950 py-16">

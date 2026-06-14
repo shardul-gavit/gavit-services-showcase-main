@@ -19,7 +19,7 @@ export const locations: Record<string, LocationData> = {
     title: "VA & Software Development Services for USA Businesses | Gavit E-Services",
     description:
       "Save 40–60% vs US developer rates. India-based VA, custom software, ERP & AI teams with timezone overlap for US businesses.",
-    canonical: "https://www.gaviteservice.com/locations/usa",
+    canonical: "https://gaviteservice.com/locations/usa",
     keywords: ["virtual assistant USA", "offshore software development India USA", "hire developers India"],
     badge: "United States",
     h1: "Affordable VA & Tech Services for US Businesses",
@@ -38,7 +38,7 @@ export const locations: Record<string, LocationData> = {
     title: "VA & Software Development Services for UK Businesses | Gavit E-Services",
     description:
       "GDPR-aware development team from Vadodara, India. VA, ERP, and custom software for UK companies.",
-    canonical: "https://www.gaviteservice.com/locations/uk",
+    canonical: "https://gaviteservice.com/locations/uk",
     keywords: ["IT outsourcing UK India", "virtual assistant UK", "software development UK India"],
     badge: "United Kingdom",
     h1: "India-Based Tech & VA Partner for UK Companies",
@@ -57,7 +57,7 @@ export const locations: Record<string, LocationData> = {
     title: "VA & Software Development for Canadian Businesses | Gavit E-Services",
     description:
       "Toronto and Vancouver startups offshore to India for affordable custom software, VA, and ERP teams.",
-    canonical: "https://www.gaviteservice.com/locations/canada",
+    canonical: "https://gaviteservice.com/locations/canada",
     keywords: ["IT outsourcing Canada India", "virtual assistant Canada", "custom software Canada"],
     badge: "Canada",
     h1: "Outsource VA & Dev Work to India — Trusted by Canadian SMBs",
@@ -75,7 +75,7 @@ export const locations: Record<string, LocationData> = {
     title: "Virtual Assistant & Software Development New Zealand | Gavit E-Services",
     description:
       "NZ businesses get India-based VA and software teams at a fraction of US/AU agency rates.",
-    canonical: "https://www.gaviteservice.com/locations/new-zealand",
+    canonical: "https://gaviteservice.com/locations/new-zealand",
     keywords: ["virtual assistant New Zealand", "software development NZ India", "outsource IT NZ"],
     badge: "New Zealand",
     h1: "NZ Businesses: Your India-Based Tech & VA Team Awaits",
@@ -93,7 +93,7 @@ export const locations: Record<string, LocationData> = {
     title: "VA & Software Development for Australian Businesses | Gavit E-Services",
     description:
       "Australian businesses trust India-based VA, ERP, and software teams with async workflows.",
-    canonical: "https://www.gaviteservice.com/locations/australia",
+    canonical: "https://gaviteservice.com/locations/australia",
     keywords: ["virtual assistant Australia", "IT outsourcing Australia India", "ERP Australia"],
     badge: "Australia",
     h1: "Australian Businesses Love Our India-Based Teams",
@@ -111,7 +111,7 @@ export const locations: Record<string, LocationData> = {
     title: "Software Development & IT Company in Vadodara | Gavit E-Services",
     description:
       "Vadodara's complete IT, VA, ERP, AI & GST billing company. Local HQ with global delivery.",
-    canonical: "https://www.gaviteservice.com/locations/vadodara",
+    canonical: "https://gaviteservice.com/locations/vadodara",
     keywords: [
       "software development company Vadodara",
       "IT company Vadodara",

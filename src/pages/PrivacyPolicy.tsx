@@ -7,7 +7,7 @@ const sections = [
   {
     title: "1. Data Fiduciary",
     content:
-      "Gavit E-Services Private Limited (“Gavit E-Services”, “we”, “us”) is the Data Fiduciary for personal data collected through www.gaviteservice.com and related services. Registered office: Vadodara, Gujarat, India.",
+      "Gavit E-Services Private Limited (“Gavit E-Services”, “we”, “us”) is the Data Fiduciary for personal data collected through gaviteservice.com and related services. Registered office: Vadodara, Gujarat, India.",
   },
   {
     title: "2. Personal Data We Collect",
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => (
     <Seo
       title="Privacy Policy | DPDP Act Compliance — Gavit E-Services"
       description="Privacy Policy for Gavit E-Services under India's Digital Personal Data Protection Act, 2023. Learn how we collect, use, and protect your personal data."
-      canonical="https://www.gaviteservice.com/privacy-policy"
+      canonical="https://gaviteservice.com/privacy-policy"
       keywords={["DPDP Act privacy policy", "Gavit E-Services data protection", "personal data India"]}
     />
 

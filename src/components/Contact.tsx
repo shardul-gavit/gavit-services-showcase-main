@@ -196,7 +196,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1 text-white">Website</h4>
-                    <p className="text-white/80">www.gaviteservice.com</p>
+                    <p className="text-white/80">gaviteservice.com</p>
                   </div>
                 </div>
               </div>

@@ -10,7 +10,7 @@ const Pricing = () => (
     <Seo
       title="Pricing | VA, ERP, Software & GST Billing — Gavit E-Services"
       description="Transparent pricing for VA services, custom software, ERP, AI development, and GST billing software. Free GST plan available."
-      canonical="https://www.gaviteservice.com/pricing"
+      canonical="https://gaviteservice.com/pricing"
       keywords={["affordable ERP India", "GST billing software pricing", "virtual assistant pricing India"]}
     />
     <section className="py-16 bg-muted/30 text-center space-y-4">

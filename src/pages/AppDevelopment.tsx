@@ -31,7 +31,7 @@ const DEFAULT_SEO: Pick<SeoProps, "title" | "description" | "canonical" | "keywo
   title: "App Development Services | Gavit E-Services",
   description:
     "App development for SMEs in Vadodara, Gujarat with native and cross-platform builds, remote developer hiring, and digital transformation services.",
-  canonical: "https://www.gaviteservice.com/app-development",
+  canonical: "https://gaviteservice.com/app-development",
   keywords: [
     "app development for SMEs in Vadodara",
     "remote developer hiring",

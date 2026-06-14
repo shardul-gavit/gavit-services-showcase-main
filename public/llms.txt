@@ -6,25 +6,25 @@ Founded by Pavan Gavit, Co-founder & CTO (B.E. Information Technology, Parul Uni
 
 ## Core pages
 
-- [Home](https://www.gaviteservice.com/): VA, ERP, software development, and staffing overview
-- [About](https://www.gaviteservice.com/about): Company story, leadership, and trust signals
-- [Services](https://www.gaviteservice.com/services): Full service catalog and consultation CTAs
-- [FAQ](https://www.gaviteservice.com/faq): Answers for web development, staffing, ERP, pricing, and company questions
-- [Contact](https://www.gaviteservice.com/contact): Inquiry form, phone, email, WhatsApp
-- [Blog — Gavite Foresight](https://www.gaviteservice.com/blog): Tech insights, AI foresight, and software trends
+- [Home](https://gaviteservice.com/): VA, ERP, software development, and staffing overview
+- [About](https://gaviteservice.com/about): Company story, leadership, and trust signals
+- [Services](https://gaviteservice.com/services): Full service catalog and consultation CTAs
+- [FAQ](https://gaviteservice.com/faq): Answers for web development, staffing, ERP, pricing, and company questions
+- [Contact](https://gaviteservice.com/contact): Inquiry form, phone, email, WhatsApp
+- [Blog — Gavite Foresight](https://gaviteservice.com/blog): Tech insights, AI foresight, and software trends
 
 ## Services
 
-- [Web Development](https://www.gaviteservice.com/web-development): React, Next.js, Node.js, WordPress, Flutter websites and web apps
-- [Custom Software](https://www.gaviteservice.com/custom-software): Bespoke software for SMBs and enterprises
-- [IT Staffing & Remote Staffing](https://www.gaviteservice.com/services/it-staff-augmentation): Dedicated developers and managed pods, 10–15 day onboarding
-- [ERP Development](https://www.gaviteservice.com/erp-development): Custom ERP for manufacturing, retail, healthcare, and trading
-- [AI Software](https://www.gaviteservice.com/ai-software): LLM integration, AI automation, custom AI products
-- [GST Billing Software](https://www.gaviteservice.com/gst-billing-software): GST-compliant billing for Indian businesses
-- [Virtual Assistant](https://www.gaviteservice.com/virtual-assistant): Admin, research, customer support, and back-office VA teams
-- [IT Services & Consultancy](https://www.gaviteservice.com/it-services): IT consulting, cloud, microservices, managed support
-- [App Development](https://www.gaviteservice.com/services/web-development): iOS, Android, React Native, Flutter
-- [Pricing](https://www.gaviteservice.com/pricing): Transparent plans for GST billing, VA, ERP, and dev teams
+- [Web Development](https://gaviteservice.com/web-development): React, Next.js, Node.js, WordPress, Flutter websites and web apps
+- [Custom Software](https://gaviteservice.com/custom-software): Bespoke software for SMBs and enterprises
+- [IT Staffing & Remote Staffing](https://gaviteservice.com/services/it-staff-augmentation): Dedicated developers and managed pods, 10–15 day onboarding
+- [ERP Development](https://gaviteservice.com/erp-development): Custom ERP for manufacturing, retail, healthcare, and trading
+- [AI Software](https://gaviteservice.com/ai-software): LLM integration, AI automation, custom AI products
+- [GST Billing Software](https://gaviteservice.com/gst-billing-software): GST-compliant billing for Indian businesses
+- [Virtual Assistant](https://gaviteservice.com/virtual-assistant): Admin, research, customer support, and back-office VA teams
+- [IT Services & Consultancy](https://gaviteservice.com/it-services): IT consulting, cloud, microservices, managed support
+- [App Development](https://gaviteservice.com/services/web-development): iOS, Android, React Native, Flutter
+- [Pricing](https://gaviteservice.com/pricing): Transparent plans for GST billing, VA, ERP, and dev teams
 
 ## Ideal clients
 
@@ -56,7 +56,7 @@ Founded by Pavan Gavit, Co-founder & CTO (B.E. Information Technology, Parul Uni
 
 ## Contact
 
-- Website: https://www.gaviteservice.com
+- Website: https://gaviteservice.com
 - Phone: +91 81413 81255
 - Email: info@gaviteservice.com
 - WhatsApp: https://wa.me/918141381255

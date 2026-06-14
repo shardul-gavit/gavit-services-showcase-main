@@ -9,7 +9,7 @@ const CustomBillingSoftware = () => (
     <Seo
       title="Custom Billing Software Development India | Gavit E-Services"
       description="Custom billing solutions for retail, services, manufacturing & more. Built exactly for your business workflow from Vadodara, India."
-      canonical="https://www.gaviteservice.com/custom-billing-software"
+      canonical="https://gaviteservice.com/custom-billing-software"
       keywords={[...GLOBAL_KEYWORDS.slice(30, 36), "billing software for manufacturing India"]}
     />
     <ServicePageLayout

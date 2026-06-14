@@ -16,7 +16,7 @@ const Elearning = () => {
     <Seo
       title="E-Learning at Gavit E-Services | Online Courses & Training"
       description="Access comprehensive e-learning courses and training programs from Gavit E-Services. Enhance your IT skills with our online learning platform."
-      canonical="https://www.gaviteservice.com/elearning"
+      canonical="https://gaviteservice.com/elearning"
       keywords={["e-learning", "online courses", "IT training", "online learning", "skill development"]}
     />
 

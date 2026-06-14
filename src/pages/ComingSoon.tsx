@@ -8,7 +8,7 @@ const ComingSoon = () => (
     <Seo
       title="Internships & Careers | Gavit E-Services"
       description="Join Gavit E-Services. Explore internship and career opportunities in IT, digital marketing, web development, and business development."
-      canonical="https://www.gaviteservice.com/coming-soon"
+      canonical="https://gaviteservice.com/coming-soon"
       keywords={["career", "jobs", "internship", "Gavit E-Services", "apply"]}
     />
 

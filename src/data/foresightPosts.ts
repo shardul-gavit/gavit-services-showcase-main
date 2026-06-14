@@ -1,5 +1,11 @@
 import shardulAvatar from "@/assets/shardul-gavit.jpeg";
 import pavanAvatar from "@/assets/pavan-gavit.jpeg";
+import { SITE_URL } from "@/constants/seo";
+
+export { SITE_URL };
+import { SITE_URL } from "@/constants/seo";
+
+export { SITE_URL };
 
 export type ForesightCategory =
   | "tech-foresight"
@@ -73,8 +79,6 @@ export const FORESIGHT_CATEGORIES: {
     description: "Personal thoughts from Gavit E-Services CEO on building a future-forward company.",
   },
 ];
-
-export const SITE_URL = "https://www.gaviteservice.com";
 
 export const shardulAuthor: ForesightAuthor = {
   name: "Shardul Gavit",

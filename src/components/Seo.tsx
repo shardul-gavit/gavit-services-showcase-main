@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import { DEFAULT_OG_DESCRIPTION, DEFAULT_TWITTER_DESCRIPTION, GLOBAL_KEYWORDS } from "@/constants/seo";
+import { DEFAULT_OG_DESCRIPTION, DEFAULT_TWITTER_DESCRIPTION, GLOBAL_KEYWORDS, SITE_URL } from "@/constants/seo";
 
-export const DEFAULT_OG_IMAGE = "https://www.gaviteservice.com/og-image.jpg";
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 
 export type SeoProps = {
   title: string;

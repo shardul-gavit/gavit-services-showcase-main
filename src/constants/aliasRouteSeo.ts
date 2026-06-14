@@ -1,3 +1,5 @@
+import { SITE_URL } from "@/constants/seo";
+
 type AliasSeo = {
   title: string;
   description: string;
@@ -5,7 +7,7 @@ type AliasSeo = {
   keywords?: string[];
 };
 
-const SITE = "https://www.gaviteservice.com";
+const SITE = SITE_URL;
 
 export const ALIAS_ROUTE_SEO = {
   virtualAssistant: {

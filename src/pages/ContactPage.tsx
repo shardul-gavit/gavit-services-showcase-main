@@ -20,7 +20,7 @@ const ContactPage = () => (
     <Seo
       title="Contact Gavit E-Services | IT Services & Staffing in Vadodara"
       description="Book free IT consultation, get staffing quote, hire remote team today, or schedule recruitment call with Gavit E-Services in Vadodara, Gujarat, India."
-      canonical="https://www.gaviteservice.com/contact"
+      canonical="https://gaviteservice.com/contact"
       keywords={["book free IT consultation", "get staffing quote", "hire remote team today", "schedule recruitment call", "IT services in Vadodara"]}
     />
 

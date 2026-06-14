@@ -9,7 +9,7 @@ const GstBillingSoftware = () => (
     <Seo
       title="GST Billing Software India | Free & Affordable Plans — Gavit E-Services"
       description="Simple, affordable GST billing software for Indian SMBs. Generate invoices, track payments, stay compliant. Free plan available."
-      canonical="https://www.gaviteservice.com/gst-billing-software"
+      canonical="https://gaviteservice.com/gst-billing-software"
       keywords={[...GLOBAL_KEYWORDS.slice(24, 30), "GST invoice software India"]}
     />
     <ServicePageLayout

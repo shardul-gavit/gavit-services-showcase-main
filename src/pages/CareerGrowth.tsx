@@ -11,7 +11,7 @@ const CareerGrowth = () => (
     <Seo
       title="Career Growth | Gavit E-Services"
       description="Explore career growth opportunities at Gavit E-Services. Continuous learning and clear career progression paths for professional development."
-      canonical="https://www.gaviteservice.com/career-growth"
+      canonical="https://gaviteservice.com/career-growth"
       keywords={["career growth", "professional development", "career progression", "Gavit E-Services"]}
     />
 

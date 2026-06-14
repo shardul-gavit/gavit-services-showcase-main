@@ -29,7 +29,7 @@ const DEFAULT_SEO: Pick<SeoProps, "title" | "description" | "canonical" | "keywo
   title: "Remote Staffing Services | Gavit E-Services",
   description:
     "Remote staffing services, remote developers for hire in India, remote staffing vs in-house hiring playbooks, and managed pods for startups.",
-  canonical: "https://www.gaviteservice.com/remote-staffing",
+  canonical: "https://gaviteservice.com/remote-staffing",
   keywords: [
     "remote staffing services",
     "remote developers for hire in India",

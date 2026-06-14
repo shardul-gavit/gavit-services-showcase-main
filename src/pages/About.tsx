@@ -144,7 +144,7 @@ const About = () => (
     <Seo
       title="About Gavit E-Services | Co-founder & CTO Pavan Gavit — IT Company Vadodara"
       description="Gavit E-Services is an IT services and remote staffing company founded in 2022 by Pavan Gavit in Vadodara, Gujarat. 100+ clients across India, USA, UK, UAE, Canada & Australia."
-      canonical="https://www.gaviteservice.com/about"
+      canonical="https://gaviteservice.com/about"
       keywords={[
         "IT services company in Vadodara",
         "Pavan Gavit Gavit E-Services",

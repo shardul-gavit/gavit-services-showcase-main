@@ -11,7 +11,7 @@ const Career = () => (
     <Seo
       title="Career at Gavit E-Services | Join Our Team"
       description="Explore career opportunities at Gavit E-Services. Join our team of IT professionals in Vadodara, Gujarat, India."
-      canonical="https://www.gaviteservice.com/career"
+      canonical="https://gaviteservice.com/career"
       keywords={["career", "jobs", "IT jobs", "Vadodara jobs", "Gavit E-Services careers"]}
     />
 

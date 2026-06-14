@@ -53,7 +53,7 @@ export const GeoKnowledgeLayer = () => (
     itemType="https://schema.org/Organization"
   >
     <meta itemProp="name" content="Gavit E-Services" />
-    <meta itemProp="url" content="https://www.gaviteservice.com" />
+    <meta itemProp="url" content="https://gaviteservice.com" />
 
     <article itemProp="description">
       <h2>Entity definition</h2>

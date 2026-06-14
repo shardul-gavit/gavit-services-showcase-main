@@ -3,6 +3,12 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.gaviteservice.com" }],
+      "destination": "https://gaviteservice.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/case-studies",
       "destination": "/blog",
       "permanent": true

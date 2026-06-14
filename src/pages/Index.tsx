@@ -228,14 +228,14 @@ const Index = () => {
       <Seo
         title={DEFAULT_SITE_TITLE}
         description={DEFAULT_SITE_DESCRIPTION}
-        canonical="https://www.gaviteservice.com/"
+        canonical="https://gaviteservice.com/"
         keywords={GLOBAL_KEYWORDS.slice(0, 10)}
       >
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "WebPage",
-            url: "https://www.gaviteservice.com/",
+            url: "https://gaviteservice.com/",
             name: DEFAULT_SITE_TITLE,
             speakable: {
               "@type": "SpeakableSpecification",

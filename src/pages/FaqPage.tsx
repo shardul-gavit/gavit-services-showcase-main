@@ -5,9 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ALL_FAQ_ITEMS, FAQ_CATEGORIES, buildFaqPageSchema } from "@/data/faqContent";
+import { SITE_URL } from "@/constants/seo";
 import { ArrowRight, MessageCircle } from "lucide-react";
 
-const CANONICAL = "https://www.gaviteservice.com/faq";
+const CANONICAL = `${SITE_URL}/faq`;
 
 const FaqPage = () => (
   <Layout>

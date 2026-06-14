@@ -55,7 +55,7 @@ const Staffing = () => (
     <Seo
       title="Staffing & Recruitment Services | Gavit E-Services"
       description="IT staffing services, recruitment and staffing solutions, non-IT staffing services, remote staffing services, and HR outsourcing in Vadodara, Gujarat."
-      canonical="https://www.gaviteservice.com/staffing"
+      canonical="https://gaviteservice.com/staffing"
       keywords={[
         "IT staffing services",
         "recruitment and staffing solutions",

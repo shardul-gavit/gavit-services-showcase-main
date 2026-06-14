@@ -73,7 +73,7 @@ const DEFAULT_SEO: Pick<SeoProps, "title" | "description" | "canonical" | "keywo
   title: "IT Services in Vadodara | Gavit E-Services",
   description:
     "IT solutions and consulting, software development services, digital transformation services, and IT infrastructure and support services for Gujarat and India.",
-  canonical: "https://www.gaviteservice.com/it-services",
+  canonical: "https://gaviteservice.com/it-services",
   keywords: [
     "IT solutions and consulting",
     "software development services",

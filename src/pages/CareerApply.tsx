@@ -359,7 +359,7 @@ const CareerApply = () => {
       <Seo
         title="Apply – Internship & BDA | Gavit E-Services"
         description="Apply for internship or Business Development Associate position at Gavit E-Services."
-        canonical="https://www.gaviteservice.com/career/apply"
+        canonical="https://gaviteservice.com/career/apply"
         keywords={["internship", "BDA", "career", "apply", "Gavit E-Services"]}
       />
 
