@@ -3,9 +3,6 @@ import pavanAvatar from "@/assets/pavan-gavit.jpeg";
 import { SITE_URL } from "@/constants/seo";
 
 export { SITE_URL };
-import { SITE_URL } from "@/constants/seo";
-
-export { SITE_URL };
 
 export type ForesightCategory =
   | "tech-foresight"
